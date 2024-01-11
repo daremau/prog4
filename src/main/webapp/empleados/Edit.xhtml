@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditEmpleadosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditEmpleadosLabel_empleado}" for="empleado" />
+                    <h:inputText id="empleado" value="#{empleadosController.selected.empleado}" title="#{bundle.EditEmpleadosTitle_empleado}" required="true" requiredMessage="#{bundle.EditEmpleadosRequiredMessage_empleado}"/>
+                    <h:outputLabel value="#{bundle.EditEmpleadosLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{empleadosController.selected.nombre}" title="#{bundle.EditEmpleadosTitle_nombre}" required="true" requiredMessage="#{bundle.EditEmpleadosRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{bundle.EditEmpleadosLabel_apellido}" for="apellido" />
+                    <h:inputText id="apellido" value="#{empleadosController.selected.apellido}" title="#{bundle.EditEmpleadosTitle_apellido}" required="true" requiredMessage="#{bundle.EditEmpleadosRequiredMessage_apellido}"/>
+                    <h:outputLabel value="#{bundle.EditEmpleadosLabel_direccion}" for="direccion" />
+                    <h:inputText id="direccion" value="#{empleadosController.selected.direccion}" title="#{bundle.EditEmpleadosTitle_direccion}" required="true" requiredMessage="#{bundle.EditEmpleadosRequiredMessage_direccion}"/>
+                    <h:outputLabel value="#{bundle.EditEmpleadosLabel_telefono}" for="telefono" />
+                    <h:inputText id="telefono" value="#{empleadosController.selected.telefono}" title="#{bundle.EditEmpleadosTitle_telefono}" required="true" requiredMessage="#{bundle.EditEmpleadosRequiredMessage_telefono}"/>
+                    <h:outputLabel value="#{bundle.EditEmpleadosLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{empleadosController.selected.email}" title="#{bundle.EditEmpleadosTitle_email}" required="true" requiredMessage="#{bundle.EditEmpleadosRequiredMessage_email}"/>
+                    <h:outputLabel value="#{bundle.EditEmpleadosLabel_fechaIngreso}" for="fechaIngreso" />
+                    <h:inputText id="fechaIngreso" value="#{empleadosController.selected.fechaIngreso}" title="#{bundle.EditEmpleadosTitle_fechaIngreso}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditEmpleadosLabel_fechaSalida}" for="fechaSalida" />
+                    <h:inputText id="fechaSalida" value="#{empleadosController.selected.fechaSalida}" title="#{bundle.EditEmpleadosTitle_fechaSalida}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditEmpleadosLabel_salario}" for="salario" />
+                    <h:inputText id="salario" value="#{empleadosController.selected.salario}" title="#{bundle.EditEmpleadosTitle_salario}" />
+                    <h:outputLabel value="#{bundle.EditEmpleadosLabel_area}" for="area" />
+                    <h:selectOneMenu id="area" value="#{empleadosController.selected.area}" title="#{bundle.EditEmpleadosTitle_area}" >
+                        <f:selectItems value="#{areasController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditEmpleadosLabel_pais}" for="pais" />
+                    <h:selectOneMenu id="pais" value="#{empleadosController.selected.pais}" title="#{bundle.EditEmpleadosTitle_pais}" >
+                        <f:selectItems value="#{paisesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{empleadosController.update}" value="#{bundle.EditEmpleadosSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditEmpleadosViewLink}"/>
+                <br />
+                <h:commandLink action="#{empleadosController.prepareList}" value="#{bundle.EditEmpleadosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditEmpleadosIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

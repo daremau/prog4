@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateProveedoresTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_proveedor}" for="proveedor" />
+                    <h:inputText id="proveedor" value="#{proveedoresController.selected.proveedor}" title="#{bundle.CreateProveedoresTitle_proveedor}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_proveedor}"/>
+                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{proveedoresController.selected.nombre}" title="#{bundle.CreateProveedoresTitle_nombre}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_direccion}" for="direccion" />
+                    <h:inputText id="direccion" value="#{proveedoresController.selected.direccion}" title="#{bundle.CreateProveedoresTitle_direccion}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_direccion}"/>
+                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_telefono}" for="telefono" />
+                    <h:inputText id="telefono" value="#{proveedoresController.selected.telefono}" title="#{bundle.CreateProveedoresTitle_telefono}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_telefono}"/>
+                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{proveedoresController.selected.email}" title="#{bundle.CreateProveedoresTitle_email}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_email}"/>
+                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_fechaInicio}" for="fechaInicio" />
+                    <h:inputText id="fechaInicio" value="#{proveedoresController.selected.fechaInicio}" title="#{bundle.CreateProveedoresTitle_fechaInicio}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_pais}" for="pais" />
+                    <h:selectOneMenu id="pais" value="#{proveedoresController.selected.pais}" title="#{bundle.CreateProveedoresTitle_pais}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_pais}">
+                        <f:selectItems value="#{paisesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{proveedoresController.create}" value="#{bundle.CreateProveedoresSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{proveedoresController.prepareList}" value="#{bundle.CreateProveedoresShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateProveedoresIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
