@@ -9,10 +9,6 @@ body {
     font-size: small;
 }
 
-a {
-    color: #e33b06;
-}
-
 table {
     empty-cells: show;
 }
@@ -79,4 +75,35 @@ tr.jsfcrud_even_row {
     position: absolute;
     left: 50%;
     top: 50%;
+}
+
+.azul {
+    color: #1b325f;
+}
+
+.celeste {
+    color: #3a89c9;
+}
+
+.blanco {
+    color: #e9f2f9;
+}
+
+.sin-estilo:hover {
+    text-decoration: none;
+}
+
+.sin-estilo {
+    text-decoration: none;
+}
+
+.gradient-custom {
+/* fallback for old browsers */
+    background: #1b325f;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-radial-gradient(circle at center, #9cc4e4, #1b325f);
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: radial-gradient(#3a89c9, #1b325f);
 }
