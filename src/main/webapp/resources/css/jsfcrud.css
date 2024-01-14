@@ -7,6 +7,7 @@ body {
     color: #3a4f54;
     background-color: #dfecf1;
     font-size: small;
+    font-weight: 300
 }
 
 a {
@@ -80,3 +81,24 @@ tr.jsfcrud_even_row {
     left: 50%;
     top: 50%;
 }
+
+#sidebar-container {
+    min-height: 100vh;
+}
+  
+#sidebar-container .logo{
+    padding: 0.875rem 1.25rem;
+}
+  
+#sidebar-container .menu {
+    width: 18rem;
+}
+
+@media (max-width: 768px) {
+    #sidebar-container {
+      display: none;
+    }
+    .stat {
+        border: 0;
+    }
+  }

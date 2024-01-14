@@ -3,34 +3,88 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Empresa S.A</title>
         <h:outputStylesheet name="css/jsfcrud.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
     </h:head>
     <h:body>
-        <div class="container">
-            <br/>
-            <h1>Hello from Facelets</h1>        
-            <br />
-            <ul class="list-group">
-                <li class="list-group-item"><h:link outcome="/ajustes/List" value="Show All Ajustes Items"/></li>
-                <br/>
-                <li class="list-group-item"><h:link outcome="/areas/List" value="Show All Areas Items"/></li>
-                <br/>
-                <li class="list-group-item"><h:link outcome="/categorias/List" value="Show All Categorias Items"/></li>
-                <br/>
-                <li class="list-group-item"><h:link outcome="/compras/List" value="Show All Compras Items"/></li>
-                <br/>
-                <li class="list-group-item"><h:link outcome="/empleados/List" value="Show All Empleados Items"/></li>
-                <br/>
-                <li class="list-group-item"><h:link outcome="/marcas/List" value="Show All Marcas Items"/></li>
-                <br/>
-                <li class="list-group-item"><h:link outcome="/paises/List" value="Show All Paises Items"/></li>
-                <br/>
-                <li class="list-group-item"><h:link outcome="/productos/List" value="Show All Productos Items"/></li>
-                <br/>
-                <li class="list-group-item"><h:link outcome="/proveedores/List" value="Show All Proveedores Items"/></li>
-            </ul>
+        <div class="d-flex" id="content-wrapper">
+            <!-- Sidebar -->
+            <div class="bg-primary" id="sidebar-container">
+                <div class="logo">
+                    <h4 class="text-light font-weight-bold mb-0">Panel de Control</h4>
+                </div>
+                <div class="menu">
+                    <h:link class="d-block text-light p-3 border-0" outcome="/ajustes/List" value="Ajustes"/>
+                    <h:link class="d-block text-light p-3 border-0" outcome="/areas/List" value="Areas"/>
+                    <h:link class="d-block text-light p-3 border-0" outcome="/categorias/List" value="Categorias"/>
+                    <h:link class="d-block text-light p-3 border-0" outcome="/compras/List" value="Compras"/>
+                    <h:link class="d-block text-light p-3 border-0" outcome="/empleados/List" value="Empleados"/>
+                    <h:link class="d-block text-light p-3 border-0" outcome="/marcas/List" value="Marcas"/>
+                    <h:link class="d-block text-light p-3 border-0" outcome="/paises/List" value="Paises"/>
+                    <h:link class="d-block text-light p-3 border-0" outcome="/productos/List" value="Productos"/>
+                    <h:link class="d-block text-light p-3 border-0" outcome="/proveedores/List" value="Proveedores"/>
+                </div>
+            </div>
+            <!-- Fin sidebar -->
+            
+            <div class="w-100">
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    Compra y distribución de equipos y suministros informáticos.
+                    <div class="container">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                              <li class="nav-item dropdown">
+                                <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Usuario
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Cerrar sesión</a>
+                                </div>
+                              </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- Fin Navbar -->
+            </div>
+            
         </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--<div class="container-fluid">
+            <h1>Compra y distribución de equipos y suministros informáticos.</h1>  
+             <div class="col-md-3 bg-light">
+                <h2 class="text-center mt-3">Panel de Control</h2>
+                <ul class="list-group">
+                    <li class="list-group-item"><h:link outcome="/ajustes/List" value="Show All Ajustes Items"/></li>
+                    <br/>
+                    <li class="list-group-item"><h:link outcome="/areas/List" value="Show All Areas Items"/></li>
+                    <br/>
+                    <li class="list-group-item"><h:link outcome="/categorias/List" value="Show All Categorias Items"/></li>
+                    <br/>
+                    <li class="list-group-item"><h:link outcome="/compras/List" value="Show All Compras Items"/></li>
+                    <br/>
+                    <li class="list-group-item"><h:link outcome="/empleados/List" value="Show All Empleados Items"/></li>
+                    <br/>
+                    <li class="list-group-item"><h:link outcome="/marcas/List" value="Show All Marcas Items"/></li>
+                    <br/>
+                    <li class="list-group-item"><h:link outcome="/paises/List" value="Show All Paises Items"/></li>
+                    <br/>
+                    <li class="list-group-item"><h:link outcome="/productos/List" value="Show All Productos Items"/></li>
+                    <br/>
+                    <li class="list-group-item"><h:link outcome="/proveedores/List" value="Show All Proveedores Items"/></li>
+                </ul>
+             </div>
+        </div>-->
+        
     </h:body>
 </html>
