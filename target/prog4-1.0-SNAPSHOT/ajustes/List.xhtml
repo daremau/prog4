@@ -95,11 +95,8 @@
                     <!--/ui:define-->
                     </div>
                 </h:panelGroup>
-                <br />
-                <h:commandLink action="#{ajustesController.prepareCreate}" value="#{bundle.ListAjustesCreateLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ListAjustesIndexLink}"/>
+                <h:commandButton action="#{ajustesController.prepareCreate}" value="#{bundle.ListAjustesCreateLink}" styleClass="btn btn-primary"/>
+                <h:commandButton outcome="/index" value="#{bundle.ListAjustesIndexLink}" styleClass="btn btn-primary"/>
                 
             </h:form>
         </ui:define>
