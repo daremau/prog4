@@ -5,35 +5,32 @@
     <h:head>
         <title>Facelet Title</title>
         <h:outputStylesheet name="css/jsfcrud.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
     </h:head>
     <h:body>
-        Hello from Facelets
-        <br />
-        <h:link outcome="/ajustes/List" value="Show All Ajustes Items"/>
-        <br />
-        <h:link outcome="/areas/List" value="Show All Areas Items"/>
-        <br />
-        <h:link outcome="/categorias/List" value="Show All Categorias Items"/>
-        <br />
-        <h:link outcome="/compras/List" value="Show All Compras Items"/>
-        <br />
-        <h:link outcome="/empleados/List" value="Show All Empleados Items"/>
-        <br />
-        <h:link outcome="/marcas/List" value="Show All Marcas Items"/>
-        <br />
-        <h:link outcome="/paises/List" value="Show All Paises Items"/>
-        <br />
-        <h:link outcome="/productos/List" value="Show All Productos Items"/>
-        <br />
-        <h:link outcome="/proveedores/List" value="Show All Proveedores Items"/>
+        <div class="container">
+            <br/>
+            <h1>Hello from Facelets</h1>         
+            <br />
+            <ul class="list-group">
+                <li class="list-group-item"><h:link outcome="/ajustes/List" value="Show All Ajustes Items"/></li>
+                <br/>
+                <li class="list-group-item"><h:link outcome="/areas/List" value="Show All Areas Items"/></li>
+                <br/>
+                <li class="list-group-item"><h:link outcome="/categorias/List" value="Show All Categorias Items"/></li>
+                <br/>
+                <li class="list-group-item"><h:link outcome="/compras/List" value="Show All Compras Items"/></li>
+                <br/>
+                <li class="list-group-item"><h:link outcome="/empleados/List" value="Show All Empleados Items"/></li>
+                <br/>
+                <li class="list-group-item"><h:link outcome="/marcas/List" value="Show All Marcas Items"/></li>
+                <br/>
+                <li class="list-group-item"><h:link outcome="/paises/List" value="Show All Paises Items"/></li>
+                <br/>
+                <li class="list-group-item"><h:link outcome="/productos/List" value="Show All Productos Items"/></li>
+                <br/>
+                <li class="list-group-item"><h:link outcome="/proveedores/List" value="Show All Proveedores Items"/></li>
+            </ul>
+        </div>
     </h:body>
-
-
-
-
-
-
-
-
-
 </html>
