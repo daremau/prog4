@@ -3,57 +3,73 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
             <h:outputText value="#{bundle.CreateEmpleadosTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
+        <ui:define name="buttons">
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateEmpleadosLabel_empleado}" for="empleado" />
-                    <h:inputText id="empleado" value="#{empleadosController.selected.empleado}" title="#{bundle.CreateEmpleadosTitle_empleado}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_empleado}"/>
-                    <h:outputLabel value="#{bundle.CreateEmpleadosLabel_nombre}" for="nombre" />
-                    <h:inputText id="nombre" value="#{empleadosController.selected.nombre}" title="#{bundle.CreateEmpleadosTitle_nombre}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_nombre}"/>
-                    <h:outputLabel value="#{bundle.CreateEmpleadosLabel_apellido}" for="apellido" />
-                    <h:inputText id="apellido" value="#{empleadosController.selected.apellido}" title="#{bundle.CreateEmpleadosTitle_apellido}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_apellido}"/>
-                    <h:outputLabel value="#{bundle.CreateEmpleadosLabel_direccion}" for="direccion" />
-                    <h:inputText id="direccion" value="#{empleadosController.selected.direccion}" title="#{bundle.CreateEmpleadosTitle_direccion}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_direccion}"/>
-                    <h:outputLabel value="#{bundle.CreateEmpleadosLabel_telefono}" for="telefono" />
-                    <h:inputText id="telefono" value="#{empleadosController.selected.telefono}" title="#{bundle.CreateEmpleadosTitle_telefono}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_telefono}"/>
-                    <h:outputLabel value="#{bundle.CreateEmpleadosLabel_email}" for="email" />
-                    <h:inputText id="email" value="#{empleadosController.selected.email}" title="#{bundle.CreateEmpleadosTitle_email}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_email}"/>
-                    <h:outputLabel value="#{bundle.CreateEmpleadosLabel_fechaIngreso}" for="fechaIngreso" />
-                    <h:inputText id="fechaIngreso" value="#{empleadosController.selected.fechaIngreso}" title="#{bundle.CreateEmpleadosTitle_fechaIngreso}" >
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:inputText>
-                    <h:outputLabel value="#{bundle.CreateEmpleadosLabel_fechaSalida}" for="fechaSalida" />
-                    <h:inputText id="fechaSalida" value="#{empleadosController.selected.fechaSalida}" title="#{bundle.CreateEmpleadosTitle_fechaSalida}" >
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:inputText>
-                    <h:outputLabel value="#{bundle.CreateEmpleadosLabel_salario}" for="salario" />
-                    <h:inputText id="salario" value="#{empleadosController.selected.salario}" title="#{bundle.CreateEmpleadosTitle_salario}" />
-                    <h:outputLabel value="#{bundle.CreateEmpleadosLabel_area}" for="area" />
-                    <h:selectOneMenu id="area" value="#{empleadosController.selected.area}" title="#{bundle.CreateEmpleadosTitle_area}" >
-                        <f:selectItems value="#{areasController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateEmpleadosLabel_pais}" for="pais" />
-                    <h:selectOneMenu id="pais" value="#{empleadosController.selected.pais}" title="#{bundle.CreateEmpleadosTitle_pais}" >
-                        <f:selectItems value="#{paisesController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                </h:panelGrid>
-                <br />
-                <h:commandLink action="#{empleadosController.create}" value="#{bundle.CreateEmpleadosSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{empleadosController.prepareList}" value="#{bundle.CreateEmpleadosShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateEmpleadosIndexLink}"/>
+                <h:commandLink class="btn btn-primary w-100 align-self-center" action="#{empleadosController.prepareList}" value="#{bundle.CreateEmpleadosShowAllLink}" immediate="true"/>
+                <h:commandLink class="btn btn-success w-100 align-self-center mt-1" action="#{empleadosController.create}" value="#{bundle.CreateEmpleadosSaveLink}" />
+            </h:form>
+        </ui:define>
+        <ui:define name="body">
+            <h:form class="col-10">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <div class="card">
+                    <div class="card-body">
+                        <h:panelGrid class="col-12">
+<!--                            <h:outputLabel value="#{bundle.CreateEmpleadosLabel_empleado}" for="empleado" />-->
+                            <br></br>
+                            <h:inputText styleClass="form-control" id="empleado"  a:placeholder="#{bundle.CreateEmpleadosLabel_empleado}" value="#{empleadosController.selected.empleado}" title="#{bundle.CreateEmpleadosTitle_empleado}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_empleado}"/>
+<!--                            <h:outputLabel value="#{bundle.CreateEmpleadosLabel_nombre}" for="nombre" />-->
+                            <br></br>
+                            <h:inputText styleClass="form-control" id="nombre" a:placeholder="#{bundle.CreateEmpleadosLabel_nombre}" value="#{empleadosController.selected.nombre}" title="#{bundle.CreateEmpleadosTitle_nombre}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_nombre}"/>
+<!--                            <h:outputLabel value="#{bundle.CreateEmpleadosLabel_apellido}" for="apellido" />-->
+                            <br></br>
+                            <h:inputText styleClass="form-control" id="apellido" a:placeholder="#{bundle.CreateEmpleadosLabel_apellido}" value="#{empleadosController.selected.apellido}" title="#{bundle.CreateEmpleadosTitle_apellido}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_apellido}"/>
+<!--                            <h:outputLabel value="#{bundle.CreateEmpleadosLabel_direccion}" for="direccion" />-->
+                            <br></br>
+                            <h:inputText styleClass="form-control" id="direccion" a:placeholder="#{bundle.CreateEmpleadosLabel_direccion}" value="#{empleadosController.selected.direccion}" title="#{bundle.CreateEmpleadosTitle_direccion}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_direccion}"/>
+<!--                            <h:outputLabel value="#{bundle.CreateEmpleadosLabel_telefono}" for="telefono" />-->
+                            <br></br>
+                            <h:inputText styleClass="form-control" id="telefono" a:placeholder="#{bundle.CreateEmpleadosLabel_telefono}" value="#{empleadosController.selected.telefono}" title="#{bundle.CreateEmpleadosTitle_telefono}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_telefono}"/>
+<!--                            <h:outputLabel value="#{bundle.CreateEmpleadosLabel_email}" for="email" />-->
+                            <br></br>
+                            <h:inputText styleClass="form-control" id="email" a:placeholder="#{bundle.CreateEmpleadosLabel_email}" value="#{empleadosController.selected.email}" title="#{bundle.CreateEmpleadosTitle_email}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_email}"/>
+<!--                            <h:outputLabel value="#{bundle.CreateEmpleadosLabel_fechaIngreso}" for="fechaIngreso" />-->
+                            <br></br>
+                            <h:inputText styleClass="form-control" id="fechaIngreso" a:placeholder="#{bundle.CreateEmpleadosLabel_fechaIngreso}" value="#{empleadosController.selected.fechaIngreso}" title="#{bundle.CreateEmpleadosTitle_fechaIngreso}" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+<!--                            <h:outputLabel value="#{bundle.CreateEmpleadosLabel_fechaSalida}" for="fechaSalida" />-->
+                            <br></br>
+                            <h:inputText styleClass="form-control" id="fechaSalida" a:placeholder="#{bundle.CreateEmpleadosLabel_fechaSalida}" value="#{empleadosController.selected.fechaSalida}" title="#{bundle.CreateEmpleadosTitle_fechaSalida}" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+<!--                            <h:outputLabel value="#{bundle.CreateEmpleadosLabel_salario}" for="salario" />-->
+                            <br></br>
+                            <h:inputText styleClass="form-control" id="salario" a:placeholder="#{bundle.CreateEmpleadosLabel_salario}" value="#{empleadosController.selected.salario}" title="#{bundle.CreateEmpleadosTitle_salario}" />
+<!--                            <h:outputLabel value="#{bundle.CreateEmpleadosLabel_area}" for="area" />-->
+                            <br></br>
+                            <h:selectOneMenu styleClass="form-control" id="area" a:placeholder="#{bundle.CreateEmpleadosLabel_area}" value="#{empleadosController.selected.area}" title="#{bundle.CreateEmpleadosTitle_area}" >
+                                <f:selectItems value="#{areasController.itemsAvailableSelectOne}"/>
+                            </h:selectOneMenu>
+                            <!--<h:outputLabel value="#{bundle.CreateEmpleadosLabel_pais}" for="pais" />-->
+                            <br></br>
+                            <h:selectOneMenu styleClass="form-control" id="pais" a:placeholder="#{bundle.CreateEmpleadosLabel_pais}" value="#{empleadosController.selected.pais}" title="#{bundle.CreateEmpleadosTitle_pais}" >
+                                <f:selectItems value="#{paisesController.itemsAvailableSelectOne}"/>
+                            </h:selectOneMenu>
+                 
+                        </h:panelGrid>
+                       <br></br>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>
