@@ -9,17 +9,25 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.ListMarcasTitle}"></h:outputText>
         </ui:define>
+        <ui:define name="buttons">
+            <h:form>
+                <h:commandLink styleClass="btn btn-primary w-100 align-self-center" action="#{ajustesController.prepareCreate}" value="#{bundle.ListAjustesCreateLink}"/>
+            </h:form>
+        </ui:define>
         <ui:define name="body">
-            <h:form styleClass="jsfcrud_list_form">
+            <h:form styleClass="jsfcrud_list_form col-12">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
+                
                 <h:outputText escape="false" value="#{bundle.ListMarcasEmpty}" rendered="#{marcasController.items.rowCount == 0}"/>
+                
                 <h:panelGroup rendered="#{marcasController.items.rowCount > 0}">
                     <h:outputText value="#{marcasController.pagination.pageFirstItem + 1}..#{marcasController.pagination.pageLastItem + 1}/#{marcasController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink action="#{marcasController.previous}" value="#{bundle.Previous} #{marcasController.pagination.pageSize}" rendered="#{marcasController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink action="#{marcasController.next}" value="#{bundle.Next} #{marcasController.pagination.pageSize}" rendered="#{marcasController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{marcasController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    
+                    <h:dataTable class="table table-sm table-bordered" value="#{marcasController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListMarcasTitle_marca}"/>
@@ -34,21 +42,22 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="&nbsp;"/>
+                                <h:outputText value="#{bundle.ListDatosAcciones}"/>
                             </f:facet>
-                            <h:commandLink action="#{marcasController.prepareView}" value="#{bundle.ListMarcasViewLink}"/>
+                            <h:commandLink action="#{marcasController.prepareView}">
+                                <ion-icon class="actions" name="eye-outline"></ion-icon>
+                            </h:commandLink>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{marcasController.prepareEdit}" value="#{bundle.ListMarcasEditLink}"/>
+                            <h:commandLink action="#{marcasController.prepareEdit}" >
+                                <ion-icon class="actions" name="create-outline"></ion-icon>
+                            </h:commandLink>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{marcasController.destroy}" value="#{bundle.ListMarcasDestroyLink}"/>
+                            <h:commandLink action="#{marcasController.destroy}">
+                                <ion-icon class="actions" name="trash-outline"></ion-icon>
+                            </h:commandLink>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
-                <br />
-                <h:commandLink action="#{marcasController.prepareCreate}" value="#{bundle.ListMarcasCreateLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ListMarcasIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

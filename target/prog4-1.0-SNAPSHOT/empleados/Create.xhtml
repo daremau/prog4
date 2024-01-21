@@ -45,12 +45,12 @@
 <!--                            <h:outputLabel value="#{bundle.CreateEmpleadosLabel_fechaIngreso}" for="fechaIngreso" />-->
                             <br></br>
                             <h:inputText styleClass="form-control" id="fechaIngreso" a:placeholder="#{bundle.CreateEmpleadosLabel_fechaIngreso}" value="#{empleadosController.selected.fechaIngreso}" title="#{bundle.CreateEmpleadosTitle_fechaIngreso}" >
-                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
                             </h:inputText>
 <!--                            <h:outputLabel value="#{bundle.CreateEmpleadosLabel_fechaSalida}" for="fechaSalida" />-->
                             <br></br>
                             <h:inputText styleClass="form-control" id="fechaSalida" a:placeholder="#{bundle.CreateEmpleadosLabel_fechaSalida}" value="#{empleadosController.selected.fechaSalida}" title="#{bundle.CreateEmpleadosTitle_fechaSalida}" >
-                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
                             </h:inputText>
 <!--                            <h:outputLabel value="#{bundle.CreateEmpleadosLabel_salario}" for="salario" />-->
                             <br></br>

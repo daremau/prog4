@@ -6,23 +6,26 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:composition template="/template.xhtml">
-            <ui:define name="title">
-                <h:outputLabel value="#{bundle.ListEmpleadosTitle}"></h:outputLabel>
-            </ui:define>
-            <ui:define name="buttons">
-                <h:form>
-                    <h:commandLink styleClass="btn btn-primary w-100 align-self-center" action="#{empleadosController.prepareCreate}" value="#{bundle.ListEmpleadosCreateLink}"/>
-                </h:form>
-            </ui:define>
+        <ui:define name="title">
+            <h:outputLabel value="#{bundle.ListEmpleadosTitle}"></h:outputLabel>
+        </ui:define>
+        <ui:define name="buttons">
+            <h:form>
+                <h:commandLink styleClass="btn btn-primary w-100 align-self-center" action="#{empleadosController.prepareCreate}" value="#{bundle.ListEmpleadosCreateLink}"/>
+            </h:form>
+        </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form col-12">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
+                
                 <h:outputText escape="false" value="#{bundle.ListEmpleadosEmpty}" rendered="#{empleadosController.items.rowCount == 0}"/>
+                
                 <h:panelGroup rendered="#{empleadosController.items.rowCount > 0}">
                     <h:outputText value="#{empleadosController.pagination.pageFirstItem + 1}..#{empleadosController.pagination.pageLastItem + 1}/#{empleadosController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink action="#{empleadosController.previous}" value="#{bundle.Previous} #{empleadosController.pagination.pageSize}" rendered="#{empleadosController.pagination.hasPreviousPage}"/>&nbsp;
+                    
                     <h:dataTable class="table table-sm table-bordered" value="#{empleadosController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
                             <f:facet name="header">
@@ -96,22 +99,18 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="&nbsp;"/>
+                                <h:outputText value="#{bundle.ListDatosAcciones}"/>
                             </f:facet>
                             <h:commandLink action="#{empleadosController.prepareView}">
-                                <ion-icon class="actions" name="eye-sharp"></ion-icon>
+                                <ion-icon class="actions" name="eye-outline"></ion-icon>
                             </h:commandLink>
-                            
                             <h:outputText value=" "/>
-                            
                             <h:commandLink action="#{empleadosController.prepareEdit}">
-                                <ion-icon class="actions" name="create-sharp"></ion-icon>
+                                <ion-icon class="actions" name="create-outline"></ion-icon>
                             </h:commandLink>
-                            
                             <h:outputText value=" "/>
-                            
                             <h:commandLink action="#{empleadosController.destroy}">
-                                <ion-icon class="actions" name="trash-sharp"></ion-icon>
+                                <ion-icon class="actions" name="trash-outline"></ion-icon>
                             </h:commandLink>
                         </h:column>
                     </h:dataTable>
@@ -123,5 +122,4 @@
             </h:form>
         </ui:define>
     </ui:composition>
-
 </html>

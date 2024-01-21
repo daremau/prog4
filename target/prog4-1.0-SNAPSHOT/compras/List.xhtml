@@ -9,17 +9,25 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.ListComprasTitle}"></h:outputText>
         </ui:define>
+        <ui:define name="buttons">
+            <h:form>
+                <h:commandLink styleClass="btn btn-primary w-100 align-self-center" action="#{ajustesController.prepareCreate}" value="#{bundle.ListAjustesCreateLink}"/>
+            </h:form>
+        </ui:define>
         <ui:define name="body">
-            <h:form styleClass="jsfcrud_list_form">
+            <h:form styleClass="jsfcrud_list_form col-12">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
+                
                 <h:outputText escape="false" value="#{bundle.ListComprasEmpty}" rendered="#{comprasController.items.rowCount == 0}"/>
+                
                 <h:panelGroup rendered="#{comprasController.items.rowCount > 0}">
                     <h:outputText value="#{comprasController.pagination.pageFirstItem + 1}..#{comprasController.pagination.pageLastItem + 1}/#{comprasController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink action="#{comprasController.previous}" value="#{bundle.Previous} #{comprasController.pagination.pageSize}" rendered="#{comprasController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink action="#{comprasController.next}" value="#{bundle.Next} #{comprasController.pagination.pageSize}" rendered="#{comprasController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{comprasController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    
+                    <h:dataTable class="table table-sm table-bordered" value="#{comprasController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListComprasTitle_compra}"/>
@@ -66,21 +74,22 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="&nbsp;"/>
+                                <h:outputText value="#{bundle.ListDatosAcciones}"/>
                             </f:facet>
-                            <h:commandLink action="#{comprasController.prepareView}" value="#{bundle.ListComprasViewLink}"/>
+                            <h:commandLink action="#{comprasController.prepareView}">
+                                <ion-icon class="actions" name="eye-outline"></ion-icon>
+                            </h:commandLink>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{comprasController.prepareEdit}" value="#{bundle.ListComprasEditLink}"/>
+                            <h:commandLink action="#{comprasController.prepareEdit}" >
+                                <ion-icon class="actions" name="create-outline"></ion-icon>
+                            </h:commandLink>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{comprasController.destroy}" value="#{bundle.ListComprasDestroyLink}"/>
+                            <h:commandLink action="#{comprasController.destroy}">
+                                <ion-icon class="actions" name="trash-outline"></ion-icon>
+                            </h:commandLink>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
-                <br />
-                <h:commandLink action="#{comprasController.prepareCreate}" value="#{bundle.ListComprasCreateLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ListComprasIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>
