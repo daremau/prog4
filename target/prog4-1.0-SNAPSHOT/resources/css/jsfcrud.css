@@ -118,3 +118,11 @@ ion-icon {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: radial-gradient(#3a89c9, #1b325f);
 }
+
+.card {
+    overflow-y: hidden;
+}
+
+.card-body {
+    overflow-y: hidden;
+}
