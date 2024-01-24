@@ -28,6 +28,10 @@ td {
     text-align: center;
 }
 
+.l-bold {
+    font-weight: bold;
+}
+
 tr.jsfcrud_odd_row {
     background-color: #fefeff;
     color: #4e6a71;

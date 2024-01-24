@@ -9,51 +9,109 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.ViewEmpleadosTitle}"></h:outputText>
         </ui:define>
+        <ui:define name="buttons">
+            <h:form>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-success mt-1 w-100" action="#{empleadosController.prepareCreate}" value="#{bundle.ViewEmpleadosCreateLink}" />
+                </div>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-primary mt-1 w-100" action="#{empleadosController.prepareList}" value="#{bundle.ViewEmpleadosShowAllLink}"/>
+                </div>
+                <div class="row">
+                    <h:link styleClass="btn btn-primary mt-1 w-100" outcome="Edit" value="#{bundle.ViewEmpleadosEditLink}"/>
+                </div>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-danger mt-1 w-100" action="#{empleadosController.destroyAndView}" value="#{bundle.ViewEmpleadosDestroyLink}"/> 
+                </div>
+            </h:form>
+        </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewEmpleadosLabel_empleado}"/>
-                    <h:outputText value="#{empleadosController.selected.empleado}" title="#{bundle.ViewEmpleadosTitle_empleado}"/>
-                    <h:outputText value="#{bundle.ViewEmpleadosLabel_nombre}"/>
-                    <h:outputText value="#{empleadosController.selected.nombre}" title="#{bundle.ViewEmpleadosTitle_nombre}"/>
-                    <h:outputText value="#{bundle.ViewEmpleadosLabel_apellido}"/>
-                    <h:outputText value="#{empleadosController.selected.apellido}" title="#{bundle.ViewEmpleadosTitle_apellido}"/>
-                    <h:outputText value="#{bundle.ViewEmpleadosLabel_direccion}"/>
-                    <h:outputText value="#{empleadosController.selected.direccion}" title="#{bundle.ViewEmpleadosTitle_direccion}"/>
-                    <h:outputText value="#{bundle.ViewEmpleadosLabel_telefono}"/>
-                    <h:outputText value="#{empleadosController.selected.telefono}" title="#{bundle.ViewEmpleadosTitle_telefono}"/>
-                    <h:outputText value="#{bundle.ViewEmpleadosLabel_email}"/>
-                    <h:outputText value="#{empleadosController.selected.email}" title="#{bundle.ViewEmpleadosTitle_email}"/>
-                    <h:outputText value="#{bundle.ViewEmpleadosLabel_fechaIngreso}"/>
-                    <h:outputText value="#{empleadosController.selected.fechaIngreso}" title="#{bundle.ViewEmpleadosTitle_fechaIngreso}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:outputText>
-                    <h:outputText value="#{bundle.ViewEmpleadosLabel_fechaSalida}"/>
-                    <h:outputText value="#{empleadosController.selected.fechaSalida}" title="#{bundle.ViewEmpleadosTitle_fechaSalida}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:outputText>
-                    <h:outputText value="#{bundle.ViewEmpleadosLabel_salario}"/>
-                    <h:outputText value="#{empleadosController.selected.salario}" title="#{bundle.ViewEmpleadosTitle_salario}"/>
-                    <h:outputText value="#{bundle.ViewEmpleadosLabel_area}"/>
-                    <h:outputText value="#{empleadosController.selected.area}" title="#{bundle.ViewEmpleadosTitle_area}"/>
-                    <h:outputText value="#{bundle.ViewEmpleadosLabel_pais}"/>
-                    <h:outputText value="#{empleadosController.selected.pais}" title="#{bundle.ViewEmpleadosTitle_pais}"/>
-                </h:panelGrid>
+            <h:form class="col-10">
+                <div class="card">
+                    <div class="card-body">
+                        <!--<h:panelGrid columns="2" styleClass="col-12">-->
+                       <div class="container col-12">
+                            <!-- Fila 1 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEmpleadosLabel_empleado}"/>
+                                    <h:outputText value="#{empleadosController.selected.empleado}" title="#{bundle.ViewEmpleadosTitle_empleado}"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEmpleadosLabel_nombre}"/>
+                                    <h:outputText value="#{empleadosController.selected.nombre}" title="#{bundle.ViewEmpleadosTitle_nombre}"/>
+                                </div>
+                            </div>
+
+                            <!-- Fila 2 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEmpleadosLabel_apellido}"/>
+                                    <h:outputText value="#{empleadosController.selected.apellido}" title="#{bundle.ViewEmpleadosTitle_apellido}"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEmpleadosLabel_direccion}"/>
+                                    <h:outputText value="#{empleadosController.selected.direccion}" title="#{bundle.ViewEmpleadosTitle_direccion}"/>
+                                </div>
+                            </div>
+
+                            <!-- Fila 3 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEmpleadosLabel_telefono}"/>
+                                    <h:outputText value="#{empleadosController.selected.telefono}" title="#{bundle.ViewEmpleadosTitle_telefono}"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEmpleadosLabel_email}"/>
+                                    <h:outputText value="#{empleadosController.selected.email}" title="#{bundle.ViewEmpleadosTitle_email}"/>
+                                </div>
+                            </div>
+
+                            <!-- Fila 4 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEmpleadosLabel_fechaIngreso}"/>
+                                    <h:outputText value="#{empleadosController.selected.fechaIngreso}" title="#{bundle.ViewEmpleadosTitle_fechaIngreso}">
+                                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                                    </h:outputText>
+                                </div>
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEmpleadosLabel_fechaSalida}"/>
+                                    <h:outputText value="#{empleadosController.selected.fechaSalida}" title="#{bundle.ViewEmpleadosTitle_fechaSalida}">
+                                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                                    </h:outputText>
+                                </div>
+                            </div>
+
+                            <!-- Fila 5 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEmpleadosLabel_salario}"/>
+                                    <h:outputText value="#{empleadosController.selected.salario}" title="#{bundle.ViewEmpleadosTitle_salario}"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEmpleadosLabel_area}"/>
+                                    <h:outputText value="#{empleadosController.selected.area}" title="#{bundle.ViewEmpleadosTitle_area}"/>
+                                </div>
+                            </div>
+
+                            <!-- Fila 6 -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEmpleadosLabel_pais}"/>
+                                    <h:outputText value="#{empleadosController.selected.pais}" title="#{bundle.ViewEmpleadosTitle_pais}"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!--</h:panelGrid>-->
+                    </div>
+                </div>
                 <br />
-                <h:commandLink action="#{empleadosController.destroyAndView}" value="#{bundle.ViewEmpleadosDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewEmpleadosEditLink}"/>
-                <br />
-                <h:commandLink action="#{empleadosController.prepareCreate}" value="#{bundle.ViewEmpleadosCreateLink}" />
-                <br />
-                <h:commandLink action="#{empleadosController.prepareList}" value="#{bundle.ViewEmpleadosShowAllLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ViewEmpleadosIndexLink}"/>
 
             </h:form>
         </ui:define>

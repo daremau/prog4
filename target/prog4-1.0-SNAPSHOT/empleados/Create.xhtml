@@ -57,12 +57,14 @@
                             <h:inputText styleClass="form-control" id="salario" a:placeholder="#{bundle.CreateEmpleadosLabel_salario}" value="#{empleadosController.selected.salario}" title="#{bundle.CreateEmpleadosTitle_salario}" />
 <!--                            <h:outputLabel value="#{bundle.CreateEmpleadosLabel_area}" for="area" />-->
                             <br></br>
-                            <h:selectOneMenu styleClass="form-control" id="area" a:placeholder="#{bundle.CreateEmpleadosLabel_area}" value="#{empleadosController.selected.area}" title="#{bundle.CreateEmpleadosTitle_area}" >
+                            <h:selectOneMenu styleClass="form-control" id="area" value="#{empleadosController.selected.area}" title="#{bundle.CreateEmpleadosTitle_area}" >
+                                <f:selectItem itemLabel="#{bundle.CreateEmpleadosLabel_area}" noSelectionOption="true"/>
                                 <f:selectItems value="#{areasController.itemsAvailableSelectOne}"/>
                             </h:selectOneMenu>
                             <!--<h:outputLabel value="#{bundle.CreateEmpleadosLabel_pais}" for="pais" />-->
                             <br></br>
-                            <h:selectOneMenu styleClass="form-control" id="pais" a:placeholder="#{bundle.CreateEmpleadosLabel_pais}" value="#{empleadosController.selected.pais}" title="#{bundle.CreateEmpleadosTitle_pais}" >
+                            <h:selectOneMenu styleClass="form-control" id="pais" value="#{empleadosController.selected.pais}" title="#{bundle.CreateEmpleadosTitle_pais}" >
+                                <f:selectItem itemLabel="#{bundle.CreateEmpleadosLabel_pais}" noSelectionOption="true"/>
                                 <f:selectItems value="#{paisesController.itemsAvailableSelectOne}"/>
                             </h:selectOneMenu>
                             <br></br>

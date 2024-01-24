@@ -11,7 +11,7 @@
         </ui:define>
         <ui:define name="buttons">
             <h:form>
-                <h:commandLink styleClass="btn btn-primary w-100 align-self-center" action="#{empleadosController.prepareCreate}" value="#{bundle.ListEmpleadosCreateLink}"/>
+                <h:commandLink styleClass="btn btn-success w-100 align-self-center" action="#{empleadosController.prepareCreate}" value="#{bundle.ListEmpleadosCreateLink}"/>
             </h:form>
         </ui:define>
         <ui:define name="body">
@@ -23,8 +23,9 @@
                 <h:outputText escape="false" value="#{bundle.ListEmpleadosEmpty}" rendered="#{empleadosController.items.rowCount == 0}"/>
                 
                 <h:panelGroup rendered="#{empleadosController.items.rowCount > 0}">
-                    <h:outputText value="#{empleadosController.pagination.pageFirstItem + 1}..#{empleadosController.pagination.pageLastItem + 1}/#{empleadosController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{empleadosController.previous}" value="#{bundle.Previous} #{empleadosController.pagination.pageSize}" rendered="#{empleadosController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:outputText styleClass="btn btn-primary" value="#{empleadosController.pagination.pageFirstItem + 1}..#{empleadosController.pagination.pageLastItem + 1}/#{empleadosController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-primary" action="#{empleadosController.next}" value="#{bundle.Next} #{empleadosController.pagination.pageSize}" rendered="#{empleadosController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-primary" action="#{empleadosController.previous}" value="#{bundle.Previous} #{empleadosController.pagination.pageSize}" rendered="#{empleadosController.pagination.hasPreviousPage}"/>&nbsp;
                     
                     <h:dataTable class="table table-sm table-bordered" value="#{empleadosController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
@@ -118,7 +119,6 @@
                 <br />
                 <br />
                 <br />
-                <h:commandButton class="boton-datos" action="#{empleadosController.next}" value="#{bundle.Next} #{empleadosController.pagination.pageSize}" rendered="#{empleadosController.pagination.hasNextPage}"/>&nbsp;
             </h:form>
         </ui:define>
     </ui:composition>
