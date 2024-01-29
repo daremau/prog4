@@ -4,10 +4,12 @@
  */
 package com.uca.prog4.entidades;
 
+import com.uca.prog4.controladores.util.JsfUtil;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Locale;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -176,9 +178,14 @@ public class Empleados implements Serializable {
     public void setFechaSalida(Date fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
-
+    
     public BigDecimal getSalario() {
         return salario;
+    }
+
+    public String getSalarioFormateado() {
+        String gsSalario = JsfUtil.formatearGuaranies(this.salario, Locale.GERMANY); // O el Locale que prefieras
+        return gsSalario;
     }
 
     public void setSalario(BigDecimal salario) {
@@ -188,6 +195,10 @@ public class Empleados implements Serializable {
     public Areas getArea() {
         return area;
     }
+    
+    public String getNombreArea() {
+        return area.getNombre();
+    }
 
     public void setArea(Areas area) {
         this.area = area;
@@ -195,6 +206,10 @@ public class Empleados implements Serializable {
 
     public Paises getPais() {
         return pais;
+    }
+    
+    public String getNombrePais() {
+        return pais.getNombre();
     }
 
     public void setPais(Paises pais) {

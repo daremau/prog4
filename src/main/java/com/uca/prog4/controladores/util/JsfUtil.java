@@ -1,6 +1,9 @@
 package com.uca.prog4.controladores.util;
 
+import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
@@ -56,5 +59,10 @@ public class JsfUtil {
         String theId = JsfUtil.getRequestParameter(requestParameterName);
         return converter.getAsObject(FacesContext.getCurrentInstance(), component, theId);
     }
-
+    
+     public static String formatearGuaranies(BigDecimal numero, Locale locale) {
+        NumberFormat formateador = NumberFormat.getNumberInstance(locale);
+        formateador.setMaximumFractionDigits(0); // No mostrar decimales
+        return formateador.format(numero);
+    }
 }

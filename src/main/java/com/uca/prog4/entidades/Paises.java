@@ -117,7 +117,7 @@ public class Paises implements Serializable {
 
     @Override
     public String toString() {
-        return "com.uca.prog4.entidades.Paises[ pais=" + pais + " ]";
+        return this.getNombre();
     }
     
 }

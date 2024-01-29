@@ -105,7 +105,7 @@ public class Areas implements Serializable {
 
     @Override
     public String toString() {
-        return "com.uca.prog4.entidades.Areas[ area=" + area + " ]";
+        return this.getNombre();
     }
     
 }
