@@ -4,9 +4,11 @@
  */
 package com.uca.prog4.entidades;
 
+import com.uca.prog4.controladores.util.JsfUtil;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Locale;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -86,6 +88,17 @@ public class Ajustes implements Serializable {
     public Character getTipoAjuste() {
         return tipoAjuste;
     }
+    
+    public String getTipoAjusteFormateado() {
+        switch (Character.toUpperCase(tipoAjuste)) {
+            case 'S':
+                return "Suma";
+            case 'R': 
+                return "Resta";
+            default:
+                return "";
+        }
+    }
 
     public void setTipoAjuste(Character tipoAjuste) {
         this.tipoAjuste = tipoAjuste;
@@ -93,6 +106,10 @@ public class Ajustes implements Serializable {
 
     public BigDecimal getCantidad() {
         return cantidad;
+    }
+    
+    public String getCantidadFormateado() {
+        return JsfUtil.formatearGuaranies(this.cantidad, Locale.GERMANY);
     }
 
     public void setCantidad(BigDecimal cantidad) {
@@ -102,6 +119,10 @@ public class Ajustes implements Serializable {
     public BigDecimal getPrecioCosto() {
         return precioCosto;
     }
+    
+    public String getPrecioCostoFormateado() {
+        return JsfUtil.formatearGuaranies(this.precioCosto, Locale.GERMANY);
+    }
 
     public void setPrecioCosto(BigDecimal precioCosto) {
         this.precioCosto = precioCosto;
@@ -110,6 +131,10 @@ public class Ajustes implements Serializable {
     public Empleados getEmpleado() {
         return empleado;
     }
+    
+    public String getNombreEmpleado() {
+        return empleado.getNombre() + ", " + empleado.getApellido();
+    }
 
     public void setEmpleado(Empleados empleado) {
         this.empleado = empleado;
@@ -117,6 +142,10 @@ public class Ajustes implements Serializable {
 
     public Productos getProducto() {
         return producto;
+    }
+    
+    public String getNombreProducto() {
+        return producto.getNombre();
     }
 
     public void setProducto(Productos producto) {

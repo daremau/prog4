@@ -256,7 +256,7 @@ public class Empleados implements Serializable {
 
     @Override
     public String toString() {
-        return "com.uca.prog4.entidades.Empleados[ empleado=" + empleado + " ]";
+        return this.nombre+ ", " + this.apellido;
     }
     
 }

@@ -23,11 +23,11 @@
                 <h:outputText escape="false" value="#{bundle.ListEmpleadosEmpty}" rendered="#{empleadosController.items.rowCount == 0}"/>
                 
                 <h:panelGroup rendered="#{empleadosController.items.rowCount > 0}">
-                    <h:outputText styleClass="btn btn-primary" value="#{empleadosController.pagination.pageFirstItem + 1}..#{empleadosController.pagination.pageLastItem + 1}/#{empleadosController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-primary" action="#{empleadosController.next}" value="#{bundle.Next} #{empleadosController.pagination.pageSize}" rendered="#{empleadosController.pagination.hasNextPage}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-primary" action="#{empleadosController.previous}" value="#{bundle.Previous} #{empleadosController.pagination.pageSize}" rendered="#{empleadosController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:outputText styleClass="btn sin-estilo btn-azul" value="#{empleadosController.pagination.pageFirstItem + 1}..#{empleadosController.pagination.pageLastItem + 1}/#{empleadosController.pagination.itemsCount}"/>
+                    <h:commandLink styleClass="btn btn-primary ml-1" action="#{empleadosController.next}" value="#{bundle.Next}" rendered="#{empleadosController.pagination.hasNextPage}"/>
+                    <h:commandLink styleClass="btn btn-primary ml-1" action="#{empleadosController.previous}" value="#{bundle.Previous}" rendered="#{empleadosController.pagination.hasPreviousPage}"/>
                     
-                    <h:dataTable class="table table-sm table-bordered" value="#{empleadosController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
+                    <h:dataTable class="table table-sm table-bordered" value="#{empleadosController.pagination.createPageDataModel()}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListEmpleadosTitle_empleado}"/>
@@ -116,9 +116,6 @@
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
-                <br />
-                <br />
-                <br />
             </h:form>
         </ui:define>
     </ui:composition>

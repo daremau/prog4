@@ -4,9 +4,11 @@
  */
 package com.uca.prog4.entidades;
 
+import com.uca.prog4.controladores.util.JsfUtil;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Locale;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -86,6 +88,10 @@ public class Compras implements Serializable {
     public BigDecimal getCantidad() {
         return cantidad;
     }
+    
+    public String getCantidadFormateado() {
+        return JsfUtil.formatearGuaranies(this.cantidad, Locale.GERMANY);
+    }
 
     public void setCantidad(BigDecimal cantidad) {
         this.cantidad = cantidad;
@@ -93,6 +99,10 @@ public class Compras implements Serializable {
 
     public BigDecimal getPrecioCosto() {
         return precioCosto;
+    }
+    
+    public String getPrecioCostoFormateado() {
+        return JsfUtil.formatearGuaranies(this.precioCosto, Locale.GERMANY);
     }
 
     public void setPrecioCosto(BigDecimal precioCosto) {
@@ -102,6 +112,10 @@ public class Compras implements Serializable {
     public Empleados getEmpleado() {
         return empleado;
     }
+    
+    public String getNombreEmpleado() {
+        return empleado.getNombre() + ", " + empleado.getApellido();
+    }
 
     public void setEmpleado(Empleados empleado) {
         this.empleado = empleado;
@@ -110,6 +124,10 @@ public class Compras implements Serializable {
     public Productos getProducto() {
         return producto;
     }
+    
+    public String getNombreProducto() {
+        return producto.getNombre();
+    }
 
     public void setProducto(Productos producto) {
         this.producto = producto;
@@ -117,6 +135,10 @@ public class Compras implements Serializable {
 
     public Proveedores getProveedor() {
         return proveedor;
+    }
+    
+    public String getNombreProveedor() {
+        return proveedor.getNombre();
     }
 
     public void setProveedor(Proveedores proveedor) {
@@ -141,7 +163,7 @@ public class Compras implements Serializable {
             return false;
         }
         return true;
-    }
+    }   
 
     @Override
     public String toString() {

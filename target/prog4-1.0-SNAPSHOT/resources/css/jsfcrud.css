@@ -125,3 +125,15 @@ ion-icon {
 .card-body {
     overflow-y: hidden;
 }
+
+.btn-azul {
+    background-color: #1b325f;
+    border-color: #1b325f;
+    color: white;
+}
+
+.btn-azul:hover {
+    background-color: #1b325f;
+    border-color: #1b325f;
+    color: white;
+}

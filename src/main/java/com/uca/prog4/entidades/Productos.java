@@ -4,10 +4,12 @@
  */
 package com.uca.prog4.entidades;
 
+import com.uca.prog4.controladores.util.JsfUtil;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Locale;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -108,6 +110,10 @@ public class Productos implements Serializable {
     public BigDecimal getPrecioCosto() {
         return precioCosto;
     }
+    
+    public String getPrecioCostoFormateado() {
+        return JsfUtil.formatearGuaranies(this.precioCosto, Locale.GERMANY);
+    }
 
     public void setPrecioCosto(BigDecimal precioCosto) {
         this.precioCosto = precioCosto;
@@ -115,6 +121,10 @@ public class Productos implements Serializable {
 
     public BigDecimal getPrecioVenta() {
         return precioVenta;
+    }
+    
+    public String getPrecioVentaFormateado() {
+        return JsfUtil.formatearGuaranies(this.precioVenta, Locale.GERMANY);
     }
 
     public void setPrecioVenta(BigDecimal precioVenta) {
@@ -132,6 +142,17 @@ public class Productos implements Serializable {
     public Character getGarantia() {
         return garantia;
     }
+    
+    public String getGarantiaFormateado() {
+        switch (Character.toUpperCase(garantia)) {
+            case 'S':
+                return "Si";
+            case 'N':
+                return "No";
+            default:
+                return "";
+        }
+    }
 
     public void setGarantia(Character garantia) {
         this.garantia = garantia;
@@ -139,6 +160,10 @@ public class Productos implements Serializable {
 
     public BigDecimal getExistencia() {
         return existencia;
+    }
+    
+    public String getExistenciaFormateado() {
+        return JsfUtil.formatearGuaranies(this.existencia, Locale.GERMANY);
     }
 
     public void setExistencia(BigDecimal existencia) {
@@ -149,12 +174,20 @@ public class Productos implements Serializable {
         return categoria;
     }
 
+    public String getNombreCategoria() {
+        return categoria.getNombre();
+    }
+    
     public void setCategoria(Categorias categoria) {
         this.categoria = categoria;
     }
 
     public Marcas getMarca() {
         return marca;
+    }
+    
+    public String getNombreMarca() {
+        return marca.getNombre();
     }
 
     public void setMarca(Marcas marca) {
@@ -201,7 +234,7 @@ public class Productos implements Serializable {
 
     @Override
     public String toString() {
-        return "com.uca.prog4.entidades.Productos[ producto=" + producto + " ]";
+        return this.nombre;
     }
-    
+     
 }

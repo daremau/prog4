@@ -117,7 +117,7 @@ public class Paises implements Serializable {
 
     @Override
     public String toString() {
-        return this.getNombre();
+        return this.nombre;
     }
     
 }
