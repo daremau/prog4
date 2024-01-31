@@ -9,28 +9,47 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.EditCategoriasTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
+        <ui:define name="buttons">
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditCategoriasLabel_categoria}" for="categoria" />
-                    <h:inputText id="categoria" value="#{categoriasController.selected.categoria}" title="#{bundle.EditCategoriasTitle_categoria}" required="true" requiredMessage="#{bundle.EditCategoriasRequiredMessage_categoria}"/>
-                    <h:outputLabel value="#{bundle.EditCategoriasLabel_nombre}" for="nombre" />
-                    <h:inputText id="nombre" value="#{categoriasController.selected.nombre}" title="#{bundle.EditCategoriasTitle_nombre}" required="true" requiredMessage="#{bundle.EditCategoriasRequiredMessage_nombre}"/>
-                </h:panelGrid>
-                <h:commandLink action="#{categoriasController.update}" value="#{bundle.EditCategoriasSaveLink}"/>
-                <br />
-                <br />
-                <h:link outcome="View" value="#{bundle.EditCategoriasViewLink}"/>
-                <br />
-                <h:commandLink action="#{categoriasController.prepareList}" value="#{bundle.EditCategoriasShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.EditCategoriasIndexLink}" />
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-success mt-1 w-100" action="#{categoriasController.update}" value="#{bundle.EditCategoriasSaveLink}"/>
+                </div>
+                <div class="row">
+                    <h:link styleClass="btn btn-primary mt-1 w-100" outcome="View" value="#{bundle.EditCategoriasViewLink}"/>
+                </div>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-primary mt-1 w-100" action="#{categoriasController.prepareList}" value="#{bundle.EditCategoriasShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+        <ui:define name="body">
+            <h:form class="col-10">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="container col-12">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <br />
+                            <div class="row">
+                                <!-- Columna Izquierda -->
+                                <div class="col-md-6">
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditCategoriasLabel_categoria}" for="categoria" />
+                                    <h:inputText styleClass="form-control" id="categoria" value="#{categoriasController.selected.categoria}" title="#{bundle.EditCategoriasTitle_categoria}" required="true" requiredMessage="#{bundle.EditCategoriasRequiredMessage_categoria}"/>
+                                    <br />
+                                </div>
+                                
+                                <!-- Columna Derecha -->
+                                <div class="col-md-6">
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditCategoriasLabel_nombre}" for="nombre" />
+                                    <h:inputText styleClass="form-control" id="nombre" value="#{categoriasController.selected.nombre}" title="#{bundle.EditCategoriasTitle_nombre}" required="true" requiredMessage="#{bundle.EditCategoriasRequiredMessage_nombre}"/>
+                                    <br />
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>
-
 </html>

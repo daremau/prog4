@@ -11,7 +11,7 @@
         </ui:define>
         <ui:define name="buttons">
             <h:form>
-                <h:commandLink styleClass="btn btn-primary w-100 align-self-center" action="#{ajustesController.prepareCreate}" value="#{bundle.ListAjustesCreateLink}"/>
+                <h:commandLink styleClass="btn btn-primary w-100 align-self-center" action="#{proveedoresController.prepareCreate}" value="#{bundle.ListProveedoresCreateLink}"/>
             </h:form>
         </ui:define>
         <ui:define name="body">
@@ -23,9 +23,9 @@
                 <h:outputText escape="false" value="#{bundle.ListProveedoresEmpty}" rendered="#{proveedoresController.items.rowCount == 0}"/>
                 
                 <h:panelGroup rendered="#{proveedoresController.items.rowCount > 0}">
-                    <h:outputText value="#{proveedoresController.pagination.pageFirstItem + 1}..#{proveedoresController.pagination.pageLastItem + 1}/#{proveedoresController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{proveedoresController.previous}" value="#{bundle.Previous} #{proveedoresController.pagination.pageSize}" rendered="#{proveedoresController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{proveedoresController.next}" value="#{bundle.Next} #{proveedoresController.pagination.pageSize}" rendered="#{proveedoresController.pagination.hasNextPage}"/>&nbsp;
+                    <h:outputText styleClass="btn btn-primary" value="#{proveedoresController.pagination.pageFirstItem + 1}..#{proveedoresController.pagination.pageLastItem + 1}/#{proveedoresController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-primary" action="#{proveedoresController.previous}" value="#{bundle.Previous} #{proveedoresController.pagination.pageSize}" rendered="#{proveedoresController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-primary" action="#{proveedoresController.next}" value="#{bundle.Next} #{proveedoresController.pagination.pageSize}" rendered="#{proveedoresController.pagination.hasNextPage}"/>&nbsp;
                     
                     <h:dataTable class="table table-sm table-bordered" value="#{proveedoresController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>

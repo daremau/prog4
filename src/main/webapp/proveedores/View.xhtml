@@ -9,44 +9,80 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.ViewProveedoresTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
+        <ui:define name="buttons">
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_proveedor}"/>
-                    <h:outputText value="#{proveedoresController.selected.proveedor}" title="#{bundle.ViewProveedoresTitle_proveedor}"/>
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_nombre}"/>
-                    <h:outputText value="#{proveedoresController.selected.nombre}" title="#{bundle.ViewProveedoresTitle_nombre}"/>
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_direccion}"/>
-                    <h:outputText value="#{proveedoresController.selected.direccion}" title="#{bundle.ViewProveedoresTitle_direccion}"/>
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_telefono}"/>
-                    <h:outputText value="#{proveedoresController.selected.telefono}" title="#{bundle.ViewProveedoresTitle_telefono}"/>
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_email}"/>
-                    <h:outputText value="#{proveedoresController.selected.email}" title="#{bundle.ViewProveedoresTitle_email}"/>
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_fechaInicio}"/>
-                    <h:outputText value="#{proveedoresController.selected.fechaInicio}" title="#{bundle.ViewProveedoresTitle_fechaInicio}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:outputText>
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_pais}"/>
-                    <h:outputText value="#{proveedoresController.selected.pais}" title="#{bundle.ViewProveedoresTitle_pais}"/>
-                </h:panelGrid>
-                <br />
-                <h:commandLink action="#{proveedoresController.destroyAndView}" value="#{bundle.ViewProveedoresDestroyLink}"/>
-                <br />
-                <br />
-                <h:link outcome="Edit" value="#{bundle.ViewProveedoresEditLink}"/>
-                <br />
-                <h:commandLink action="#{proveedoresController.prepareCreate}" value="#{bundle.ViewProveedoresCreateLink}" />
-                <br />
-                <h:commandLink action="#{proveedoresController.prepareList}" value="#{bundle.ViewProveedoresShowAllLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ViewProveedoresIndexLink}"/>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-primary mt-1 w-100" action="#{proveedoresController.prepareList}" value="#{bundle.ViewProveedoresShowAllLink}"/>
+                </div>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-success mt-1 w-100" action="#{proveedoresController.prepareCreate}" value="#{bundle.ViewProveedoresCreateLink}" />
+                </div>
+                <div class="row">
+                    <h:link styleClass="btn btn-secondary mt-1 w-100" outcome="Edit" value="#{bundle.ViewProveedoresEditLink}"/>
+                </div>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-danger mt-1 w-100" action="#{proveedoresController.destroyAndView}" value="#{bundle.ViewProveedoresDestroyLink}"/> 
+                </div>
+            </h:form>
+        </ui:define>
+        <ui:define name="body">
+            <h:form class="col-10">
+                <div class="card">
+                    <div class="card-body">
+                       <div class="container col-12">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <br />
+                            <!-- Fila 1 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewProveedoresLabel_proveedor}"/>
+                                    <h:outputText value="#{proveedoresController.selected.proveedor}" title="#{bundle.ViewProveedoresTitle_proveedor}"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewProveedoresLabel_email}"/>
+                                    <h:outputText value="#{proveedoresController.selected.email}" title="#{bundle.ViewProveedoresTitle_email}"/>
+                                </div>
+                            </div>
 
+                            <!-- Fila 2 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewProveedoresLabel_nombre}"/>
+                                    <h:outputText value="#{proveedoresController.selected.nombre}" title="#{bundle.ViewProveedoresTitle_nombre}"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewProveedoresLabel_fechaInicio}"/>
+                                    <h:outputText value="#{proveedoresController.selected.fechaInicio}" title="#{bundle.ViewProveedoresTitle_fechaInicio}">
+                                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                                    </h:outputText>
+                                </div>
+                            </div>
+
+                            <!-- Fila 3 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewProveedoresLabel_direccion}"/>
+                                    <h:outputText value="#{proveedoresController.selected.direccion}" title="#{bundle.ViewProveedoresTitle_direccion}"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <h:outputText value="#{bundle.ViewProveedoresLabel_pais}"/>
+                                    <h:outputText value="#{proveedoresController.selected.pais}" title="#{bundle.ViewProveedoresTitle_pais}"/>
+                                </div>
+                            </div>
+
+                            <!-- Fila 4 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewProveedoresLabel_telefono}"/>
+                                    <h:outputText value="#{proveedoresController.selected.telefono}" title="#{bundle.ViewProveedoresTitle_telefono}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>
-
 </html>

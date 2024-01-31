@@ -9,32 +9,46 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.ViewPaisesTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
+        <ui:define name="buttons">
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewPaisesLabel_pais}"/>
-                    <h:outputText value="#{paisesController.selected.pais}" title="#{bundle.ViewPaisesTitle_pais}"/>
-                    <h:outputText value="#{bundle.ViewPaisesLabel_nombre}"/>
-                    <h:outputText value="#{paisesController.selected.nombre}" title="#{bundle.ViewPaisesTitle_nombre}"/>
-                </h:panelGrid>
-                <br />
-                <h:commandLink action="#{paisesController.destroyAndView}" value="#{bundle.ViewPaisesDestroyLink}"/>
-                <br />
-                <br />
-                <h:link outcome="Edit" value="#{bundle.ViewPaisesEditLink}"/>
-                <br />
-                <h:commandLink action="#{paisesController.prepareCreate}" value="#{bundle.ViewPaisesCreateLink}" />
-                <br />
-                <h:commandLink action="#{paisesController.prepareList}" value="#{bundle.ViewPaisesShowAllLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ViewPaisesIndexLink}"/>
-
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-primary mt-1 w-100" action="#{paisesController.prepareList}" value="#{bundle.ViewPaisesShowAllLink}"/>
+                </div>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-success mt-1 w-100" action="#{paisesController.prepareCreate}" value="#{bundle.ViewPaisesCreateLink}" />
+                </div>
+                <div class="row">
+                    <h:link styleClass="btn btn-secondary mt-1 w-100" outcome="Edit" value="#{bundle.ViewPaisesEditLink}"/>
+                </div>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-danger mt-1 w-100" action="#{paisesController.destroyAndView}" value="#{bundle.ViewPaisesDestroyLink}"/> 
+                </div>
+            </h:form>
+        </ui:define>
+        <ui:define name="body">
+            <h:form class="col-10">
+                <div class="card">
+                    <div class="card-body">
+                       <div class="container col-12">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <br />
+                            <!-- Fila 1 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewPaisesLabel_pais}"/>
+                                    <h:outputText value="#{paisesController.selected.pais}" title="#{bundle.ViewPaisesTitle_pais}"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewPaisesLabel_nombre}"/>
+                                    <h:outputText value="#{paisesController.selected.nombre}" title="#{bundle.ViewPaisesTitle_nombre}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>
-
 </html>

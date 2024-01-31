@@ -9,42 +9,71 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.EditProveedoresTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
+        <ui:define name="buttons">
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditProveedoresLabel_proveedor}" for="proveedor" />
-                    <h:inputText id="proveedor" value="#{proveedoresController.selected.proveedor}" title="#{bundle.EditProveedoresTitle_proveedor}" required="true" requiredMessage="#{bundle.EditProveedoresRequiredMessage_proveedor}"/>
-                    <h:outputLabel value="#{bundle.EditProveedoresLabel_nombre}" for="nombre" />
-                    <h:inputText id="nombre" value="#{proveedoresController.selected.nombre}" title="#{bundle.EditProveedoresTitle_nombre}" required="true" requiredMessage="#{bundle.EditProveedoresRequiredMessage_nombre}"/>
-                    <h:outputLabel value="#{bundle.EditProveedoresLabel_direccion}" for="direccion" />
-                    <h:inputText id="direccion" value="#{proveedoresController.selected.direccion}" title="#{bundle.EditProveedoresTitle_direccion}" required="true" requiredMessage="#{bundle.EditProveedoresRequiredMessage_direccion}"/>
-                    <h:outputLabel value="#{bundle.EditProveedoresLabel_telefono}" for="telefono" />
-                    <h:inputText id="telefono" value="#{proveedoresController.selected.telefono}" title="#{bundle.EditProveedoresTitle_telefono}" required="true" requiredMessage="#{bundle.EditProveedoresRequiredMessage_telefono}"/>
-                    <h:outputLabel value="#{bundle.EditProveedoresLabel_email}" for="email" />
-                    <h:inputText id="email" value="#{proveedoresController.selected.email}" title="#{bundle.EditProveedoresTitle_email}" required="true" requiredMessage="#{bundle.EditProveedoresRequiredMessage_email}"/>
-                    <h:outputLabel value="#{bundle.EditProveedoresLabel_fechaInicio}" for="fechaInicio" />
-                    <h:inputText id="fechaInicio" value="#{proveedoresController.selected.fechaInicio}" title="#{bundle.EditProveedoresTitle_fechaInicio}" >
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:inputText>
-                    <h:outputLabel value="#{bundle.EditProveedoresLabel_pais}" for="pais" />
-                    <h:selectOneMenu id="pais" value="#{proveedoresController.selected.pais}" title="#{bundle.EditProveedoresTitle_pais}" required="true" requiredMessage="#{bundle.EditProveedoresRequiredMessage_pais}">
-                        <f:selectItems value="#{paisesController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                </h:panelGrid>
-                <h:commandLink action="#{proveedoresController.update}" value="#{bundle.EditProveedoresSaveLink}"/>
-                <br />
-                <br />
-                <h:link outcome="View" value="#{bundle.EditProveedoresViewLink}"/>
-                <br />
-                <h:commandLink action="#{proveedoresController.prepareList}" value="#{bundle.EditProveedoresShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.EditProveedoresIndexLink}" />
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-success mt-1 w-100" action="#{proveedoresController.update}" value="#{bundle.EditProveedoresSaveLink}"/>
+                </div>
+                <div class="row">
+                    <h:link styleClass="btn btn-primary mt-1 w-100" outcome="View" value="#{bundle.EditProveedoresViewLink}"/>
+                </div>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-primary mt-1 w-100" action="#{ProveedoresController.prepareList}" value="#{bundle.EditProveedoresShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+        <ui:define name="body">
+            <h:form class="col-10">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="container col-12">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <br />
+                            <div class="row">
+                                <!-- Columna Izquierda -->
+                                <div class="col-md-6">
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditProveedoresLabel_proveedor}" for="proveedor" />
+                                    <h:inputText styleClass="form-control" id="proveedor" value="#{proveedoresController.selected.proveedor}" title="#{bundle.EditProveedoresTitle_proveedor}" required="true" requiredMessage="#{bundle.EditProveedoresRequiredMessage_proveedor}"/>
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditProveedoresLabel_nombre}" for="nombre" />
+                                    <h:inputText styleClass="form-control" id="nombre" value="#{proveedoresController.selected.nombre}" title="#{bundle.EditProveedoresTitle_nombre}" required="true" requiredMessage="#{bundle.EditProveedoresRequiredMessage_nombre}"/>
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditProveedoresLabel_direccion}" for="direccion" />
+                                    <h:inputText styleClass="form-control" id="direccion" value="#{proveedoresController.selected.direccion}" title="#{bundle.EditProveedoresTitle_direccion}" required="true" requiredMessage="#{bundle.EditProveedoresRequiredMessage_direccion}"/>
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditProveedoresLabel_telefono}" for="telefono" />
+                                    <h:inputText styleClass="form-control" id="telefono" value="#{proveedoresController.selected.telefono}" title="#{bundle.EditProveedoresTitle_telefono}" required="true" requiredMessage="#{bundle.EditProveedoresRequiredMessage_telefono}"/>
+                                    <br />
+                                </div>
+                                
+                                <!-- Columna Derecha -->
+                                <div class="col-md-6">
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditProveedoresLabel_email}" for="email" />
+                                    <h:inputText styleClass="form-control" id="email" value="#{proveedoresController.selected.email}" title="#{bundle.EditProveedoresTitle_email}" required="true" requiredMessage="#{bundle.EditProveedoresRequiredMessage_email}"/>
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditProveedoresLabel_fechaInicio}" for="fechaInicio" />
+                                    <h:inputText styleClass="form-control" id="fechaInicio" value="#{proveedoresController.selected.fechaInicio}" title="#{bundle.EditProveedoresTitle_fechaInicio}" >
+                                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                                    </h:inputText>
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditProveedoresLabel_pais}" for="pais" />
+                                    <h:selectOneMenu styleClass="form-control" id="pais" value="#{proveedoresController.selected.pais}" title="#{bundle.EditProveedoresTitle_pais}" required="true" requiredMessage="#{bundle.EditProveedoresRequiredMessage_pais}">
+                                        <f:selectItems value="#{paisesController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
+                                    <br />
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>
-
 </html>

@@ -9,28 +9,47 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.EditPaisesTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
+        <ui:define name="buttons">
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditPaisesLabel_pais}" for="pais" />
-                    <h:inputText id="pais" value="#{paisesController.selected.pais}" title="#{bundle.EditPaisesTitle_pais}" required="true" requiredMessage="#{bundle.EditPaisesRequiredMessage_pais}"/>
-                    <h:outputLabel value="#{bundle.EditPaisesLabel_nombre}" for="nombre" />
-                    <h:inputText id="nombre" value="#{paisesController.selected.nombre}" title="#{bundle.EditPaisesTitle_nombre}" required="true" requiredMessage="#{bundle.EditPaisesRequiredMessage_nombre}"/>
-                </h:panelGrid>
-                <h:commandLink action="#{paisesController.update}" value="#{bundle.EditPaisesSaveLink}"/>
-                <br />
-                <br />
-                <h:link outcome="View" value="#{bundle.EditPaisesViewLink}"/>
-                <br />
-                <h:commandLink action="#{paisesController.prepareList}" value="#{bundle.EditPaisesShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.EditPaisesIndexLink}" />
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-success mt-1 w-100" action="#{paisesController.update}" value="#{bundle.EditPaisesSaveLink}"/>
+                </div>
+                <div class="row">
+                    <h:link styleClass="btn btn-primary mt-1 w-100" outcome="View" value="#{bundle.EditPaisesViewLink}"/>
+                </div>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-primary mt-1 w-100" action="#{paisesController.prepareList}" value="#{bundle.EditPaisesShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+        <ui:define name="body">
+            <h:form class="col-10">
+                <div class="card">
+                    <div class="card-body">
+                       <div class="container col-12">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <br />
+                            <div class="row">
+                                <!-- Columna Izquierda -->
+                                <div class="col-md-6">
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditPaisesLabel_pais}" for="pais" />
+                                    <h:inputText styleClass="form-control" id="pais" value="#{paisesController.selected.pais}" title="#{bundle.EditPaisesTitle_pais}" required="true" requiredMessage="#{bundle.EditPaisesRequiredMessage_pais}"/>
+                                    <br />
+                                </div>
+                                
+                                <!-- Columna Derecha -->
+                                <div class="col-md-6">
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditPaisesLabel_nombre}" for="nombre" />
+                                    <h:inputText styleClass="form-control" id="nombre" value="#{paisesController.selected.nombre}" title="#{bundle.EditPaisesTitle_nombre}" required="true" requiredMessage="#{bundle.EditPaisesRequiredMessage_nombre}"/>
+                                    <br />
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>
-
 </html>

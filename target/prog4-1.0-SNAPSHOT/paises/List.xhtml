@@ -11,7 +11,7 @@
         </ui:define>
         <ui:define name="buttons">
             <h:form>
-                <h:commandLink styleClass="btn btn-primary w-100 align-self-center" action="#{ajustesController.prepareCreate}" value="#{bundle.ListAjustesCreateLink}"/>
+                <h:commandLink styleClass="btn btn-primary w-100 align-self-center" action="#{paisesController.prepareCreate}" value="#{bundle.ListPaisesCreateLink}"/>
             </h:form>
         </ui:define>
         <ui:define name="body">
@@ -23,9 +23,9 @@
                 <h:outputText escape="false" value="#{bundle.ListPaisesEmpty}" rendered="#{paisesController.items.rowCount == 0}"/>
                 
                 <h:panelGroup rendered="#{paisesController.items.rowCount > 0}">
-                    <h:outputText value="#{paisesController.pagination.pageFirstItem + 1}..#{paisesController.pagination.pageLastItem + 1}/#{paisesController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{paisesController.previous}" value="#{bundle.Previous} #{paisesController.pagination.pageSize}" rendered="#{paisesController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{paisesController.next}" value="#{bundle.Next} #{paisesController.pagination.pageSize}" rendered="#{paisesController.pagination.hasNextPage}"/>&nbsp;
+                    <h:outputText styleClass="btn btn-primary" value="#{paisesController.pagination.pageFirstItem + 1}..#{paisesController.pagination.pageLastItem + 1}/#{paisesController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-primary" action="#{paisesController.previous}" value="#{bundle.Previous} #{paisesController.pagination.pageSize}" rendered="#{paisesController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-primary" action="#{paisesController.next}" value="#{bundle.Next} #{paisesController.pagination.pageSize}" rendered="#{paisesController.pagination.hasNextPage}"/>&nbsp;
                     
                     <h:dataTable class="table table-sm table-bordered" value="#{paisesController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>

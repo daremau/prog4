@@ -20,7 +20,6 @@
             <h:form class="col-10">
                 <div class="card">
                     <div class="card-body">
-                        <!--<h:panelGrid columns="2" styleClass="col-12">-->
                        <div class="container col-12">
                             <h:panelGroup id="messagePanel" layout="block">
                                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
@@ -32,18 +31,23 @@
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEmpleadosLabel_empleado}" for="empleado" />
                                     <h:inputText styleClass="form-control" id="empleado" a:placeholder="Ingrese el numero" value="#{empleadosController.selected.empleado}" title="#{bundle.CreateEmpleadosTitle_empleado}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_empleado}"/>
                                     <br/>
+                                    
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEmpleadosLabel_nombre}" for="nombre" />
                                     <h:inputText styleClass="form-control" id="nombre" a:placeholder="Ingrese el nombre" value="#{empleadosController.selected.nombre}" title="#{bundle.CreateEmpleadosTitle_nombre}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_nombre}"/>
                                     <br/>
+                                    
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEmpleadosLabel_apellido}" for="apellido" />
                                     <h:inputText styleClass="form-control" id="apellido" a:placeholder="Ingrese el apellido" value="#{empleadosController.selected.apellido}" title="#{bundle.CreateEmpleadosTitle_apellido}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_apellido}"/>
                                     <br/>
+                                    
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEmpleadosLabel_direccion}" for="direccion" />
                                     <h:inputText styleClass="form-control" id="direccion" a:placeholder="Ingrese la direccion" value="#{empleadosController.selected.direccion}" title="#{bundle.CreateEmpleadosTitle_direccion}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_direccion}"/>
                                     <br/>
+                                    
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEmpleadosLabel_telefono}" for="telefono" />
                                     <h:inputText styleClass="form-control" id="telefono" a:placeholder="Ingrese el numero de telefono" value="#{empleadosController.selected.telefono}" title="#{bundle.CreateEmpleadosTitle_telefono}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_telefono}"/>
                                     <br/>
+                                    
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEmpleadosLabel_pais}" for="pais" />
                                     <h:selectOneMenu styleClass="form-control" id="pais" value="#{empleadosController.selected.pais}" title="#{bundle.CreateEmpleadosTitle_pais}">
                                         <f:selectItems value="#{paisesController.itemsAvailableSelectOne}"/>
@@ -55,32 +59,33 @@
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEmpleadosLabel_email}" for="email" />
                                     <h:inputText styleClass="form-control" id="email" a:placeholder="Ingrese el email" value="#{empleadosController.selected.email}" title="#{bundle.CreateEmpleadosTitle_email}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_email}"/>
                                     <br/>
+                                    
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEmpleadosLabel_fechaIngreso}" for="fechaIngreso" />
                                     <h:inputText styleClass="form-control" id="fechaIngreso" a:placeholder="Ingrese la fecha de ingreso" value="#{empleadosController.selected.fechaIngreso}" title="#{bundle.CreateEmpleadosTitle_fechaIngreso}">
                                         <f:convertDateTime pattern="dd/MM/yyyy" />
                                     </h:inputText>
                                     <br/>
+                                    
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEmpleadosLabel_fechaSalida}" for="fechaSalida" />
                                     <h:inputText styleClass="form-control" id="fechaSalida" a:placeholder="Ingrese la fecha de salida" value="#{empleadosController.selected.fechaSalida}" title="#{bundle.CreateEmpleadosTitle_fechaSalida}">
                                         <f:convertDateTime pattern="dd/MM/yyyy" />
                                     </h:inputText>
                                     <br/>
+                                    
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEmpleadosLabel_salario}" for="salario" />
                                     <h:inputText styleClass="form-control formato-numero" id="salario" a:placeholder="Ingrese el salario en Gs." value="#{empleadosController.selected.salario}" title="#{bundle.CreateEmpleadosTitle_salario}" />
                                     <br/>
+                                    
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEmpleadosLabel_area}" for="area" />
                                     <h:selectOneMenu styleClass="form-control" id="area" value="#{empleadosController.selected.area}" title="#{bundle.CreateEmpleadosTitle_area}">
                                         <f:selectItems value="#{areasController.itemsAvailableSelectOne}"/>
                                     </h:selectOneMenu>
                                 </div>
                             </div>
-                            <br />
-                            <br />
                         </div>
                     </div>
                 </div>
             </h:form>
         </ui:define>
     </ui:composition>
-
 </html>

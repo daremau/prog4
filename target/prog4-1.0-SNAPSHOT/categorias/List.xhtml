@@ -11,7 +11,7 @@
         </ui:define>
         <ui:define name="buttons">
             <h:form>
-                <h:commandLink styleClass="btn btn-primary w-100 align-self-center" action="#{ajustesController.prepareCreate}" value="#{bundle.ListAjustesCreateLink}"/>
+                <h:commandLink styleClass="btn btn-primary w-100 align-self-center" action="#{categoriasController.prepareCreate}" value="#{bundle.ListCategoriasCreateLink}"/>
             </h:form>
         </ui:define>
         <ui:define name="body">
@@ -23,9 +23,9 @@
                 <h:outputText escape="false" value="#{bundle.ListCategoriasEmpty}" rendered="#{categoriasController.items.rowCount == 0}"/>
                
                 <h:panelGroup rendered="#{categoriasController.items.rowCount > 0}">
-                    <h:outputText value="#{categoriasController.pagination.pageFirstItem + 1}..#{categoriasController.pagination.pageLastItem + 1}/#{categoriasController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{categoriasController.previous}" value="#{bundle.Previous} #{categoriasController.pagination.pageSize}" rendered="#{categoriasController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{categoriasController.next}" value="#{bundle.Next} #{categoriasController.pagination.pageSize}" rendered="#{categoriasController.pagination.hasNextPage}"/>&nbsp;
+                    <h:outputText styleClass="btn btn-primary" value="#{categoriasController.pagination.pageFirstItem + 1}..#{categoriasController.pagination.pageLastItem + 1}/#{categoriasController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-primary" action="#{categoriasController.previous}" value="#{bundle.Previous} #{categoriasController.pagination.pageSize}" rendered="#{categoriasController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-primary" action="#{categoriasController.next}" value="#{bundle.Next} #{categoriasController.pagination.pageSize}" rendered="#{categoriasController.pagination.hasNextPage}"/>&nbsp;
                     
                     <h:dataTable class="table table-sm table-bordered" value="#{categoriasController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>

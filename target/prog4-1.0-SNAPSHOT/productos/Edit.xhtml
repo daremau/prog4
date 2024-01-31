@@ -9,48 +9,81 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.EditProductosTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
+        <ui:define name="buttons">
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditProductosLabel_producto}" for="producto" />
-                    <h:inputText id="producto" value="#{productosController.selected.producto}" title="#{bundle.EditProductosTitle_producto}" required="true" requiredMessage="#{bundle.EditProductosRequiredMessage_producto}"/>
-                    <h:outputLabel value="#{bundle.EditProductosLabel_nombre}" for="nombre" />
-                    <h:inputText id="nombre" value="#{productosController.selected.nombre}" title="#{bundle.EditProductosTitle_nombre}" required="true" requiredMessage="#{bundle.EditProductosRequiredMessage_nombre}"/>
-                    <h:outputLabel value="#{bundle.EditProductosLabel_precioCosto}" for="precioCosto" />
-                    <h:inputText id="precioCosto" value="#{productosController.selected.precioCosto}" title="#{bundle.EditProductosTitle_precioCosto}" />
-                    <h:outputLabel value="#{bundle.EditProductosLabel_precioVenta}" for="precioVenta" />
-                    <h:inputText id="precioVenta" value="#{productosController.selected.precioVenta}" title="#{bundle.EditProductosTitle_precioVenta}" />
-                    <h:outputLabel value="#{bundle.EditProductosLabel_fechaAdquisicion}" for="fechaAdquisicion" />
-                    <h:inputText id="fechaAdquisicion" value="#{productosController.selected.fechaAdquisicion}" title="#{bundle.EditProductosTitle_fechaAdquisicion}" >
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:inputText>
-                    <h:outputLabel value="#{bundle.EditProductosLabel_garantia}" for="garantia" />
-                    <h:inputText id="garantia" value="#{productosController.selected.garantia}" title="#{bundle.EditProductosTitle_garantia}" />
-                    <h:outputLabel value="#{bundle.EditProductosLabel_existencia}" for="existencia" />
-                    <h:inputText id="existencia" value="#{productosController.selected.existencia}" title="#{bundle.EditProductosTitle_existencia}" />
-                    <h:outputLabel value="#{bundle.EditProductosLabel_categoria}" for="categoria" />
-                    <h:selectOneMenu id="categoria" value="#{productosController.selected.categoria}" title="#{bundle.EditProductosTitle_categoria}" >
-                        <f:selectItems value="#{categoriasController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.EditProductosLabel_marca}" for="marca" />
-                    <h:selectOneMenu id="marca" value="#{productosController.selected.marca}" title="#{bundle.EditProductosTitle_marca}" >
-                        <f:selectItems value="#{marcasController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                </h:panelGrid>
-                <h:commandLink action="#{productosController.update}" value="#{bundle.EditProductosSaveLink}"/>
-                <br />
-                <br />
-                <h:link outcome="View" value="#{bundle.EditProductosViewLink}"/>
-                <br />
-                <h:commandLink action="#{productosController.prepareList}" value="#{bundle.EditProductosShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.EditProductosIndexLink}" />
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-success mt-1 w-100" action="#{productosController.update}" value="#{bundle.EditProductosSaveLink}"/>
+                </div>
+                <div class="row">
+                    <h:link styleClass="btn btn-primary mt-1 w-100" outcome="View" value="#{bundle.EditProductosViewLink}"/>
+                </div>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-primary mt-1 w-100" action="#{productosController.prepareList}" value="#{bundle.EditProductosShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+        <ui:define name="body">
+            <h:form class="col-10">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="container col-12">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <br />
+                            <div class="row">
+                                <!-- Columna Izquierda -->
+                                <div class="col-md-6">
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_producto}" for="producto" />
+                                    <h:inputText styleClass="form-control" id="producto" value="#{productosController.selected.producto}" title="#{bundle.EditProductosTitle_producto}" required="true" requiredMessage="#{bundle.EditProductosRequiredMessage_producto}"/>
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_nombre}" for="nombre" />
+                                    <h:inputText styleClass="form-control" id="nombre" value="#{productosController.selected.nombre}" title="#{bundle.EditProductosTitle_nombre}" required="true" requiredMessage="#{bundle.EditProductosRequiredMessage_nombre}"/>
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_precioCosto}" for="precioCosto" />
+                                    <h:inputText styleClass="form-control formato-numero" id="precioCosto" value="#{productosController.selected.precioCosto}" title="#{bundle.EditProductosTitle_precioCosto}" />
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_precioVenta}" for="precioVenta" />
+                                    <h:inputText styleClass="form-control formato-numero" id="precioVenta" value="#{productosController.selected.precioVenta}" title="#{bundle.EditProductosTitle_precioVenta}" />
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_fechaAdquisicion}" for="fechaAdquisicion" />
+                                    <h:inputText styleClass="form-control" id="fechaAdquisicion" value="#{productosController.selected.fechaAdquisicion}" title="#{bundle.EditProductosTitle_fechaAdquisicion}" >
+                                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                                    </h:inputText>
+                                    <br />
+                                </div>
+                                
+                                <!-- Columna Derecha -->
+                                <div class="col-md-6">
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_garantia}" for="garantia" />
+                                    <h:inputText styleClass="form-control" id="garantia" value="#{productosController.selected.garantia}" title="#{bundle.EditProductosTitle_garantia}" />
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_existencia}" for="existencia" />
+                                    <h:inputText styleClass="form-control formato-numero" id="existencia" value="#{productosController.selected.existencia}" title="#{bundle.EditProductosTitle_existencia}" />
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_categoria}" for="categoria" />
+                                    <h:selectOneMenu styleClass="form-control" id="categoria" value="#{productosController.selected.categoria}" title="#{bundle.EditProductosTitle_categoria}" >
+                                        <f:selectItems value="#{categoriasController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_marca}" for="marca" />
+                                    <h:selectOneMenu styleClass="form-control" id="marca" value="#{productosController.selected.marca}" title="#{bundle.EditProductosTitle_marca}" >
+                                        <f:selectItems value="#{marcasController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
+                                    <br />
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+                </div>       
             </h:form>
         </ui:define>
     </ui:composition>
-
 </html>
