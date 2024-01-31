@@ -9,44 +9,73 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.EditAjustesTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
+        <ui:define name="buttons">
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditAjustesLabel_ajuste}" for="ajuste" />
-                    <h:inputText id="ajuste" value="#{ajustesController.selected.ajuste}" title="#{bundle.EditAjustesTitle_ajuste}" required="true" requiredMessage="#{bundle.EditAjustesRequiredMessage_ajuste}"/>
-                    <h:outputLabel value="#{bundle.EditAjustesLabel_fecha}" for="fecha" />
-                    <h:inputText id="fecha" value="#{ajustesController.selected.fecha}" title="#{bundle.EditAjustesTitle_fecha}" >
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:inputText>
-                    <h:outputLabel value="#{bundle.EditAjustesLabel_tipoAjuste}" for="tipoAjuste" />
-                    <h:inputText id="tipoAjuste" value="#{ajustesController.selected.tipoAjuste}" title="#{bundle.EditAjustesTitle_tipoAjuste}" />
-                    <h:outputLabel value="#{bundle.EditAjustesLabel_cantidad}" for="cantidad" />
-                    <h:inputText id="cantidad" value="#{ajustesController.selected.cantidad}" title="#{bundle.EditAjustesTitle_cantidad}" />
-                    <h:outputLabel value="#{bundle.EditAjustesLabel_precioCosto}" for="precioCosto" />
-                    <h:inputText id="precioCosto" value="#{ajustesController.selected.precioCosto}" title="#{bundle.EditAjustesTitle_precioCosto}" />
-                    <h:outputLabel value="#{bundle.EditAjustesLabel_empleado}" for="empleado" />
-                    <h:selectOneMenu id="empleado" value="#{ajustesController.selected.empleado}" title="#{bundle.EditAjustesTitle_empleado}" >
-                        <f:selectItems value="#{empleadosController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.EditAjustesLabel_producto}" for="producto" />
-                    <h:selectOneMenu id="producto" value="#{ajustesController.selected.producto}" title="#{bundle.EditAjustesTitle_producto}" >
-                        <f:selectItems value="#{productosController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                </h:panelGrid>
-                <h:commandLink action="#{ajustesController.update}" value="#{bundle.EditAjustesSaveLink}"/>
-                <br />
-                <br />
-                <h:link outcome="View" value="#{bundle.EditAjustesViewLink}"/>
-                <br />
-                <h:commandLink action="#{ajustesController.prepareList}" value="#{bundle.EditAjustesShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.EditAjustesIndexLink}" />
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-success mt-1 w-100" action="#{ajustesController.update}" value="#{bundle.EditAjustesSaveLink}"/>
+                </div>
+                <div class="row">
+                    <h:link styleClass="btn btn-primary mt-1 w-100" outcome="View" value="#{bundle.EditAjustesViewLink}"/>
+                </div>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-primary mt-1 w-100" action="#{ajustesController.prepareList}" value="#{bundle.EditAjustesShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+        <ui:define name="body">
+            <h:form class="col-10">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="container col-12">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <br />
+                            <div class="row">
+                                <!-- Columna Izquierda -->
+                                <div class="col-md-6">
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditAjustesLabel_ajuste}" for="ajuste" />
+                                    <h:inputText styleClass="form-control" id="ajuste" value="#{ajustesController.selected.ajuste}" title="#{bundle.EditAjustesTitle_ajuste}" required="true" requiredMessage="#{bundle.EditAjustesRequiredMessage_ajuste}"/>
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditAjustesLabel_fecha}" for="fecha" />
+                                    <h:inputText styleClass="form-control" id="fecha" value="#{ajustesController.selected.fecha}" title="#{bundle.EditAjustesTitle_fecha}" >
+                                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                                    </h:inputText>
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditAjustesLabel_tipoAjuste}" for="tipoAjuste" />
+                                    <h:inputText styleClass="form-control" id="tipoAjuste" value="#{ajustesController.selected.tipoAjuste}" title="#{bundle.EditAjustesTitle_tipoAjuste}" />
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditAjustesLabel_cantidad}" for="cantidad" />
+                                    <h:inputText styleClass="form-control formato numero" id="cantidad" value="#{ajustesController.selected.cantidad}" title="#{bundle.EditAjustesTitle_cantidad}" />
+                                    <br />
+                                </div>
+                               
+                                <!-- Columna Derecha -->
+                                <div class="col-md-6">
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditAjustesLabel_precioCosto}" for="precioCosto" />
+                                    <h:inputText styleClass="form-control formato-numero" id="precioCosto" value="#{ajustesController.selected.precioCosto}" title="#{bundle.EditAjustesTitle_precioCosto}" />
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditAjustesLabel_empleado}" for="empleado" />
+                                    <h:selectOneMenu styleClass="form-control" id="empleado" value="#{ajustesController.selected.empleado}" title="#{bundle.EditAjustesTitle_empleado}" >
+                                        <f:selectItems value="#{empleadosController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
+                                    <br />
+                           
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditAjustesLabel_producto}" for="producto" />
+                                    <h:selectOneMenu styleClass="form-control" id="producto" value="#{ajustesController.selected.producto}" title="#{bundle.EditAjustesTitle_producto}" >
+                                        <f:selectItems value="#{productosController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
+                                    <br />
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+                </div>   
             </h:form>
         </ui:define>
     </ui:composition>
-
 </html>

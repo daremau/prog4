@@ -12,13 +12,13 @@
         <ui:define name="buttons">
             <h:form>
                 <div class="row">
-                    <h:commandLink styleClass="btn btn-success mt-1 w-100" action="#{empleadosController.prepareCreate}" value="#{bundle.ViewEmpleadosCreateLink}" />
-                </div>
-                <div class="row">
                     <h:commandLink styleClass="btn btn-primary mt-1 w-100" action="#{empleadosController.prepareList}" value="#{bundle.ViewEmpleadosShowAllLink}"/>
                 </div>
                 <div class="row">
-                    <h:link styleClass="btn btn-primary mt-1 w-100" outcome="Edit" value="#{bundle.ViewEmpleadosEditLink}"/>
+                    <h:commandLink styleClass="btn btn-success mt-1 w-100" action="#{empleadosController.prepareCreate}" value="#{bundle.ViewEmpleadosCreateLink}" />
+                </div>
+                <div class="row">
+                    <h:link styleClass="btn btn-secondary mt-1 w-100" outcome="Edit" value="#{bundle.ViewEmpleadosEditLink}"/>
                 </div>
                 <div class="row">
                     <h:commandLink styleClass="btn btn-danger mt-1 w-100" action="#{empleadosController.destroyAndView}" value="#{bundle.ViewEmpleadosDestroyLink}"/> 
@@ -29,13 +29,10 @@
             <h:form class="col-10">
                 <div class="card">
                     <div class="card-body">
-                        
-                        <!--<h:panelGrid columns="2" styleClass="col-12">-->
                        <div class="container col-12">
                             <h:panelGroup id="messagePanel" layout="block">
                                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                             </h:panelGroup>
-                           
                             <br />
                             <!-- Fila 1 -->
                             <div class="row mb-2">
@@ -108,13 +105,9 @@
                                     <h:outputText value="#{empleadosController.selected.nombrePais}" title="#{bundle.ViewEmpleadosTitle_pais}"/>
                                 </div>
                             </div>
-                            
-                            <br />
                         </div>
-                        <!--</h:panelGrid>-->
                     </div>
                 </div>
-
             </h:form>
         </ui:define>
     </ui:composition>

@@ -9,42 +9,78 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.ViewComprasTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
+        <ui:define name="buttons">
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewComprasLabel_compra}"/>
-                    <h:outputText value="#{comprasController.selected.compra}" title="#{bundle.ViewComprasTitle_compra}"/>
-                    <h:outputText value="#{bundle.ViewComprasLabel_fecha}"/>
-                    <h:outputText value="#{comprasController.selected.fecha}" title="#{bundle.ViewComprasTitle_fecha}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:outputText>
-                    <h:outputText value="#{bundle.ViewComprasLabel_cantidad}"/>
-                    <h:outputText value="#{comprasController.selected.cantidad}" title="#{bundle.ViewComprasTitle_cantidad}"/>
-                    <h:outputText value="#{bundle.ViewComprasLabel_precioCosto}"/>
-                    <h:outputText value="#{comprasController.selected.precioCosto}" title="#{bundle.ViewComprasTitle_precioCosto}"/>
-                    <h:outputText value="#{bundle.ViewComprasLabel_empleado}"/>
-                    <h:outputText value="#{comprasController.selected.empleado}" title="#{bundle.ViewComprasTitle_empleado}"/>
-                    <h:outputText value="#{bundle.ViewComprasLabel_producto}"/>
-                    <h:outputText value="#{comprasController.selected.producto}" title="#{bundle.ViewComprasTitle_producto}"/>
-                    <h:outputText value="#{bundle.ViewComprasLabel_proveedor}"/>
-                    <h:outputText value="#{comprasController.selected.proveedor}" title="#{bundle.ViewComprasTitle_proveedor}"/>
-                </h:panelGrid>
-                <br />
-                <h:commandLink action="#{comprasController.destroyAndView}" value="#{bundle.ViewComprasDestroyLink}"/>
-                <br />
-                <br />
-                <h:link outcome="Edit" value="#{bundle.ViewComprasEditLink}"/>
-                <br />
-                <h:commandLink action="#{comprasController.prepareCreate}" value="#{bundle.ViewComprasCreateLink}" />
-                <br />
-                <h:commandLink action="#{comprasController.prepareList}" value="#{bundle.ViewComprasShowAllLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ViewComprasIndexLink}"/>
-
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-primary mt-1 w-100" action="#{comprasController.prepareList}" value="#{bundle.ViewComprasShowAllLink}"/>
+                </div>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-success mt-1 w-100" action="#{comprasController.prepareCreate}" value="#{bundle.ViewComprasCreateLink}" />
+                </div>
+                <div class="row">
+                    <h:link styleClass="btn btn-secondary mt-1 w-100" outcome="Edit" value="#{bundle.ViewComprasEditLink}"/>
+                </div>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-danger mt-1 w-100" action="#{comprasController.destroyAndView}" value="#{bundle.ViewComprasDestroyLink}"/> 
+                </div>
+            </h:form>
+        </ui:define>
+        <ui:define name="body">
+            <h:form class="col-10">
+                <div class="card">
+                    <div class="card-body">
+                       <div class="container col-12">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <br />
+                            <!-- Fila 1 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText value="#{bundle.ViewComprasLabel_compra}"/>
+                                    <h:outputText value="#{comprasController.selected.compra}" title="#{bundle.ViewComprasTitle_compra}"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <h:outputText value="#{bundle.ViewComprasLabel_empleado}"/>
+                                    <h:outputText value="#{comprasController.selected.empleado}" title="#{bundle.ViewComprasTitle_empleado}"/>
+                                </div>
+                            </div>
+                            
+                            <!-- Fila 2 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText value="#{bundle.ViewComprasLabel_fecha}"/>
+                                    <h:outputText value="#{comprasController.selected.fecha}" title="#{bundle.ViewComprasTitle_fecha}">
+                                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                                    </h:outputText>
+                                </div>
+                                <div class="col-md-6">
+                                    <h:outputText value="#{bundle.ViewComprasLabel_producto}"/>
+                                    <h:outputText value="#{comprasController.selected.producto}" title="#{bundle.ViewComprasTitle_producto}"/>
+                                </div>
+                            </div>
+                            
+                            <!-- Fila 3 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText value="#{bundle.ViewComprasLabel_cantidad}"/>
+                                    <h:outputText value="#{comprasController.selected.cantidad}" title="#{bundle.ViewComprasTitle_cantidad}"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <h:outputText value="#{bundle.ViewComprasLabel_proveedor}"/>
+                                    <h:outputText value="#{comprasController.selected.proveedor}" title="#{bundle.ViewComprasTitle_proveedor}"/>
+                                </div>
+                            </div>
+                            <!-- Fila 4 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText value="#{bundle.ViewComprasLabel_precioCosto}"/>
+                                    <h:outputText value="#{comprasController.selected.precioCosto}" title="#{bundle.ViewComprasTitle_precioCosto}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

@@ -11,7 +11,7 @@
         </ui:define>
         <ui:define name="buttons">
             <h:form>
-                <h:commandLink styleClass="btn btn-primary w-100 align-self-center" action="#{empleadosController.prepareCreate}" value="#{bundle.ListEmpleadosCreateLink}"/>
+                <h:commandLink styleClass="btn btn-primary w-100 align-self-center" action="#{areasController.prepareCreate}" value="#{bundle.ListAreasCreateLink}"/>
             </h:form>
         </ui:define>
         <ui:define name="body">
@@ -23,9 +23,9 @@
                 <h:outputText escape="false" value="#{bundle.ListAreasEmpty}" rendered="#{areasController.items.rowCount == 0}"/>
                 
                 <h:panelGroup rendered="#{areasController.items.rowCount > 0}">
-                    <h:outputText value="#{areasController.pagination.pageFirstItem + 1}..#{areasController.pagination.pageLastItem + 1}/#{areasController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{areasController.previous}" value="#{bundle.Previous} #{areasController.pagination.pageSize}" rendered="#{areasController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{areasController.next}" value="#{bundle.Next} #{areasController.pagination.pageSize}" rendered="#{areasController.pagination.hasNextPage}"/>&nbsp;
+                    <h:outputText styleClass="btn btn-primary" value="#{areasController.pagination.pageFirstItem + 1}..#{areasController.pagination.pageLastItem + 1}/#{areasController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-primary" action="#{areasController.previous}" value="#{bundle.Previous} #{areasController.pagination.pageSize}" rendered="#{areasController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-primary" action="#{areasController.next}" value="#{bundle.Next} #{areasController.pagination.pageSize}" rendered="#{areasController.pagination.hasNextPage}"/>&nbsp;
                     
                     <h:dataTable class="table table-sm table-bordered" value="#{areasController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>

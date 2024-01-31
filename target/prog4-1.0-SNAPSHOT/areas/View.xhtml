@@ -9,30 +9,45 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.ViewAreasTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
+        <ui:define name="buttons">
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewAreasLabel_area}"/>
-                    <h:outputText value="#{areasController.selected.area}" title="#{bundle.ViewAreasTitle_area}"/>
-                    <h:outputText value="#{bundle.ViewAreasLabel_nombre}"/>
-                    <h:outputText value="#{areasController.selected.nombre}" title="#{bundle.ViewAreasTitle_nombre}"/>
-                </h:panelGrid>
-                <br />
-                <h:commandLink action="#{areasController.destroyAndView}" value="#{bundle.ViewAreasDestroyLink}"/>
-                <br />
-                <br />
-                <h:link outcome="Edit" value="#{bundle.ViewAreasEditLink}"/>
-                <br />
-                <h:commandLink action="#{areasController.prepareCreate}" value="#{bundle.ViewAreasCreateLink}" />
-                <br />
-                <h:commandLink action="#{areasController.prepareList}" value="#{bundle.ViewAreasShowAllLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ViewAreasIndexLink}"/>
-
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-primary mt-1 w-100" action="#{areasController.prepareList}" value="#{bundle.ViewAreasShowAllLink}"/>
+                </div>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-success mt-1 w-100" action="#{areasController.prepareCreate}" value="#{bundle.ViewAreasCreateLink}" />
+                </div>
+                <div class="row">
+                    <h:link styleClass="btn btn-secondary mt-1 w-100" outcome="Edit" value="#{bundle.ViewAreasEditLink}"/>
+                </div>
+                <div class="row">
+                    <h:commandLink styleClass="btn btn-danger mt-1 w-100" action="#{areasController.destroyAndView}" value="#{bundle.ViewAreasDestroyLink}"/> 
+                </div>
+            </h:form>
+        </ui:define>
+        <ui:define name="body">
+            <h:form class="col-10">
+                <div class="card">
+                    <div class="card-body">
+                       <div class="container col-12">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <br />
+                            <!-- Fila 1 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewAreasLabel_area}"/>
+                                    <h:outputText value="#{areasController.selected.area}" title="#{bundle.ViewAreasTitle_area}"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewAreasLabel_nombre}"/>
+                                    <h:outputText value="#{areasController.selected.nombre}" title="#{bundle.ViewAreasTitle_nombre}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>
