@@ -43,11 +43,11 @@
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_precioCosto}" for="precioCosto" />
-                                    <h:inputText styleClass="form-control formato-numero" id="precioCosto" value="#{productosController.selected.precioCosto}" title="#{bundle.EditProductosTitle_precioCosto}" />
+                                    <h:inputText styleClass="form-control formato-numero" id="precioCosto" value="#{productosController.selected.precioCostoFormateado}" title="#{bundle.EditProductosTitle_precioCosto}" />
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_precioVenta}" for="precioVenta" />
-                                    <h:inputText styleClass="form-control formato-numero" id="precioVenta" value="#{productosController.selected.precioVenta}" title="#{bundle.EditProductosTitle_precioVenta}" />
+                                    <h:inputText styleClass="form-control formato-numero" id="precioVenta" value="#{productosController.selected.precioVentaFormateado}" title="#{bundle.EditProductosTitle_precioVenta}" />
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_fechaAdquisicion}" for="fechaAdquisicion" />
@@ -60,21 +60,21 @@
                                 <!-- Columna Derecha -->
                                 <div class="col-md-6">
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_garantia}" for="garantia" />
-                                    <h:inputText styleClass="form-control" id="garantia" value="#{productosController.selected.garantia}" title="#{bundle.EditProductosTitle_garantia}" />
+                                    <h:inputText styleClass="form-control" id="garantia" value="#{productosController.selected.garantiaFormateado}" title="#{bundle.EditProductosTitle_garantia}" />
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_existencia}" for="existencia" />
-                                    <h:inputText styleClass="form-control formato-numero" id="existencia" value="#{productosController.selected.existencia}" title="#{bundle.EditProductosTitle_existencia}" />
+                                    <h:inputText styleClass="form-control formato-numero" id="existencia" value="#{productosController.selected.existenciaFormateado}" title="#{bundle.EditProductosTitle_existencia}" />
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_categoria}" for="categoria" />
-                                    <h:selectOneMenu styleClass="form-control" id="categoria" value="#{productosController.selected.categoria}" title="#{bundle.EditProductosTitle_categoria}" >
+                                    <h:selectOneMenu styleClass="form-control" id="categoria" value="#{productosController.selected.nombreCategoria}" title="#{bundle.EditProductosTitle_categoria}" >
                                         <f:selectItems value="#{categoriasController.itemsAvailableSelectOne}"/>
                                     </h:selectOneMenu>
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_marca}" for="marca" />
-                                    <h:selectOneMenu styleClass="form-control" id="marca" value="#{productosController.selected.marca}" title="#{bundle.EditProductosTitle_marca}" >
+                                    <h:selectOneMenu styleClass="form-control" id="marca" value="#{productosController.selected.nombreMarca}" title="#{bundle.EditProductosTitle_marca}" >
                                         <f:selectItems value="#{marcasController.itemsAvailableSelectOne}"/>
                                     </h:selectOneMenu>
                                     <br />

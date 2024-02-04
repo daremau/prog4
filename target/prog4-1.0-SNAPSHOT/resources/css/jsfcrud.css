@@ -110,13 +110,13 @@ ion-icon {
 
 .gradient-custom {
 /* fallback for old browsers */
-    background: #e9f2f9;
+    background: #1b325f;
 
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-radial-gradient(circle at center, #9cc4e4, #1b325f);
+/*    background: -webkit-radial-gradient(circle at center, #9cc4e4, #1b325f);
 
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: radial-gradient(#3a89c9, #1b325f);
+     W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
+    background: radial-gradient(#3a89c9, #1b325f);*/
 }
 
 .card {
@@ -125,4 +125,16 @@ ion-icon {
 
 .card-body {
     overflow-y: hidden;
+}
+
+.btn-azul {
+    background-color: #1b325f;
+    border-color: #1b325f;
+    color: white;
+}
+
+.btn-azul:hover {
+    background-color: #1b325f;
+    border-color: #1b325f;
+    color: white;
 }

@@ -152,6 +152,10 @@ public class Proveedores implements Serializable {
     public Paises getPais() {
         return pais;
     }
+    
+    public String getNombrePais() {
+        return pais.getNombre();
+    }
 
     public void setPais(Paises pais) {
         this.pais = pais;
@@ -179,7 +183,7 @@ public class Proveedores implements Serializable {
 
     @Override
     public String toString() {
-        return "com.uca.prog4.entidades.Proveedores[ proveedor=" + proveedor + " ]";
+        return this.nombre;
     }
     
 }

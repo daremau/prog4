@@ -44,45 +44,45 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProductosTitle_precioCosto}"/>
                             </f:facet>
-                            <h:outputText value="#{item.precioCosto}"/>
+                            <h:outputText value="#{item.precioCostoFormateado}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProductosTitle_precioVenta}"/>
                             </f:facet>
-                            <h:outputText value="#{item.precioVenta}"/>
+                            <h:outputText value="#{item.precioVentaFormateado}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProductosTitle_fechaAdquisicion}"/>
                             </f:facet>
                             <h:outputText value="#{item.fechaAdquisicion}">
-                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
                             </h:outputText>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProductosTitle_garantia}"/>
                             </f:facet>
-                            <h:outputText value="#{item.garantia}"/>
+                            <h:outputText value="#{item.garantiaFormateado}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProductosTitle_existencia}"/>
                             </f:facet>
-                            <h:outputText value="#{item.existencia}"/>
+                            <h:outputText value="#{item.existenciaFormateado}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProductosTitle_categoria}"/>
                             </f:facet>
-                            <h:outputText value="#{item.categoria}"/>
+                            <h:outputText value="#{item.nombreCategoria}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProductosTitle_marca}"/>
                             </f:facet>
-                            <h:outputText value="#{item.marca}"/>
+                            <h:outputText value="#{item.nombreMarca}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">

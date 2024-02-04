@@ -45,30 +45,30 @@
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditComprasLabel_cantidad}" for="cantidad" />
-                                    <h:inputText styleClass="form-control formato-numero" id="cantidad" value="#{comprasController.selected.cantidad}" title="#{bundle.EditComprasTitle_cantidad}" />
+                                    <h:inputText styleClass="form-control formato-numero" id="cantidad" value="#{comprasController.selected.cantidadFormateado}" title="#{bundle.EditComprasTitle_cantidad}" />
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditComprasLabel_precioCosto}" for="precioCosto" />
-                                    <h:inputText styleClass="form-control formato-numero" id="precioCosto" value="#{comprasController.selected.precioCosto}" title="#{bundle.EditComprasTitle_precioCosto}" />
+                                    <h:inputText styleClass="form-control formato-numero" id="precioCosto" value="#{comprasController.selected.precioCostoFormateado}" title="#{bundle.EditComprasTitle_precioCosto}" />
                                     <br />
                                 </div>
                                 
                                 <!-- Columna Derecha -->
                                 <div class="col-md-6">
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditComprasLabel_empleado}" for="empleado" />
-                                    <h:selectOneMenu styleClass="form-control" id="empleado" value="#{comprasController.selected.empleado}" title="#{bundle.EditComprasTitle_empleado}" >
+                                    <h:selectOneMenu styleClass="form-control" id="empleado" value="#{comprasController.selected.nombreEmpleado}" title="#{bundle.EditComprasTitle_empleado}" >
                                         <f:selectItems value="#{empleadosController.itemsAvailableSelectOne}"/>
                                     </h:selectOneMenu>
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditComprasLabel_producto}" for="producto" />
-                                    <h:selectOneMenu styleClass="form-control" id="producto" value="#{comprasController.selected.producto}" title="#{bundle.EditComprasTitle_producto}" >
+                                    <h:selectOneMenu styleClass="form-control" id="producto" value="#{comprasController.selected.nombreProducto}" title="#{bundle.EditComprasTitle_producto}" >
                                         <f:selectItems value="#{productosController.itemsAvailableSelectOne}"/>
                                     </h:selectOneMenu>
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditComprasLabel_proveedor}" for="proveedor" />
-                                    <h:selectOneMenu styleClass="form-control" id="proveedor" value="#{comprasController.selected.proveedor}" title="#{bundle.EditComprasTitle_proveedor}" >
+                                    <h:selectOneMenu styleClass="form-control" id="proveedor" value="#{comprasController.selected.nombreProveedor}" title="#{bundle.EditComprasTitle_proveedor}" >
                                         <f:selectItems value="#{proveedoresController.itemsAvailableSelectOne}"/>
                                     </h:selectOneMenu>
                                     <br />

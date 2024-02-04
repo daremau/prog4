@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <h:outputText styleClass="l-bold" value="#{bundle.ViewProductosLabel_garantia}"/>
-                                    <h:outputText value="#{productosController.selected.garantia}" title="#{bundle.ViewProductosTitle_garantia}"/>
+                                    <h:outputText value="#{productosController.selected.garantiaFormateado}" title="#{bundle.ViewProductosTitle_garantia}"/>
                                 </div>
                             </div>
 
@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="col-md-6"> 
                                     <h:outputText styleClass="l-bold" value="#{bundle.ViewProductosLabel_existencia}"/>
-                                    <h:outputText value="#{productosController.selected.existencia}" title="#{bundle.ViewProductosTitle_existencia}"/>
+                                    <h:outputText value="#{productosController.selected.existenciaFormateado}" title="#{bundle.ViewProductosTitle_existencia}"/>
                                 </div>
                             </div>
 
@@ -62,11 +62,11 @@
                             <div class="row mb-2">
                                 <div class="col-md-6">
                                     <h:outputText styleClass="l-bold" value="#{bundle.ViewProductosLabel_precioCosto}"/>
-                                    <h:outputText value="#{productosController.selected.precioCosto}" title="#{bundle.ViewProductosTitle_precioCosto}"/>
+                                    <h:outputText value="#{productosController.selected.precioCostoFormateado}" title="#{bundle.ViewProductosTitle_precioCosto}"/>
                                 </div>
                                 <div class="col-md-6">
                                     <h:outputText styleClass="l-bold" value="#{bundle.ViewProductosLabel_categoria}"/>
-                                    <h:outputText value="#{productosController.selected.categoria}" title="#{bundle.ViewProductosTitle_categoria}"/>
+                                    <h:outputText value="#{productosController.selected.nombreCategoria}" title="#{bundle.ViewProductosTitle_categoria}"/>
                                     
                                 </div>
                             </div>
@@ -75,11 +75,11 @@
                             <div class="row mb-2">
                                 <div class="col-md-6">
                                     <h:outputText styleClass="l-bold" value="#{bundle.ViewProductosLabel_precioVenta}"/>
-                                    <h:outputText value="#{productosController.selected.precioVenta}" title="#{bundle.ViewProductosTitle_precioVenta}"/>
+                                    <h:outputText value="#{productosController.selected.precioVentaFormateado}" title="#{bundle.ViewProductosTitle_precioVenta}"/>
                                 </div>
                                 <div class="col-md-6">
                                     <h:outputText styleClass="l-bold" value="#{bundle.ViewProductosLabel_marca}"/>
-                                    <h:outputText value="#{productosController.selected.marca}" title="#{bundle.ViewProductosTitle_marca}"/>
+                                    <h:outputText value="#{productosController.selected.nombreMarca}" title="#{bundle.ViewProductosTitle_marca}"/>
                                 </div>
                             </div>
 
@@ -88,7 +88,7 @@
                                 <div class="col-md-6">
                                     <h:outputText styleClass="l-bold" value="#{bundle.ViewProductosLabel_fechaAdquisicion}"/>
                                     <h:outputText value="#{productosController.selected.fechaAdquisicion}" title="#{bundle.ViewProductosTitle_fechaAdquisicion}">
-                                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                                        <f:convertDateTime pattern="dd/MM/yyyy" />
                                     </h:outputText>
                                 </div>
                             </div>

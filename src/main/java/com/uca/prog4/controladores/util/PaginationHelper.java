@@ -52,7 +52,7 @@ public abstract class PaginationHelper {
     }
 
     public int getPageSize() {
-        return pageSize;
+        return pageSize - 1;
     }
 
 }

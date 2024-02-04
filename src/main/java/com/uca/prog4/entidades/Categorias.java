@@ -105,7 +105,7 @@ public class Categorias implements Serializable {
 
     @Override
     public String toString() {
-        return "com.uca.prog4.entidades.Categorias[ categoria=" + categoria + " ]";
+        return this.nombre;
     }
     
 }

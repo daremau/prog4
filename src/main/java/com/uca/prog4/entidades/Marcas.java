@@ -105,7 +105,7 @@ public class Marcas implements Serializable {
 
     @Override
     public String toString() {
-        return "com.uca.prog4.entidades.Marcas[ marca=" + marca + " ]";
+        return this.nombre;
     }
     
 }

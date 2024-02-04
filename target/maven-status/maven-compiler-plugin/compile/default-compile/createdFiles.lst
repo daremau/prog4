@@ -53,5 +53,6 @@ com\uca\prog4\entidades\Paises.class
 com\uca\prog4\controladores\ProductosController$1.class
 com\uca\prog4\controladores\AreasController.class
 com\uca\prog4\controladores\EmpleadosController$1.class
+servlets\Servlet_login.class
 com\uca\prog4\controladores\CategoriasController$CategoriasControllerConverter.class
 com\uca\prog4\entidades\Areas_.class
