@@ -3,6 +3,7 @@ C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\clases\AreasFacade.java
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\entidades\Proveedores.java
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\controladores\PaisesController.java
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\entidades\Areas.java
+C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\clases\EntregasFacade.java
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\clases\AjustesFacade.java
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\clases\CategoriasFacade.java
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\controladores\EmpleadosController.java
@@ -10,6 +11,7 @@ C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\entidades\Categorias.ja
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\clases\AbstractFacade.java
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\clases\ProductosFacade.java
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\entidades\Compras.java
+C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\controladores\EntregasController.java
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\entidades\Productos.java
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\controladores\util\PaginationHelper.java
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\clases\MarcasFacade.java
@@ -21,6 +23,7 @@ C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\controladores\util\JsfU
 C:\Users\Belén\Desktop\prog4\src\main\java\servlets\Servlet_login.java
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\clases\EmpleadosFacade.java
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\controladores\CategoriasController.java
+C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\entidades\Entregas.java
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\controladores\ProductosController.java
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\entidades\Paises.java
 C:\Users\Belén\Desktop\prog4\src\main\java\com\uca\prog4\controladores\AreasController.java

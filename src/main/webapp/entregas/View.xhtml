@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewEntregasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form class="col-10">
+                <div class="card">
+                    <div class="card-body">
+                       <div class="container col-12">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <br />
+                            <!-- Fila 1 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEntregasLabel_entrega}"/>
+                                    <h:outputText value="#{entregasController.selected.entrega}" title="#{bundle.ViewEntregasTitle_entrega}"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEntregasLabel_nombre}"/>
+                                    <h:outputText value="#{entregasController.selected.nombre}" title="#{bundle.ViewEntregasTitle_nombre}"/>
+                                </div>
+                            </div>
+                            
+                             <!-- Fila 2 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEntregasLabel_fecha}"/>
+                                    <h:outputText value="#{entregasController.selected.fecha}" title="#{bundle.ViewEntregasTitle_fecha}">
+                                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                    </h:outputText>
+                                </div>
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEntregasLabel_cantidad}"/>
+                                    <h:outputText value="#{entregasController.selected.cantidad}" title="#{bundle.ViewEntregasTitle_cantidad}"/>
+                                </div>
+                            </div>
+                             
+                              <!-- Fila 3 -->
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEntregasLabel_area}"/>
+                                    <h:outputText value="#{entregasController.selected.area}" title="#{bundle.ViewEntregasTitle_area}"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <h:outputText styleClass="l-bold" value="#{bundle.ViewEntregasLabel_precioCosto}"/>
+                                    <h:outputText value="#{entregasController.selected.precioCosto}" title="#{bundle.ViewEntregasTitle_precioCosto}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <h:commandLink styleClass="btn btn-primary w-auto" action="#{entregasController.prepareList}" value="#{bundle.ViewEntregasShowAllLink}"/>
+                <h:commandLink styleClass="btn btn-success w-auto ml-1" action="#{entregasController.prepareCreate}" value="#{bundle.ViewEntregasCreateLink}" />
+                <h:link styleClass="btn btn-secondary w-auto ml-1" outcome="Edit" value="#{bundle.ViewEntregasEditLink}"/>
+                <h:commandLink styleClass="btn btn-danger w-auto ml-1" action="#{entregasController.destroyAndView}" value="#{bundle.ViewEntregasDestroyLink}"/> 
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
