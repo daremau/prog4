@@ -41,20 +41,20 @@
                                 <h:outputText value="#{bundle.ListDatosAcciones}"/>
                             </f:facet>
                             <h:commandLink action="#{areasController.prepareView}">
-                                <ion-icon class="actions" name="eye-outline"></ion-icon>
+                                <ion-icon class="actions" name="eye-outline" title="#{bundle.ListBotonVer}"></ion-icon>
                             </h:commandLink>
                             <h:outputText value=" "/>
                             <h:commandLink action="#{areasController.prepareEdit}" >
-                                <ion-icon class="actions" name="create-outline"></ion-icon>
+                                <ion-icon class="actions" name="create-outline" title="#{bundle.ListBotonEditar}"></ion-icon>
                             </h:commandLink>
                             <h:outputText value=" "/>
                             <h:commandLink action="#{areasController.destroy}">
-                                <ion-icon class="actions" name="trash-outline"></ion-icon>
+                                <ion-icon class="actions" name="trash-outline" title="#{bundle.ListBotonEliminar}"></ion-icon>
                             </h:commandLink>
                         </h:column>
                     </h:dataTable>
                     <h:commandLink styleClass="btn btn-success w-auto align-self-center" action="#{areasController.prepareCreate}" value="#{bundle.ListAreasCreateLink}"/>
-                    <h:commandLink styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>
+                    <h:button onclick="exportTableToCSV('datos.csv')" styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>
                 </h:panelGroup>
             </h:form>
         </ui:define>

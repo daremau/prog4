@@ -10,12 +10,7 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.CreateCategoriasTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="buttons">
-            <h:form>
-                <h:commandLink class="btn btn-primary w-100 align-self-center" action="#{categoriasController.prepareList}" value="#{bundle.CreateCategoriasShowAllLink}" immediate="true"/>
-                <h:commandLink class="btn btn-success w-100 align-self-center mt-1" action="#{categoriasController.create}" value="#{bundle.CreateCategoriasSaveLink}" />
-            </h:form>
-        </ui:define>
+ 
         <ui:define name="body">
             <h:form class="col-10">
                 <div class="card">
@@ -42,7 +37,10 @@
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
+                <br/>
+                <h:commandLink class="btn btn-primary w-auto align-self-center" action="#{categoriasController.prepareList}" value="#{bundle.CreateCategoriasShowAllLink}" immediate="true"/>
+                <h:commandLink class="btn btn-success w-auto align-self-center ml-1" action="#{categoriasController.create}" value="#{bundle.CreateCategoriasSaveLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

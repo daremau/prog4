@@ -11,18 +11,7 @@
         </ui:define>
         <ui:define name="buttons">
             <h:form>
-                <div class="row">
-                    <h:commandLink styleClass="btn btn-primary mt-1 w-100" action="#{areasController.prepareList}" value="#{bundle.ViewAreasShowAllLink}"/>
-                </div>
-                <div class="row">
-                    <h:commandLink styleClass="btn btn-success mt-1 w-100" action="#{areasController.prepareCreate}" value="#{bundle.ViewAreasCreateLink}" />
-                </div>
-                <div class="row">
-                    <h:link styleClass="btn btn-secondary mt-1 w-100" outcome="Edit" value="#{bundle.ViewAreasEditLink}"/>
-                </div>
-                <div class="row">
-                    <h:commandLink styleClass="btn btn-danger mt-1 w-100" action="#{areasController.destroyAndView}" value="#{bundle.ViewAreasDestroyLink}"/> 
-                </div>
+                
             </h:form>
         </ui:define>
         <ui:define name="body">
@@ -45,9 +34,15 @@
                                     <h:outputText value="#{areasController.selected.nombre}" title="#{bundle.ViewAreasTitle_nombre}"/>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
+                <br/>
+                <h:commandLink styleClass="btn btn-primary w-auto" action="#{areasController.prepareList}" value="#{bundle.ViewAreasShowAllLink}"/>
+                <h:commandLink styleClass="btn btn-success w-auto ml-1" action="#{areasController.prepareCreate}" value="#{bundle.ViewAreasCreateLink}" />
+                <h:link styleClass="btn btn-secondary w-auto ml-1" outcome="Edit" value="#{bundle.ViewAreasEditLink}"/>
+                <h:commandLink styleClass="btn btn-danger w-auto ml-1" action="#{areasController.destroyAndView}" value="#{bundle.ViewAreasDestroyLink}"/> 
             </h:form>
         </ui:define>
     </ui:composition>
