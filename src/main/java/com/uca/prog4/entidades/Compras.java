@@ -114,7 +114,9 @@ public class Compras implements Serializable {
     }
     
     public String getNombreEmpleado() {
-        return empleado.getNombre() + ", " + empleado.getApellido();
+        String nombre = empleado.getNombre() != null ? empleado.getNombre() : "";
+        String apellido = empleado.getApellido() != null ? empleado.getApellido() : "";
+        return nombre + ", " + apellido;
     }
 
     public void setEmpleado(Empleados empleado) {
