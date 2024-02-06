@@ -76,7 +76,7 @@ public class AjustesController implements Serializable {
     public String prepareCreate() {
         current = new Ajustes();
         selectedItemIndex = -1;
-        return "Crear";
+        return "Create";
     }
 
     public String create() {

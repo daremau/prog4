@@ -23,8 +23,6 @@ import java.util.logging.Logger;
 @WebServlet(name = "Servlet_login", urlPatterns = {"/Servlet_login"})
 public class Servlet_login extends HttpServlet {
     
-    private String usuario;
-
     /**
      * Procesa tanto las solicitudes HTTP GET como POST.
      *
@@ -61,8 +59,7 @@ public class Servlet_login extends HttpServlet {
                 // Establecimiento de la sesión para el usuario autenticado
                 sesion.setAttribute("USUARIO", user);
                 // Redireccionamiento a la página index.xhtml después del inicio de sesión exitoso
-                request.getRequestDispatcher("faces/index.xhtml").forward(request, response);        
-                usuario = user;
+                request.getRequestDispatcher("/faces/index.xhtml").forward(request, response);        
             }
         } catch (SQLException e) {
             // Log del error
@@ -70,7 +67,7 @@ public class Servlet_login extends HttpServlet {
             // Enviar mensaje de error a la página
             request.setAttribute("errorMessage", "Usuario o contraseña incorrectos.");
             // Redirigir de nuevo a la página de inicio de sesión
-            request.getRequestDispatcher("faces/login/login.xhtml").forward(request, response);
+            request.getRequestDispatcher("/faces/login/login.xhtml").forward(request, response);
         }
     }
 
@@ -112,9 +109,5 @@ public class Servlet_login extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }
-    
-    public String getUsuario() {
-        return this.usuario;
     }
 }
