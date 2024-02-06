@@ -10,12 +10,7 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.CreateEmpleadosTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="buttons">
-            <h:form>
-                <h:commandLink class="btn btn-primary w-100 align-self-center" action="#{empleadosController.prepareList}" value="#{bundle.CreateEmpleadosShowAllLink}" immediate="true"/>
-                <h:commandLink class="btn btn-success w-100 align-self-center mt-1" action="#{empleadosController.create}" value="#{bundle.CreateEmpleadosSaveLink}" />
-            </h:form>
-        </ui:define>
+        
         <ui:define name="body">
             <h:form class="col-10">
                 <div class="card">
@@ -52,6 +47,7 @@
                                     <h:selectOneMenu styleClass="form-control" id="pais" value="#{empleadosController.selected.pais}" title="#{bundle.CreateEmpleadosTitle_pais}">
                                         <f:selectItems value="#{paisesController.itemsAvailableSelectOne}"/>
                                     </h:selectOneMenu>
+                                    <br/>
                                 </div>
 
                                 <!-- Columna Derecha -->
@@ -80,11 +76,15 @@
                                     <h:selectOneMenu styleClass="form-control" id="area" value="#{empleadosController.selected.area}" title="#{bundle.CreateEmpleadosTitle_area}">
                                         <f:selectItems value="#{areasController.itemsAvailableSelectOne}"/>
                                     </h:selectOneMenu>
+                                    <br/>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <br/>
+                <h:commandLink class="btn btn-primary w-auto align-self-center" action="#{empleadosController.prepareList}" value="#{bundle.CreateEmpleadosShowAllLink}" immediate="true"/>
+                <h:commandLink class="btn btn-success w-auto align-self-center ml-1" action="#{empleadosController.create}" value="#{bundle.CreateEmpleadosSaveLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

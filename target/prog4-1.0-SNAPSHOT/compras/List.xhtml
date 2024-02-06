@@ -9,11 +9,7 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.ListComprasTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="buttons">
-            <h:form>
-                <h:commandLink styleClass="btn btn-primary w-100 align-self-center" action="#{comprasController.prepareCreate}" value="#{bundle.ListComprasCreateLink}"/>
-            </h:form>
-        </ui:define>
+      
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form col-12">
                 <h:panelGroup id="messagePanel" layout="block">
@@ -52,7 +48,7 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListComprasTitle_precioCosto}"/>
                             </f:facet>
-                            <h:outputText value="#{item.precioCostoFormateado}"/>
+                            <h:outputText value="#{item.precioCosto}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
@@ -77,19 +73,21 @@
                                 <h:outputText value="#{bundle.ListDatosAcciones}"/>
                             </f:facet>
                             <h:commandLink action="#{comprasController.prepareView}">
-                                <ion-icon class="actions" name="eye-outline"></ion-icon>
+                                <ion-icon class="actions" name="eye-outline" title="#{bundle.ListBotonVer}"></ion-icon>
                             </h:commandLink>
                             <h:outputText value=" "/>
                             <h:commandLink action="#{comprasController.prepareEdit}" >
-                                <ion-icon class="actions" name="create-outline"></ion-icon>
+                                <ion-icon class="actions" name="create-outline" title="#{bundle.ListBotonEditar}"></ion-icon>
                             </h:commandLink>
                             <h:outputText value=" "/>
                             <h:commandLink action="#{comprasController.destroy}">
-                                <ion-icon class="actions" name="trash-outline"></ion-icon>
+                                <ion-icon class="actions" name="trash-outline" title="#{bundle.ListBotonEliminar}"></ion-icon>
                             </h:commandLink>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
+                <h:commandLink styleClass="btn btn-success w-auto align-self-center" action="#{comprasController.prepareCreate}" value="#{bundle.ListComprasCreateLink}"/>
+                <h:button onclick="exportTableToCSV('datos.csv')" styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>
             </h:form>
         </ui:define>
     </ui:composition>

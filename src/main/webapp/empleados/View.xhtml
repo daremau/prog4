@@ -9,22 +9,7 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.ViewEmpleadosTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="buttons">
-            <h:form>
-                <div class="row">
-                    <h:commandLink styleClass="btn btn-primary mt-1 w-100" action="#{empleadosController.prepareList}" value="#{bundle.ViewEmpleadosShowAllLink}"/>
-                </div>
-                <div class="row">
-                    <h:commandLink styleClass="btn btn-success mt-1 w-100" action="#{empleadosController.prepareCreate}" value="#{bundle.ViewEmpleadosCreateLink}" />
-                </div>
-                <div class="row">
-                    <h:link styleClass="btn btn-secondary mt-1 w-100" outcome="Edit" value="#{bundle.ViewEmpleadosEditLink}"/>
-                </div>
-                <div class="row">
-                    <h:commandLink styleClass="btn btn-danger mt-1 w-100" action="#{empleadosController.destroyAndView}" value="#{bundle.ViewEmpleadosDestroyLink}"/> 
-                </div>
-            </h:form>
-        </ui:define>
+       
         <ui:define name="body">
             <h:form class="col-10">
                 <div class="card">
@@ -108,6 +93,11 @@
                         </div>
                     </div>
                 </div>
+                <br/>
+                <h:commandLink styleClass="btn btn-primary w-auto" action="#{empleadosController.prepareList}" value="#{bundle.ViewEmpleadosShowAllLink}"/>
+                <h:commandLink styleClass="btn btn-success w-auto ml-1" action="#{empleadosController.prepareCreate}" value="#{bundle.ViewEmpleadosCreateLink}" />
+                <h:link styleClass="btn btn-secondary w-auto ml-1" outcome="Edit" value="#{bundle.ViewEmpleadosEditLink}"/>
+                <h:commandLink styleClass="btn btn-danger w-auto ml-1" action="#{empleadosController.destroyAndView}" value="#{bundle.ViewEmpleadosDestroyLink}"/> 
             </h:form>
         </ui:define>
     </ui:composition>

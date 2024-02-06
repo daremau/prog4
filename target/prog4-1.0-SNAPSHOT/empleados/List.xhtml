@@ -7,13 +7,9 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputLabel value="#{bundle.ListEmpleadosTitle}"></h:outputLabel>
+            <h:outputText value="#{bundle.ListEmpleadosTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="buttons">
-            <h:form>
-                <h:commandLink styleClass="btn btn-success w-100 align-self-center" action="#{empleadosController.prepareCreate}" value="#{bundle.ListEmpleadosCreateLink}"/>
-            </h:form>
-        </ui:define>
+     
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form col-12">
                 <h:panelGroup id="messagePanel" layout="block">
@@ -24,8 +20,8 @@
                 
                 <h:panelGroup rendered="#{empleadosController.items.rowCount > 0}">
                     <h:outputText styleClass="btn sin-estilo btn-azul" value="#{empleadosController.pagination.pageFirstItem + 1}..#{empleadosController.pagination.pageLastItem + 1}/#{empleadosController.pagination.itemsCount}"/>
-                    <h:commandLink styleClass="btn btn-primary ml-1" action="#{empleadosController.next}" value="#{bundle.Next}" rendered="#{empleadosController.pagination.hasNextPage}"/>
                     <h:commandLink styleClass="btn btn-primary ml-1" action="#{empleadosController.previous}" value="#{bundle.Previous}" rendered="#{empleadosController.pagination.hasPreviousPage}"/>
+                    <h:commandLink styleClass="btn btn-primary ml-1" action="#{empleadosController.next}" value="#{bundle.Next}" rendered="#{empleadosController.pagination.hasNextPage}"/>
                     
                     <h:dataTable class="table table-sm table-bordered" value="#{empleadosController.pagination.createPageDataModel()}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
@@ -103,7 +99,7 @@
                                 <h:outputText value="#{bundle.ListDatosAcciones}"/>
                             </f:facet>
                             <h:commandLink action="#{empleadosController.prepareView}">
-                                <ion-icon class="actions" name="eye-outline"></ion-icon>
+                                <ion-icon class="actions" name="eye-outline" title="#{bundle.ListBotonVer}"></ion-icon>
                             </h:commandLink>
                             <h:outputText value=" "/>
                             <h:commandLink action="#{empleadosController.prepareEdit}">
@@ -111,11 +107,13 @@
                             </h:commandLink>
                             <h:outputText value=" "/>
                             <h:commandLink action="#{empleadosController.destroy}">
-                                <ion-icon class="actions" name="trash-outline"></ion-icon>
+                                <ion-icon class="actions" name="trash-outline" title="#{bundle.ListBotonEliminar}"></ion-icon>
                             </h:commandLink>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
+                <h:commandLink styleClass="btn btn-success w-auto align-self-center" action="#{empleadosController.prepareCreate}" value="#{bundle.ListEmpleadosCreateLink}"/>
+                <h:button onclick="exportTableToCSV('datos.csv')" styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>
             </h:form>
         </ui:define>
     </ui:composition>

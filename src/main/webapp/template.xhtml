@@ -5,6 +5,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 
     <h:head>
+        <link rel="icon" href="business.ico"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -54,7 +55,7 @@
                           <p class="lead text-muted">Interactue con los datos según sus necesidades</p>
                         </div>
                         <div class="col-lg-3 col-md-4 d-flex">
-                            <ui:insert name="buttons">Buttons Actions</ui:insert>
+                            <ui:insert name="buttons"></ui:insert>
                         </div>
                     </div>
                 </div>
@@ -84,8 +85,9 @@
 
                 // Aplicar el formateo a cualquier input con la clase 'formato-numero'
                 $('.formato-numero').on('input', formatearNumeroInput);
-            });
+            });   
         </script>
+        
     </h:body>
 
 </html>

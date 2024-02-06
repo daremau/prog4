@@ -9,19 +9,7 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.EditCategoriasTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="buttons">
-            <h:form>
-                <div class="row">
-                    <h:commandLink styleClass="btn btn-success mt-1 w-100" action="#{categoriasController.update}" value="#{bundle.EditCategoriasSaveLink}"/>
-                </div>
-                <div class="row">
-                    <h:link styleClass="btn btn-primary mt-1 w-100" outcome="View" value="#{bundle.EditCategoriasViewLink}"/>
-                </div>
-                <div class="row">
-                    <h:commandLink styleClass="btn btn-primary mt-1 w-100" action="#{categoriasController.prepareList}" value="#{bundle.EditCategoriasShowAllLink}" immediate="true"/>
-                </div>
-            </h:form>
-        </ui:define>
+        
         <ui:define name="body">
             <h:form class="col-10">
                 <div class="card">
@@ -49,6 +37,10 @@
                        </div>
                     </div>
                 </div>
+                <br/>
+                <h:commandLink styleClass="btn btn-primary w-auto" action="#{categoriasController.prepareList}" value="#{bundle.EditCategoriasShowAllLink}" immediate="true"/>
+                <h:commandLink styleClass="btn btn-success w-auto ml-1" action="#{categoriasController.update}" value="#{bundle.EditCategoriasSaveLink}"/>
+                <h:link styleClass="btn btn-secondary w-auto ml-1" outcome="View" value="#{bundle.EditCategoriasViewLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>
