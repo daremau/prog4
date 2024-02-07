@@ -186,11 +186,15 @@ public class Empleados implements Serializable {
     }
 
     public String getSalarioFormateado() {
-        DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
-        simbolos.setDecimalSeparator(','); 
-        simbolos.setGroupingSeparator('.');
-        DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
-        return formateador.format(this.salario);
+        if (salario != null) {
+            DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
+            simbolos.setDecimalSeparator(',');
+            simbolos.setGroupingSeparator('.');
+            DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
+            return formateador.format(salario);
+        } else {
+            return "";
+        }
     }
 
     public void setSalario(BigDecimal salario) {

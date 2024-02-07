@@ -111,11 +111,16 @@ public class Ajustes implements Serializable {
     }
     
     public String getCantidadFormateado() {
-        DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
-        simbolos.setDecimalSeparator(','); 
-        simbolos.setGroupingSeparator('.');
-        DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
-        return formateador.format(this.cantidad);    }
+        if (cantidad != null) {
+            DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
+            simbolos.setDecimalSeparator(',');
+            simbolos.setGroupingSeparator('.');
+            DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
+            return formateador.format(cantidad);
+        } else {
+            return "";
+        }
+    }
 
     public void setCantidad(BigDecimal cantidad) {
         this.cantidad = cantidad;
@@ -126,11 +131,16 @@ public class Ajustes implements Serializable {
     }
     
     public String getPrecioCostoFormateado() {
-        DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
-        simbolos.setDecimalSeparator(','); 
-        simbolos.setGroupingSeparator('.');
-        DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
-        return formateador.format(this.precioCosto);    }
+        if (precioCosto != null) {
+            DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
+            simbolos.setDecimalSeparator(',');
+            simbolos.setGroupingSeparator('.');
+            DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
+            return formateador.format(precioCosto);
+        } else {
+            return "";
+        }
+    }
 
     public void setPrecioCosto(BigDecimal precioCosto) {
         this.precioCosto = precioCosto;

@@ -38,6 +38,12 @@
                                         <f:selectItems value="#{areasController.itemsAvailableSelectOne}"/>
                                     </h:selectOneMenu>
                                     <br/>
+                                    
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.CreateComprasLabel_producto}" for="producto" />
+                                    <h:selectOneMenu styleClass="form-control" id="producto" value="#{entregasController.selected.producto}" title="#{bundle.CreateComprasTitle_producto}" >
+                                        <f:selectItems value="#{productosController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
+                                    <br/>
                                 </div>
                                 
                                 <!-- Columna Derecha -->

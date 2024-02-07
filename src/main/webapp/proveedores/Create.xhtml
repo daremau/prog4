@@ -23,30 +23,30 @@
                                 <!-- Columna Izquierda -->
                                 <div class="col-md-6">
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProveedoresLabel_proveedor}" for="proveedor" />
-                                    <h:inputText styleClass="form-control" id="proveedor" value="#{proveedoresController.selected.proveedor}" title="#{bundle.CreateProveedoresTitle_proveedor}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_proveedor}"/>
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el numero" id="proveedor" value="#{proveedoresController.selected.proveedor}" title="#{bundle.CreateProveedoresTitle_proveedor}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_proveedor}"/>
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProveedoresLabel_nombre}" for="nombre" />
-                                    <h:inputText styleClass="form-control" id="nombre" value="#{proveedoresController.selected.nombre}" title="#{bundle.CreateProveedoresTitle_nombre}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_nombre}"/>
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el nombre" id="nombre" value="#{proveedoresController.selected.nombre}" title="#{bundle.CreateProveedoresTitle_nombre}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_nombre}"/>
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProveedoresLabel_direccion}" for="direccion" />
-                                    <h:inputText styleClass="form-control" id="direccion" value="#{proveedoresController.selected.direccion}" title="#{bundle.CreateProveedoresTitle_direccion}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_direccion}"/>
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese la direccion" id="direccion" value="#{proveedoresController.selected.direccion}" title="#{bundle.CreateProveedoresTitle_direccion}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_direccion}"/>
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProveedoresLabel_telefono}" for="telefono" />
-                                    <h:inputText styleClass="form-control" id="telefono" value="#{proveedoresController.selected.telefono}" title="#{bundle.CreateProveedoresTitle_telefono}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_telefono}"/>
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el telefono" id="telefono" value="#{proveedoresController.selected.telefono}" title="#{bundle.CreateProveedoresTitle_telefono}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_telefono}"/>
                                     <br/>
                                 </div>
                                 
                                 <!-- Columna Derecha -->
                                 <div class="col-md-6">
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProveedoresLabel_email}" for="email" />
-                                    <h:inputText styleClass="form-control" id="email" value="#{proveedoresController.selected.email}" title="#{bundle.CreateProveedoresTitle_email}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_email}"/>
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el email" id="email" value="#{proveedoresController.selected.email}" title="#{bundle.CreateProveedoresTitle_email}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_email}"/>
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProveedoresLabel_fechaInicio}" for="fechaInicio" />
-                                    <h:inputText styleClass="form-control" id="fechaInicio" value="#{proveedoresController.selected.fechaInicio}" title="#{bundle.CreateProveedoresTitle_fechaInicio}" >
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese la fecha inicio" id="fechaInicio" value="#{proveedoresController.selected.fechaInicio}" title="#{bundle.CreateProveedoresTitle_fechaInicio}" >
                                         <f:convertDateTime pattern="dd/MM/yyyy" />
                                     </h:inputText>
                                     <br/>

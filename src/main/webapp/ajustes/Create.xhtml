@@ -23,36 +23,36 @@
                             <div class="row">
                                 <!-- Columna Izquierda -->
                                 <div class="col-md-6">
-                                    <h:outputLabel value="#{bundle.CreateAjustesLabel_ajuste}" for="ajuste"/>
-                                    <h:inputText styleClass="form-control" id="ajuste" a:placeholder="#{bundle.CreateAjustesLabel_ajuste}" value="#{ajustesController.selected.ajuste}" title="#{bundle.CreateAjustesTitle_ajuste}" required="true" requiredMessage="#{bundle.CreateAjustesRequiredMessage_ajuste}"/>
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.CreateAjustesLabel_ajuste}" for="ajuste"/>
+                                    <h:inputText styleClass="form-control" id="ajuste" a:placeholder="Ingrese el numero" value="#{ajustesController.selected.ajuste}" title="#{bundle.CreateAjustesTitle_ajuste}" required="true" requiredMessage="#{bundle.CreateAjustesRequiredMessage_ajuste}"/>
                                     <br/>
-                                    <h:outputLabel value="#{bundle.CreateAjustesLabel_fecha}" for="fecha"/>
-                                    <h:inputText styleClass="form-control" id="fecha" a:placeholder="#{bundle.CreateAjustesLabel_fecha}" value="#{ajustesController.selected.fecha}" title="#{bundle.CreateAjustesTitle_fecha}">
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.CreateAjustesLabel_fecha}" for="fecha"/>
+                                    <h:inputText styleClass="form-control" id="fecha" a:placeholder="Ingrese la fecha" value="#{ajustesController.selected.fecha}" title="#{bundle.CreateAjustesTitle_fecha}">
                                         <f:convertDateTime pattern="dd/MM/yyyy" />
                                     </h:inputText>
                                     <br/>
-                                    <h:outputLabel value="#{bundle.CreateAjustesLabel_tipoAjuste}" for="tipoAjuste"/>
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.CreateAjustesLabel_tipoAjuste}" for="tipoAjuste"/>
                                     <!--<h:inputText styleClass="form-control" id="tipoAjuste" a:placeholder="#{bundle.CreateAjustesLabel_tipoAjuste}" value="#{ajustesController.selected.tipoAjuste}" title="#{bundle.CreateAjustesTitle_tipoAjuste}" />-->
                                     <h:selectOneMenu id="tipoAjuste" styleClass="form-control" value="#{ajustesController.selected.tipoAjuste}" title="#{bundle.CreateAjustesTitle_tipoAjuste}">
                                         <f:selectItem itemValue="S" itemLabel="Suma" />
                                         <f:selectItem itemValue="R" itemLabel="Resta" />
                                     </h:selectOneMenu>
                                     <br/>
-                                    <h:outputLabel value="#{bundle.CreateAjustesLabel_cantidad}" for="cantidad"/>
-                                    <h:inputText styleClass="form-control" id="cantidad" a:placeholder="#{bundle.CreateAjustesLabel_cantidad}" value="#{ajustesController.selected.cantidad}" title="#{bundle.CreateAjustesTitle_cantidad}" />
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.CreateAjustesLabel_cantidad}" for="cantidad"/>
+                                    <h:inputText styleClass="form-control" id="cantidad" a:placeholder="Ingrese la cantidad" value="#{ajustesController.selected.cantidad}" title="#{bundle.CreateAjustesTitle_cantidad}" />
                                 </div>
                                 
                                 <!-- Columna Derecha -->
                                 <div class="col-md-6">
-                                    <h:outputLabel value="#{bundle.CreateAjustesLabel_precioCosto}" for="precioCosto"/>
-                                    <h:inputText styleClass="form-control" id="precioCosto" a:placeholder="#{bundle.CreateAjustesLabel_precioCosto}" value="#{ajustesController.selected.precioCosto}" title="#{bundle.CreateAjustesTitle_precioCosto}" />
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.CreateAjustesLabel_precioCosto}" for="precioCosto"/>
+                                    <h:inputText styleClass="form-control" id="precioCosto" a:placeholder="Ingrese el precio costo" value="#{ajustesController.selected.precioCosto}" title="#{bundle.CreateAjustesTitle_precioCosto}" />
                                     <br/>
-                                    <h:outputLabel value="#{bundle.CreateAjustesLabel_empleado}" for="empleado"/>
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.CreateAjustesLabel_empleado}" for="empleado"/>
                                     <h:selectOneMenu styleClass="form-control" id="empleado" a:placeholder="#{bundle.CreateAjustesLabel_empleado}" value="#{ajustesController.selected.empleado}" title="#{bundle.CreateAjustesTitle_empleado}" >
                                         <f:selectItems value="#{empleadosController.itemsAvailableSelectOne}"/>
                                     </h:selectOneMenu>
                                     <br/>
-                                    <h:outputLabel value="#{bundle.CreateAjustesLabel_producto}" for="producto"/>
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.CreateAjustesLabel_producto}" for="producto"/>
                                     <h:selectOneMenu styleClass="form-control" id="producto" a:placeholder="#{bundle.CreateAjustesLabel_producto}" value="#{ajustesController.selected.producto}" title="#{bundle.CreateAjustesTitle_producto}" >
                                         <f:selectItems value="#{productosController.itemsAvailableSelectOne}"/>
                                     </h:selectOneMenu>

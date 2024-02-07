@@ -66,11 +66,10 @@
                     </div>
                 </div>
                 <br/>
-                <h:commandLink styleClass="btn btn-primary w-auto" action="#{compraController.prepareList}" value="#{bundle.EditComprasShowAllLink}" immediate="true"/>
+                <h:commandLink styleClass="btn btn-primary w-auto" action="#{comprasController.prepareList}" value="#{bundle.EditComprasShowAllLink}" immediate="true"/>
                 <h:commandLink styleClass="btn btn-success w-auto ml-1" action="#{comprasController.update}" value="#{bundle.EditComprasSaveLink}"/>
                 <h:link styleClass="btn btn-secondary w-auto ml-1" outcome="View" value="#{bundle.EditComprasViewLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>
-
 </html>
