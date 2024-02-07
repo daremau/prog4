@@ -21,15 +21,6 @@
         <servlet-name>Servlet_login</servlet-name>
         <url-pattern>/Servlet_login</url-pattern>
     </servlet-mapping>
-    <servlet>
-        <servlet-name>Servlet_logout</servlet-name>
-        <servlet-class>servlets.Servlet_logout</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>Servlet_logout</servlet-name>
-        <url-pattern>/Servlet_logout</url-pattern>
-    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

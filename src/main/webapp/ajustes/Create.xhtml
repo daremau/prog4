@@ -19,6 +19,7 @@
                             <h:panelGroup id="messagePanel" layout="block">
                                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                             </h:panelGroup>
+                            <br />
                             <div class="row">
                                 <!-- Columna Izquierda -->
                                 <div class="col-md-6">
@@ -31,7 +32,11 @@
                                     </h:inputText>
                                     <br/>
                                     <h:outputLabel value="#{bundle.CreateAjustesLabel_tipoAjuste}" for="tipoAjuste"/>
-                                    <h:inputText styleClass="form-control" id="tipoAjuste" a:placeholder="#{bundle.CreateAjustesLabel_tipoAjuste}" value="#{ajustesController.selected.tipoAjuste}" title="#{bundle.CreateAjustesTitle_tipoAjuste}" />
+                                    <!--<h:inputText styleClass="form-control" id="tipoAjuste" a:placeholder="#{bundle.CreateAjustesLabel_tipoAjuste}" value="#{ajustesController.selected.tipoAjuste}" title="#{bundle.CreateAjustesTitle_tipoAjuste}" />-->
+                                    <h:selectOneMenu id="tipoAjuste" styleClass="form-control" value="#{ajustesController.selected.tipoAjuste}" title="#{bundle.CreateAjustesTitle_tipoAjuste}">
+                                        <f:selectItem itemValue="S" itemLabel="Suma" />
+                                        <f:selectItem itemValue="R" itemLabel="Resta" />
+                                    </h:selectOneMenu>
                                     <br/>
                                     <h:outputLabel value="#{bundle.CreateAjustesLabel_cantidad}" for="cantidad"/>
                                     <h:inputText styleClass="form-control" id="cantidad" a:placeholder="#{bundle.CreateAjustesLabel_cantidad}" value="#{ajustesController.selected.cantidad}" title="#{bundle.CreateAjustesTitle_cantidad}" />
@@ -55,6 +60,7 @@
                             </div>
                         </div>
                     </div>
+                    <br />
                 </div>
                 <br/>
                 <h:commandLink class="btn btn-primary w-auto align-self-center" action="#{ajustesController.prepareList}" value="#{bundle.CreateAjustesShowAllLink}" immediate="true"/>

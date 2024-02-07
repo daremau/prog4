@@ -35,12 +35,12 @@
                                 <div class="col-md-6">
                                     <h:outputText styleClass="l-bold" value="#{bundle.ViewEntregasLabel_fecha}"/>
                                     <h:outputText value="#{entregasController.selected.fecha}" title="#{bundle.ViewEntregasTitle_fecha}">
-                                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                        <f:convertDateTime pattern="dd/MM/yyyy" />
                                     </h:outputText>
                                 </div>
                                 <div class="col-md-6">
                                     <h:outputText styleClass="l-bold" value="#{bundle.ViewEntregasLabel_cantidad}"/>
-                                    <h:outputText value="#{entregasController.selected.cantidad}" title="#{bundle.ViewEntregasTitle_cantidad}"/>
+                                    <h:outputText value="#{entregasController.selected.cantidadFormateado}" title="#{bundle.ViewEntregasTitle_cantidad}"/>
                                 </div>
                             </div>
                              
@@ -48,11 +48,11 @@
                             <div class="row mb-2">
                                 <div class="col-md-6">
                                     <h:outputText styleClass="l-bold" value="#{bundle.ViewEntregasLabel_area}"/>
-                                    <h:outputText value="#{entregasController.selected.area}" title="#{bundle.ViewEntregasTitle_area}"/>
+                                    <h:outputText value="#{entregasController.selected.nombreArea}" title="#{bundle.ViewEntregasTitle_area}"/>
                                 </div>
                                 <div class="col-md-6">
                                     <h:outputText styleClass="l-bold" value="#{bundle.ViewEntregasLabel_precioCosto}"/>
-                                    <h:outputText value="#{entregasController.selected.precioCosto}" title="#{bundle.ViewEntregasTitle_precioCosto}"/>
+                                    <h:outputText value="#{entregasController.selected.precioCostoFormateado}" title="#{bundle.ViewEntregasTitle_precioCosto}"/>
                                 </div>
                             </div>
                         </div>

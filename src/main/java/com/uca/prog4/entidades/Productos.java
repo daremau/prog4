@@ -7,6 +7,8 @@ package com.uca.prog4.entidades;
 import com.uca.prog4.controladores.util.JsfUtil;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Locale;
@@ -112,8 +114,11 @@ public class Productos implements Serializable {
     }
     
     public String getPrecioCostoFormateado() {
-        return JsfUtil.formatearGuaranies(this.precioCosto, Locale.GERMANY);
-    }
+        DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
+        simbolos.setDecimalSeparator(','); 
+        simbolos.setGroupingSeparator('.');
+        DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
+        return formateador.format(this.precioCosto);    }
 
     public void setPrecioCosto(BigDecimal precioCosto) {
         this.precioCosto = precioCosto;
@@ -124,8 +129,13 @@ public class Productos implements Serializable {
     }
     
     public String getPrecioVentaFormateado() {
-        return JsfUtil.formatearGuaranies(this.precioVenta, Locale.GERMANY);
+        DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
+        simbolos.setDecimalSeparator(','); 
+        simbolos.setGroupingSeparator('.');
+        DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
+        return formateador.format(this.precioVenta);
     }
+    
 
     public void setPrecioVenta(BigDecimal precioVenta) {
         this.precioVenta = precioVenta;
@@ -163,8 +173,11 @@ public class Productos implements Serializable {
     }
     
     public String getExistenciaFormateado() {
-        return JsfUtil.formatearGuaranies(this.existencia, Locale.GERMANY);
-    }
+        DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
+        simbolos.setDecimalSeparator(','); 
+        simbolos.setGroupingSeparator('.');
+        DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
+        return formateador.format(this.existencia);    }
 
     public void setExistencia(BigDecimal existencia) {
         this.existencia = existencia;

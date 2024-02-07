@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
@@ -22,32 +23,35 @@
                                 <!-- Columna Izquierda -->
                                 <div class="col-md-6">
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEntregasLabel_entrega}" for="entrega" />
-                                    <h:inputText styleClass="form-control" id="entrega" value="#{entregasController.selected.entrega}" title="#{bundle.CreateEntregasTitle_entrega}" required="true" requiredMessage="#{bundle.CreateEntregasRequiredMessage_entrega}"/>
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el numero" id="entrega" value="#{entregasController.selected.entrega}" title="#{bundle.CreateEntregasTitle_entrega}" required="true" requiredMessage="#{bundle.CreateEntregasRequiredMessage_entrega}"/>
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEntregasLabel_fecha}" for="fecha" />
-                                    <h:inputText styleClass="form-control" id="fecha" value="#{entregasController.selected.fecha}" title="#{bundle.CreateEntregasTitle_fecha}" >
-                                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese la fecha" id="fecha" value="#{entregasController.selected.fecha}" title="#{bundle.CreateEntregasTitle_fecha}" >
+                                        <f:convertDateTime pattern="dd/MM/yyyy" />
                                     </h:inputText>
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEntregasLabel_area}" for="area" />
-                                    <h:inputText styleClass="form-control" id="area" value="#{entregasController.selected.area}" title="#{bundle.CreateEntregasTitle_area}" />
+                                    <!--<h:inputText styleClass="form-control" id="area" value="#{entregasController.selected.area}" title="#{bundle.CreateEntregasTitle_area}" />-->
+                                    <h:selectOneMenu styleClass="form-control" id="area" value="#{entregasController.selected.area}" title="#{bundle.CreateEntregasTitle_area}" >
+                                        <f:selectItems value="#{areasController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
                                     <br/>
                                 </div>
                                 
                                 <!-- Columna Derecha -->
                                 <div class="col-md-6">
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEntregasLabel_nombre}" for="nombre" />
-                                    <h:inputText styleClass="form-control" id="nombre" value="#{entregasController.selected.nombre}" title="#{bundle.CreateEntregasTitle_nombre}" required="true" requiredMessage="#{bundle.CreateEntregasRequiredMessage_nombre}"/>
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el nombre" id="nombre" value="#{entregasController.selected.nombre}" title="#{bundle.CreateEntregasTitle_nombre}" required="true" requiredMessage="#{bundle.CreateEntregasRequiredMessage_nombre}"/>
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEntregasLabel_cantidad}" for="cantidad" />
-                                    <h:inputText styleClass="form-control" id="cantidad" value="#{entregasController.selected.cantidad}" title="#{bundle.CreateEntregasTitle_cantidad}" />
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese la cantidad" id="cantidad" value="#{entregasController.selected.cantidad}" title="#{bundle.CreateEntregasTitle_cantidad}" />
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEntregasLabel_precioCosto}" for="precioCosto" />
-                                    <h:inputText styleClass="form-control" id="precioCosto" value="#{entregasController.selected.precioCosto}" title="#{bundle.CreateEntregasTitle_precioCosto}" />
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el precio costo" id="precioCosto" value="#{entregasController.selected.precioCosto}" title="#{bundle.CreateEntregasTitle_precioCosto}" />
                                     <br/>
                                 </div>
                             </div>

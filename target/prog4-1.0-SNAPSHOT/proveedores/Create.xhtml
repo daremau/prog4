@@ -10,12 +10,6 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.CreateProveedoresTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="buttons">
-            <h:form>
-                <h:commandLink class="btn btn-primary w-100 align-self-center" action="#{proveedoresController.prepareList}" value="#{bundle.CreateProveedoresShowAllLink}" immediate="true"/>
-                <h:commandLink class="btn btn-success w-100 align-self-center mt-1" action="#{proveedoresController.create}" value="#{bundle.CreateProveedoresSaveLink}" />
-            </h:form>
-        </ui:define>
         <ui:define name="body">
             <h:form class="col-10">
                 <div class="card">
@@ -53,7 +47,7 @@
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProveedoresLabel_fechaInicio}" for="fechaInicio" />
                                     <h:inputText styleClass="form-control" id="fechaInicio" value="#{proveedoresController.selected.fechaInicio}" title="#{bundle.CreateProveedoresTitle_fechaInicio}" >
-                                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                                        <f:convertDateTime pattern="dd/MM/yyyy" />
                                     </h:inputText>
                                     <br/>
                                     
@@ -67,6 +61,9 @@
                         </div>
                     </div>
                 </div>
+                <br />
+                <h:commandLink class="btn btn-primary align-self-center" action="#{proveedoresController.prepareList}" value="#{bundle.CreateProveedoresShowAllLink}" immediate="true"/>
+                <h:commandLink class="btn btn-success align-self-center ml-1" action="#{proveedoresController.create}" value="#{bundle.CreateProveedoresSaveLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

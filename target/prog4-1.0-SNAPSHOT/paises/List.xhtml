@@ -19,11 +19,11 @@
                 <h:outputText escape="false" value="#{bundle.ListPaisesEmpty}" rendered="#{paisesController.items.rowCount == 0}"/>
                 
                 <h:panelGroup rendered="#{paisesController.items.rowCount > 0}">
-                    <h:outputText styleClass="btn btn-primary" value="#{paisesController.pagination.pageFirstItem + 1}..#{paisesController.pagination.pageLastItem + 1}/#{paisesController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-primary" action="#{paisesController.previous}" value="#{bundle.Previous} #{paisesController.pagination.pageSize}" rendered="#{paisesController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-primary" action="#{paisesController.next}" value="#{bundle.Next} #{paisesController.pagination.pageSize}" rendered="#{paisesController.pagination.hasNextPage}"/>&nbsp;
+                    <h:outputText styleClass="btn sin-estilo btn-azul" value="#{paisesController.pagination.pageFirstItem + 1}..#{paisesController.pagination.pageLastItem + 1}/#{paisesController.pagination.itemsCount}"/>
+                    <h:commandLink styleClass="btn btn-primary" action="#{paisesController.previous}" value="#{bundle.Previous}" rendered="#{paisesController.pagination.hasPreviousPage}"/>
+                    <h:commandLink styleClass="btn btn-primary" action="#{paisesController.next}" value="#{bundle.Next}" rendered="#{paisesController.pagination.hasNextPage}"/>
                     
-                    <h:dataTable class="table table-sm table-bordered" value="#{paisesController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
+                    <h:dataTable class="table table-sm table-bordered" value="#{paisesController.pagination.createPageDataModel()}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListPaisesTitle_pais}"/>
@@ -55,7 +55,7 @@
                     </h:dataTable>
                 </h:panelGroup>
                 <h:commandLink styleClass="btn btn-success w-auto align-self-center" action="#{paisesController.prepareCreate}" value="#{bundle.ListPaisesCreateLink}"/>
-                <h:button onclick="exportTableToCSV('datos.csv')" styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>
+<!--                <h:button onclick="exportTableToCSV('datos.csv')" styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>-->
             </h:form>
         </ui:define>
     </ui:composition>
