@@ -20,8 +20,8 @@
                 
                 <h:panelGroup rendered="#{entregasController.items.rowCount > 0}">
                     <h:outputText styleClass="btn sin-estilo btn-azul" value="#{entregasController.pagination.pageFirstItem + 1}..#{entregasController.pagination.pageLastItem + 1}/#{entregasController.pagination.itemsCount}"/>  
-                    <h:commandLink styleClass="btn btn-primary ml-1" action="#{entregasController.previous}" value="#{bundle.Previous} #{entregasController.pagination.pageSize}" rendered="#{entregasController.pagination.hasPreviousPage}"/>
-                    <h:commandLink styleClass="btn btn-primary ml-1" action="#{entregasController.next}" value="#{bundle.Next} #{entregasController.pagination.pageSize}" rendered="#{entregasController.pagination.hasNextPage}"/>
+                    <h:commandLink styleClass="btn btn-primary ml-1" action="#{entregasController.previous}" value="#{bundle.Previous}" rendered="#{entregasController.pagination.hasPreviousPage}"/>
+                    <h:commandLink styleClass="btn btn-primary ml-1" action="#{entregasController.next}" value="#{bundle.Next}" rendered="#{entregasController.pagination.hasNextPage}"/>
                     
                     <h:dataTable class="table table-sm table-bordered" value="#{entregasController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
@@ -35,14 +35,14 @@
                                 <h:outputText value="#{bundle.ListEntregasTitle_fecha}"/>
                             </f:facet>
                             <h:outputText value="#{item.fecha}">
-                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
                             </h:outputText>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListEntregasTitle_area}"/>
                             </f:facet>
-                            <h:outputText value="#{item.area}"/>
+                            <h:outputText value="#{item.nombreArea}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
@@ -54,13 +54,19 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListEntregasTitle_cantidad}"/>
                             </f:facet>
-                            <h:outputText value="#{item.cantidad}"/>
+                            <h:outputText value="#{item.cantidadFormateado}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListEntregasTitle_precioCosto}"/>
                             </f:facet>
-                            <h:outputText value="#{item.precioCosto}"/>
+                            <h:outputText value="#{item.precioCostoFormateado}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListComprasTitle_producto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombreProducto}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
@@ -80,7 +86,7 @@
                         </h:column>
                     </h:dataTable>
                     <h:commandLink styleClass="btn btn-success w-auto align-self-center" action="#{entregasController.prepareCreate}" value="#{bundle.ListEntregasCreateLink}"/>
-                    <h:button onclick="exportTableToCSV('datos.csv')" styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>
+                    <!--<h:button onclick="exportTableToCSV('datos.csv')" styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>-->
                 </h:panelGroup>
             </h:form>
         </ui:define>

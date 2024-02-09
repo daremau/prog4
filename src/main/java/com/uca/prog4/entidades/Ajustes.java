@@ -7,6 +7,8 @@ package com.uca.prog4.entidades;
 import com.uca.prog4.controladores.util.JsfUtil;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.Date;
 import java.util.Locale;
 import javax.persistence.Basic;
@@ -109,7 +111,15 @@ public class Ajustes implements Serializable {
     }
     
     public String getCantidadFormateado() {
-        return JsfUtil.formatearGuaranies(this.cantidad, Locale.GERMANY);
+        if (cantidad != null) {
+            DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
+            simbolos.setDecimalSeparator(',');
+            simbolos.setGroupingSeparator('.');
+            DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
+            return formateador.format(cantidad);
+        } else {
+            return "";
+        }
     }
 
     public void setCantidad(BigDecimal cantidad) {
@@ -121,7 +131,15 @@ public class Ajustes implements Serializable {
     }
     
     public String getPrecioCostoFormateado() {
-        return JsfUtil.formatearGuaranies(this.precioCosto, Locale.GERMANY);
+        if (precioCosto != null) {
+            DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
+            simbolos.setDecimalSeparator(',');
+            simbolos.setGroupingSeparator('.');
+            DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
+            return formateador.format(precioCosto);
+        } else {
+            return "";
+        }
     }
 
     public void setPrecioCosto(BigDecimal precioCosto) {

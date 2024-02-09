@@ -19,9 +19,9 @@
                 <h:outputText escape="false" value="#{bundle.ListComprasEmpty}" rendered="#{comprasController.items.rowCount == 0}"/>
                 
                 <h:panelGroup rendered="#{comprasController.items.rowCount > 0}">
-                    <h:outputText styleClass="btn btn-primary" value="#{comprasController.pagination.pageFirstItem + 1}..#{comprasController.pagination.pageLastItem + 1}/#{comprasController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-primary" action="#{comprasController.previous}" value="#{bundle.Previous} #{comprasController.pagination.pageSize}" rendered="#{comprasController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-primary" action="#{comprasController.next}" value="#{bundle.Next} #{comprasController.pagination.pageSize}" rendered="#{comprasController.pagination.hasNextPage}"/>&nbsp;
+                    <h:outputText styleClass="btn sin-estilo btn-azul" value="#{comprasController.pagination.pageFirstItem + 1}..#{comprasController.pagination.pageLastItem + 1}/#{comprasController.pagination.itemsCount}"/>
+                    <h:commandLink styleClass="btn btn-primary" action="#{comprasController.previous}" value="#{bundle.Previous}" rendered="#{comprasController.pagination.hasPreviousPage}"/>
+                    <h:commandLink styleClass="btn btn-primary" action="#{comprasController.next}" value="#{bundle.Next}" rendered="#{comprasController.pagination.hasNextPage}"/>
                     
                     <h:dataTable class="table table-sm table-bordered" value="#{comprasController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
@@ -35,7 +35,7 @@
                                 <h:outputText value="#{bundle.ListComprasTitle_fecha}"/>
                             </f:facet>
                             <h:outputText value="#{item.fecha}">
-                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
                             </h:outputText>
                         </h:column>
                         <h:column>
@@ -48,7 +48,7 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListComprasTitle_precioCosto}"/>
                             </f:facet>
-                            <h:outputText value="#{item.precioCosto}"/>
+                            <h:outputText value="#{item.precioCostoFormateado}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
@@ -87,7 +87,7 @@
                     </h:dataTable>
                 </h:panelGroup>
                 <h:commandLink styleClass="btn btn-success w-auto align-self-center" action="#{comprasController.prepareCreate}" value="#{bundle.ListComprasCreateLink}"/>
-                <h:button onclick="exportTableToCSV('datos.csv')" styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>
+                <!--<h:button onclick="exportTableToCSV('datos.csv')" styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>-->
             </h:form>
         </ui:define>
     </ui:composition>

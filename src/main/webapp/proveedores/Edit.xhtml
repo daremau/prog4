@@ -52,7 +52,7 @@
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditProveedoresLabel_pais}" for="pais" />
-                                    <h:selectOneMenu styleClass="form-control" id="pais" value="#{proveedoresController.selected.nombrePais}" title="#{bundle.EditProveedoresTitle_pais}" required="true" requiredMessage="#{bundle.EditProveedoresRequiredMessage_pais}">
+                                    <h:selectOneMenu styleClass="form-control" id="pais" value="#{proveedoresController.selected.pais}" title="#{bundle.EditProveedoresTitle_pais}" required="true" requiredMessage="#{bundle.EditProveedoresRequiredMessage_pais}">
                                         <f:selectItems value="#{paisesController.itemsAvailableSelectOne}"/>
                                     </h:selectOneMenu>
                                     <br />

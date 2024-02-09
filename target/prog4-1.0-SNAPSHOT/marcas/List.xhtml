@@ -19,9 +19,9 @@
                 <h:outputText escape="false" value="#{bundle.ListMarcasEmpty}" rendered="#{marcasController.items.rowCount == 0}"/>
                 
                 <h:panelGroup rendered="#{marcasController.items.rowCount > 0}">
-                    <h:outputText styleClass="btn btn-primary" value="#{marcasController.pagination.pageFirstItem + 1}..#{marcasController.pagination.pageLastItem + 1}/#{marcasController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-primary" action="#{marcasController.previous}" value="#{bundle.Previous} #{marcasController.pagination.pageSize}" rendered="#{marcasController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-primary" action="#{marcasController.next}" value="#{bundle.Next} #{marcasController.pagination.pageSize}" rendered="#{marcasController.pagination.hasNextPage}"/>&nbsp;
+                    <h:outputText styleClass="btn sin-estilo btn-azul" value="#{marcasController.pagination.pageFirstItem + 1}..#{marcasController.pagination.pageLastItem + 1}/#{marcasController.pagination.itemsCount}"/>
+                    <h:commandLink styleClass="btn btn-primary" action="#{marcasController.previous}" value="#{bundle.Previous}" rendered="#{marcasController.pagination.hasPreviousPage}"/>
+                    <h:commandLink styleClass="btn btn-primary" action="#{marcasController.next}" value="#{bundle.Next}" rendered="#{marcasController.pagination.hasNextPage}"/>
                     
                     <h:dataTable class="table table-sm table-bordered" value="#{marcasController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
@@ -55,7 +55,7 @@
                     </h:dataTable>
                 </h:panelGroup>
                 <h:commandLink styleClass="btn btn-success w-auto align-self-center" action="#{marcasController.prepareCreate}" value="#{bundle.ListMarcasCreateLink}"/>
-                <h:button onclick="exportTableToCSV('datos.csv')" styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>
+                <!--<h:button onclick="exportTableToCSV('datos.csv')" styleCslass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>-->
             </h:form>
         </ui:define>
     </ui:composition>

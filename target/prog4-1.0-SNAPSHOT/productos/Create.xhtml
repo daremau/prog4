@@ -10,12 +10,6 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.CreateProductosTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="buttons">
-            <h:form>
-                <h:commandLink class="btn btn-primary w-100 align-self-center" action="#{productosController.prepareList}" value="#{bundle.CreateProductosShowAllLink}" immediate="true"/>
-                <h:commandLink class="btn btn-success w-100 align-self-center mt-1" action="#{productosController.create}" value="#{bundle.CreateProductosSaveLink}" />
-            </h:form>
-        </ui:define>
         <ui:define name="body">
             <h:form class="col-10">
                 <div class="card">
@@ -29,24 +23,24 @@
                                 <!-- Columna Izquierda -->
                                 <div class="col-md-6">
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProductosLabel_producto}" for="producto" />
-                                    <h:inputText styleClass="form-control" id="producto" value="#{productosController.selected.producto}" title="#{bundle.CreateProductosTitle_producto}" required="true" requiredMessage="#{bundle.CreateProductosRequiredMessage_producto}"/>
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el numero" id="producto" value="#{productosController.selected.producto}" title="#{bundle.CreateProductosTitle_producto}" required="true" requiredMessage="#{bundle.CreateProductosRequiredMessage_producto}"/>
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProductosLabel_nombre}" for="nombre" />
-                                    <h:inputText styleClass="form-control" id="nombre" value="#{productosController.selected.nombre}" title="#{bundle.CreateProductosTitle_nombre}" required="true" requiredMessage="#{bundle.CreateProductosRequiredMessage_nombre}"/>
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el nombre" id="nombre" value="#{productosController.selected.nombre}" title="#{bundle.CreateProductosTitle_nombre}" required="true" requiredMessage="#{bundle.CreateProductosRequiredMessage_nombre}"/>
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProductosLabel_precioCosto}" for="precioCosto" />
-                                    <h:inputText styleClass="form-control formato-numero" id="precioCosto" value="#{productosController.selected.precioCosto}" title="#{bundle.CreateProductosTitle_precioCosto}" />
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el precio costo" id="precioCosto" value="#{productosController.selected.precioCosto}" title="#{bundle.CreateProductosTitle_precioCosto}" />
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProductosLabel_precioVenta}" for="precioVenta" />
-                                    <h:inputText styleClass="form-control formato-numero" id="precioVenta" value="#{productosController.selected.precioVenta}" title="#{bundle.CreateProductosTitle_precioVenta}" />
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el precio venta" id="precioVenta" value="#{productosController.selected.precioVenta}" title="#{bundle.CreateProductosTitle_precioVenta}" />
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProductosLabel_fechaAdquisicion}" for="fechaAdquisicion" />
-                                    <h:inputText styleClass="form-control" id="fechaAdquisicion" value="#{productosController.selected.fechaAdquisicion}" title="#{bundle.CreateProductosTitle_fechaAdquisicion}" >
-                                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                                    <h:inputText a:type="date" styleClass="form-control" a:placeholder="Ingrese la fecha adquisicion" id="fechaAdquisicion" value="#{productosController.selected.fechaAdquisicion}" title="#{bundle.CreateProductosTitle_fechaAdquisicion}" >
+                                        <f:convertDateTime pattern="yyyy-mm-dd" />
                                     </h:inputText>
                                     <br/>
                                 </div>
@@ -54,11 +48,14 @@
                                 <!-- Columna Derecha -->
                                 <div class="col-md-6">
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProductosLabel_garantia}" for="garantia" />
-                                    <h:inputText styleClass="form-control" id="garantia" value="#{productosController.selected.garantia}" title="#{bundle.CreateProductosTitle_garantia}" />
+                                    <h:selectOneMenu styleClass="form-control" value="#{productosController.selected.garantia}" title="#{bundle.EditProductosTitle_garantia}">
+                                        <f:selectItem itemValue="S" itemLabel="Si" />
+                                        <f:selectItem itemValue="N" itemLabel="No" />
+                                    </h:selectOneMenu>
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProductosLabel_existencia}" for="existencia" />
-                                    <h:inputText styleClass="form-control formato-numero" id="existencia" value="#{productosController.selected.existencia}" title="#{bundle.CreateProductosTitle_existencia}" />
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese la existencia" id="existencia" value="#{productosController.selected.existencia}" title="#{bundle.CreateProductosTitle_existencia}" />
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProductosLabel_categoria}" for="categoria" />
@@ -77,6 +74,9 @@
                         </div>
                     </div>
                 </div>
+                <br />
+                <h:commandLink class="btn btn-primary align-self-center" action="#{productosController.prepareList}" value="#{bundle.CreateProductosShowAllLink}" immediate="true"/>
+                <h:commandLink class="btn btn-success align-self-center ml-1" action="#{productosController.create}" value="#{bundle.CreateProductosSaveLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

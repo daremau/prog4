@@ -6,11 +6,16 @@ package com.uca.prog4.entidades;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.Date;
+import java.util.Locale;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -46,8 +51,9 @@ public class Entregas implements Serializable {
     @Column(name = "FECHA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha;
-    @Column(name = "AREA")
-    private Integer area;
+    @JoinColumn(name = "AREA", referencedColumnName = "AREA")
+    @ManyToOne
+    private Areas area;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 50)
@@ -58,6 +64,9 @@ public class Entregas implements Serializable {
     private BigDecimal cantidad;
     @Column(name = "PRECIO_COSTO")
     private BigDecimal precioCosto;
+    @JoinColumn(name = "PRODUCTO", referencedColumnName = "PRODUCTO")
+    @ManyToOne
+    private Productos producto;
 
     public Entregas() {
     }
@@ -87,11 +96,15 @@ public class Entregas implements Serializable {
         this.fecha = fecha;
     }
 
-    public Integer getArea() {
+    public Areas getArea() {
         return area;
     }
+    
+    public String getNombreArea() {
+        return area.getNombre();
+    }
 
-    public void setArea(Integer area) {
+    public void setArea(Areas area) {
         this.area = area;
     }
 
@@ -106,6 +119,18 @@ public class Entregas implements Serializable {
     public BigDecimal getCantidad() {
         return cantidad;
     }
+    
+    public String getCantidadFormateado() {
+        if (cantidad != null) {
+            DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
+            simbolos.setDecimalSeparator(',');
+            simbolos.setGroupingSeparator('.');
+            DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
+            return formateador.format(cantidad);
+        } else {
+            return "";
+        }
+    }
 
     public void setCantidad(BigDecimal cantidad) {
         this.cantidad = cantidad;
@@ -114,9 +139,33 @@ public class Entregas implements Serializable {
     public BigDecimal getPrecioCosto() {
         return precioCosto;
     }
+    
+    public String getPrecioCostoFormateado() {
+        if (precioCosto != null) {
+            DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
+            simbolos.setDecimalSeparator(',');
+            simbolos.setGroupingSeparator('.');
+            DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
+            return formateador.format(precioCosto);
+        } else {
+            return "";
+        }
+    }
 
     public void setPrecioCosto(BigDecimal precioCosto) {
         this.precioCosto = precioCosto;
+    }
+    
+    public Productos getProducto() {
+        return producto;
+    }
+    
+    public String getNombreProducto() {
+        return producto.getNombre();
+    }
+
+    public void setProducto(Productos producto) {
+        this.producto = producto;
     }
 
     @Override

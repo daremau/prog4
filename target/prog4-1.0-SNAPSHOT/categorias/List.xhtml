@@ -19,9 +19,9 @@
                 <h:outputText escape="false" value="#{bundle.ListCategoriasEmpty}" rendered="#{categoriasController.items.rowCount == 0}"/>
                
                 <h:panelGroup rendered="#{categoriasController.items.rowCount > 0}">
-                    <h:outputText styleClass="btn btn-primary" value="#{categoriasController.pagination.pageFirstItem + 1}..#{categoriasController.pagination.pageLastItem + 1}/#{categoriasController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-primary" action="#{categoriasController.previous}" value="#{bundle.Previous} #{categoriasController.pagination.pageSize}" rendered="#{categoriasController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-primary" action="#{categoriasController.next}" value="#{bundle.Next} #{categoriasController.pagination.pageSize}" rendered="#{categoriasController.pagination.hasNextPage}"/>&nbsp;
+                    <h:outputText styleClass="btn sin-estilo btn-azul" value="#{categoriasController.pagination.pageFirstItem + 1}..#{categoriasController.pagination.pageLastItem + 1}/#{categoriasController.pagination.itemsCount}"/>
+                    <h:commandLink styleClass="btn btn-primary" action="#{categoriasController.previous}" value="#{bundle.Previous} #{categoriasController.pagination.pageSize}" rendered="#{categoriasController.pagination.hasPreviousPage}"/>
+                    <h:commandLink styleClass="btn btn-primary" action="#{categoriasController.next}" value="#{bundle.Next} #{categoriasController.pagination.pageSize}" rendered="#{categoriasController.pagination.hasNextPage}"/>
                     
                     <h:dataTable class="table table-sm table-bordered" value="#{categoriasController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
@@ -55,7 +55,7 @@
                     </h:dataTable>
                 </h:panelGroup>
                 <h:commandLink styleClass="btn btn-success w-auto align-self-center" action="#{categoriasController.prepareCreate}" value="#{bundle.ListCategoriasCreateLink}"/>
-                <h:button onclick="exportTableToCSV('datos.csv')" styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>
+                <!--<h:button onclick="exportTableToCSV('datos.csv')" styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>-->
             </h:form>
         </ui:define>
     </ui:composition>

@@ -19,9 +19,9 @@
                 <h:outputText escape="false" value="#{bundle.ListProveedoresEmpty}" rendered="#{proveedoresController.items.rowCount == 0}"/>
                 
                 <h:panelGroup rendered="#{proveedoresController.items.rowCount > 0}">
-                    <h:outputText styleClass="btn btn-primary" value="#{proveedoresController.pagination.pageFirstItem + 1}..#{proveedoresController.pagination.pageLastItem + 1}/#{proveedoresController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-primary" action="#{proveedoresController.previous}" value="#{bundle.Previous} #{proveedoresController.pagination.pageSize}" rendered="#{proveedoresController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-primary" action="#{proveedoresController.next}" value="#{bundle.Next} #{proveedoresController.pagination.pageSize}" rendered="#{proveedoresController.pagination.hasNextPage}"/>&nbsp;
+                    <h:outputText styleClass="btn sin-estilo btn-azul" value="#{proveedoresController.pagination.pageFirstItem + 1}..#{proveedoresController.pagination.pageLastItem + 1}/#{proveedoresController.pagination.itemsCount}"/>
+                    <h:commandLink styleClass="btn btn-primary" action="#{proveedoresController.previous}" value="#{bundle.Previous}" rendered="#{proveedoresController.pagination.hasPreviousPage}"/>
+                    <h:commandLink styleClass="btn btn-primary" action="#{proveedoresController.next}" value="#{bundle.Next}" rendered="#{proveedoresController.pagination.hasNextPage}"/>
                     
                     <h:dataTable class="table table-sm table-bordered" value="#{proveedoresController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
@@ -59,7 +59,7 @@
                                 <h:outputText value="#{bundle.ListProveedoresTitle_fechaInicio}"/>
                             </f:facet>
                             <h:outputText value="#{item.fechaInicio}">
-                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
                             </h:outputText>
                         </h:column>
                         <h:column>
@@ -87,7 +87,7 @@
                     </h:dataTable>
                 </h:panelGroup>
                 <h:commandLink styleClass="btn btn-success w-auto align-self-center" action="#{proveedoresController.prepareCreate}" value="#{bundle.ListProveedoresCreateLink}"/>
-                <h:button onclick="exportTableToCSV('datos.csv')" styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>
+                <!--<h:button onclick="exportTableToCSV('datos.csv')" styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>-->
             </h:form>
         </ui:define>
     </ui:composition>

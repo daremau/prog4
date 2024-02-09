@@ -7,6 +7,8 @@ package com.uca.prog4.entidades;
 import com.uca.prog4.controladores.util.JsfUtil;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Locale;
@@ -78,6 +80,8 @@ public class Productos implements Serializable {
     private Collection<Compras> comprasCollection;
     @OneToMany(mappedBy = "producto")
     private Collection<Ajustes> ajustesCollection;
+    @OneToMany(mappedBy = "producto")
+    private Collection<Entregas> entregasCollection;
 
     public Productos() {
     }
@@ -112,7 +116,15 @@ public class Productos implements Serializable {
     }
     
     public String getPrecioCostoFormateado() {
-        return JsfUtil.formatearGuaranies(this.precioCosto, Locale.GERMANY);
+        if (precioCosto != null) {
+            DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
+            simbolos.setDecimalSeparator(',');
+            simbolos.setGroupingSeparator('.');
+            DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
+            return formateador.format(precioCosto);
+        } else {
+            return "";
+        }
     }
 
     public void setPrecioCosto(BigDecimal precioCosto) {
@@ -124,8 +136,17 @@ public class Productos implements Serializable {
     }
     
     public String getPrecioVentaFormateado() {
-        return JsfUtil.formatearGuaranies(this.precioVenta, Locale.GERMANY);
+        if (precioVenta != null) {
+            DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
+            simbolos.setDecimalSeparator(',');
+            simbolos.setGroupingSeparator('.');
+            DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
+            return formateador.format(precioVenta);
+        } else {
+            return "";
+        }
     }
+    
 
     public void setPrecioVenta(BigDecimal precioVenta) {
         this.precioVenta = precioVenta;
@@ -163,7 +184,15 @@ public class Productos implements Serializable {
     }
     
     public String getExistenciaFormateado() {
-        return JsfUtil.formatearGuaranies(this.existencia, Locale.GERMANY);
+        if (existencia != null) {
+            DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
+            simbolos.setDecimalSeparator(',');
+            simbolos.setGroupingSeparator('.');
+            DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
+            return formateador.format(existencia);
+        } else {
+            return "";
+        }
     }
 
     public void setExistencia(BigDecimal existencia) {
@@ -210,6 +239,15 @@ public class Productos implements Serializable {
 
     public void setAjustesCollection(Collection<Ajustes> ajustesCollection) {
         this.ajustesCollection = ajustesCollection;
+    }
+    
+    @XmlTransient
+    public Collection<Entregas> getEntregasCollection() {
+        return entregasCollection;
+    }
+
+    public void setEntregasCollection(Collection<Entregas> entregasCollection) {
+        this.entregasCollection = entregasCollection;
     }
 
     @Override

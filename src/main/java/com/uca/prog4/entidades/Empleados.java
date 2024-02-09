@@ -7,6 +7,8 @@ package com.uca.prog4.entidades;
 import com.uca.prog4.controladores.util.JsfUtil;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Locale;
@@ -184,8 +186,15 @@ public class Empleados implements Serializable {
     }
 
     public String getSalarioFormateado() {
-        String gsSalario = JsfUtil.formatearGuaranies(this.salario, Locale.GERMANY); // O el Locale que prefieras
-        return gsSalario;
+        if (salario != null) {
+            DecimalFormatSymbols simbolos = new DecimalFormatSymbols(Locale.getDefault());
+            simbolos.setDecimalSeparator(',');
+            simbolos.setGroupingSeparator('.');
+            DecimalFormat formateador = new DecimalFormat("#,##0.00", simbolos);
+            return formateador.format(salario);
+        } else {
+            return "";
+        }
     }
 
     public void setSalario(BigDecimal salario) {

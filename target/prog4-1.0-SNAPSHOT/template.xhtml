@@ -35,7 +35,7 @@
                                 <h:outputText value="#{sessionScope.USUARIO}" />
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="../faces/login.xhtml">Cerrar sesión</a>
+                              <a class="dropdown-item" href="../../">Cerrar sesión</a>
                             </div>
                           </li>
                         </ul>
@@ -75,18 +75,32 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-        <script>
-            $(document).ready(function() {
-                // Función para formatear el valor de los inputs
-                function formatearNumeroInput() {
-                    var valor = $(this).val().replace(/\./g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-                    $(this).val(valor);
-                }
+<!--        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                document.querySelectorAll('.formato-numero').forEach(function(element) {
+                    element.addEventListener('focus', function(e) {
+                        // Al enfocar, prepara el valor para edición
+                        var valor = e.target.value;
+                        valor = valor.replace(/\./g, '').replace(',', '.');
+                        e.target.value = parseFloat(valor).toFixed(2).replace('.', ',');
+                    });
 
-                // Aplicar el formateo a cualquier input con la clase 'formato-numero'
-                $('.formato-numero').on('input', formatearNumeroInput);
-            });   
-        </script>
+                    element.addEventListener('blur', function(e) {
+                        // Al perder el foco, formatea el valor para visualización
+                        var valor = e.target.value;
+                        valor = valor.replace(/\./g, '').replace(',', '.');
+                        e.target.value = new Intl.NumberFormat('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(valor);
+
+                        // Encuentra el ID del input oculto desde el atributo data-input-oculto
+                        var inputOcultoId = e.target.getAttribute('data-input-oculto');
+                        if (inputOcultoId) {
+                            // Actualiza el valor del input oculto para enviarlo correctamente
+                            document.getElementById(inputOcultoId).value = valor.replace(/\./g, '').replace(',', '.');
+                        }
+                    });
+                });
+            });
+        </script>-->
         
     </h:body>
 

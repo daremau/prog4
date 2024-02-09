@@ -19,11 +19,11 @@
                 <h:outputText escape="false" value="#{bundle.ListAjustesEmpty}" rendered="#{ajustesController.items.rowCount == 0}"/>
 
                 <h:panelGroup rendered="#{ajustesController.items.rowCount > 0}">
-                    <h:outputText styleClass="btn btn-primary" value="#{ajustesController.pagination.pageFirstItem + 1}..#{ajustesController.pagination.pageLastItem + 1}/#{ajustesController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-primary" action="#{ajustesController.previous}" value="#{bundle.Previous} #{ajustesController.pagination.pageSize}" rendered="#{ajustesController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-primary" action="#{ajustesController.next}" value="#{bundle.Next} #{ajustesController.pagination.pageSize}" rendered="#{ajustesController.pagination.hasNextPage}"/>&nbsp;
+                    <h:outputText styleClass="btn sin-estilo btn-azul" value="#{ajustesController.pagination.pageFirstItem + 1}..#{ajustesController.pagination.pageLastItem + 1}/#{ajustesController.pagination.itemsCount}"/>
+                    <h:commandLink styleClass="btn btn-primary" action="#{ajustesController.previous}" value="#{bundle.Previous} #{ajustesController.pagination.pageSize}" rendered="#{ajustesController.pagination.hasPreviousPage}"/>
+                    <h:commandLink styleClass="btn btn-primary" action="#{ajustesController.next}" value="#{bundle.Next} #{ajustesController.pagination.pageSize}" rendered="#{ajustesController.pagination.hasNextPage}"/>
                     
-                    <h:dataTable class="table table-sm table-bordered" value="#{ajustesController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
+                    <h:dataTable class="table table-sm table-bordered" value="#{ajustesController.pagination.createPageDataModel()}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>  
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListAjustesTitle_ajuste}"/>
@@ -87,7 +87,7 @@
                     </h:dataTable>
                 </h:panelGroup>
                 <h:commandLink styleClass="btn btn-success w-auto align-self-center" action="#{ajustesController.prepareCreate}" value="#{bundle.ListAjustesCreateLink}"/>
-                <h:button onclick="exportTableToCSV('datos.csv')" styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>
+                <!--<h:button onclick="exportTableToCSV('datos.csv')" styleClass="btn btn-primary w-auto align-self-center ml-1" value="Descargar CSV"/>-->
             </h:form>
         </ui:define>
     </ui:composition>

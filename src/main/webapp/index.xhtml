@@ -17,26 +17,27 @@
                     <h4 class="text-light font-weight-bold mb-0">Panel de Control</h4>
                 </div>
                 <div class="menu">
-                    <a href="faces/productos/List.xhtml" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
-                        Productos</a>
-                    <a href="faces/proveedores/List.xhtml" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
-                        Proveedores</a>
-                    <a href="faces/marcas/List.xhtml" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
-                        Marcas</a>
-                    <a href="faces/ajustes/List.xhtml" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
-                        Ajustes</a>
-                    <a href="faces/categorias/List.xhtml" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
-                        Categorias</a>
-                    <a href="faces/areas/List.xhtml" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
-                        Areas</a>
-                    <a href="faces/paises/List.xhtml" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
-                        Paises</a>
-                    <a href="faces/empleados/List.xhtml" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
-                        Empleados</a>
-                    <a href="faces/compras/List.xhtml" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
-                        Compras</a>
-                    <a href="faces/entregas/List.xhtml" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
-                        Entregas</a>
+                    <!--<h:link style="font-size: medium" outcome="/login/recoverPassword" value="¿Olvidó su contraseña?"/>-->
+                    <h:link outcome="/productos/List" styleClass="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                        Productos</h:link>
+                    <h:link outcome="/proveedores/List" styleClass="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                        Proveedores</h:link>
+                    <h:link outcome="/marcas/List" styleClass="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                        Marcas</h:link>
+                    <h:link outcome="/ajustes/List" styleClass="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                        Ajustes</h:link>
+                    <h:link outcome="/categorias/List" styleClass="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                        Categorias</h:link>
+                    <h:link outcome="/areas/List" styleClass="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                        Areas</h:link>
+                    <h:link outcome="/paises/List" styleClass="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                        Paises</h:link>
+                    <h:link outcome="/empleados/List" styleClass="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                        Empleados</h:link>
+                    <h:link outcome="/compras/List" styleClass="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                        Compras</h:link>
+                    <h:link outcome="/entregas/List" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                        Entregas</h:link>
                 </div>
             </div>
             <!-- Fin sidebar -->
@@ -54,19 +55,17 @@
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                              <li class="nav-item dropdown">
-                                <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <h:outputText value="#{sessionScope.USUARIO}" />
-                                </a>
-                                  
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <!--<a href="/logout" class="dropdown-item">Cerrar sesión</a>-->
-                                    <form action="Servlet_logout" method="POST">
-                                        <input class="dropdown-item" type="submit" value="Cerrar sesión"/>
-                                    </form>
-                                </div>
-                              </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <h:outputText value="#{sessionScope.USUARIO}" />
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <form action="Servlet_logout" method="post">
+                                            <button id="btnLogout" type="submit" class="dropdown-item">Cerrar Sesion</button>
+                                        </form>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -79,7 +78,7 @@
                             <div class="row">
                                 <div class="col-lg-9 col-md-8">
                                   <h1 class="font-weight-bold mb-0">Bienvenido #{sessionScope.USUARIO}</h1>
-                                  <p class="lead text-muted">Revisa la última información</p>
+                                  <p class="lead text-muted">Revisa nuestas ultimas novedades</p>
                                 </div>
                                 <!--div class="col-lg-3 col-md-4 d-flex">
                                   <button class="btn btn-primary w-100 align-self-center">Descargar reporte</button>

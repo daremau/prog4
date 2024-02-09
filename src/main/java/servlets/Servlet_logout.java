@@ -12,22 +12,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author root
- */
 @WebServlet(name = "Servlet_logout", urlPatterns = {"/Servlet_logout"})
 public class Servlet_logout extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Invalida la sesión para cerrar sesión
-        HttpSession session = request.getSession(false); // false = no crear una nueva sesión
+        // Obtiene la sesión actual y la invalida
+        HttpSession session = request.getSession(false); // false para no crear una nueva sesión si no existe
         if (session != null) {
             session.invalidate();
         }
-        // Redirige al usuario a la página de login o a la página principal
-        response.sendRedirect(request.getContextPath() + "/faces/login/login.xhtml");
+        
+        // Redirige al usuario a la página de inicio de sesión
+        response.sendRedirect(request.getContextPath() + "/");
     }
 
     @Override
@@ -40,5 +37,10 @@ public class Servlet_logout extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+    }
+
+    @Override
+    public String getServletInfo() {
+        return "Servlet de Logout";
     }
 }

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
+import java.util.ResourceBundle;
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
@@ -25,15 +26,45 @@ public class JsfUtil {
         }
         return items;
     }
-
-    public static void addErrorMessage(Exception ex, String defaultMsg) {
-        String msg = ex.getLocalizedMessage();
-        if (msg != null && msg.length() > 0) {
-            addErrorMessage(msg);
+    
+        public static void addErrorMessage(Exception e, String defaultMsgKey) {
+        String detailedErrorMessage = extractRootCauseMessage(e);
+        String localizedMessage = ResourceBundle.getBundle("/Bundle").getString(defaultMsgKey);
+        
+        FacesMessage facesMsg;
+        
+        if (detailedErrorMessage != null && !detailedErrorMessage.isEmpty()) {
+            // Usar mensaje detallado de la causa raíz si está disponible
+            facesMsg = new FacesMessage(FacesMessage.SEVERITY_ERROR, detailedErrorMessage, detailedErrorMessage);
         } else {
-            addErrorMessage(defaultMsg);
+            // Usar mensaje genérico si no se encontró un mensaje detallado
+            facesMsg = new FacesMessage(FacesMessage.SEVERITY_ERROR, localizedMessage, localizedMessage);
         }
+        
+        FacesContext.getCurrentInstance().addMessage(null, facesMsg);
     }
+
+    private static String extractRootCauseMessage(Throwable throwable) {
+        // Recorre las causas de la excepción para encontrar la causa raíz
+        Throwable cause = throwable;
+        String rootMessage = null;
+        
+        while (cause != null) {
+            rootMessage = cause.getLocalizedMessage();
+            cause = cause.getCause();
+        }
+        
+        return rootMessage;
+    }
+
+//    public static void addErrorMessage(Exception ex, String defaultMsg) {
+//        String msg = ex.getLocalizedMessage();
+//        if (msg != null && msg.length() > 0) {
+//            addErrorMessage(msg);
+//        } else {
+//            addErrorMessage(defaultMsg);
+//        }
+//    }
 
     public static void addErrorMessages(List<String> messages) {
         for (String message : messages) {
@@ -60,9 +91,9 @@ public class JsfUtil {
         return converter.getAsObject(FacesContext.getCurrentInstance(), component, theId);
     }
     
-     public static String formatearGuaranies(BigDecimal numero, Locale locale) {
-        NumberFormat formateador = NumberFormat.getNumberInstance(locale);
-        formateador.setMaximumFractionDigits(0); // No mostrar decimales
-        return formateador.format(numero);
-    }
+//     public static String formatearGuaranies(BigDecimal numero, Locale locale) {
+//        NumberFormat formateador = NumberFormat.getNumberInstance(locale);
+//        formateador.setMaximumFractionDigits(0); // No mostrar decimales
+//        return formateador.format(numero);
+//    }
 }
