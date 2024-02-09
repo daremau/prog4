@@ -46,8 +46,8 @@
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProveedoresLabel_fechaInicio}" for="fechaInicio" />
-                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese la fecha inicio" id="fechaInicio" value="#{proveedoresController.selected.fechaInicio}" title="#{bundle.CreateProveedoresTitle_fechaInicio}" >
-                                        <f:convertDateTime pattern="dd/MM/yyyy" />
+                                    <h:inputText a:type="date" styleClass="form-control" a:placeholder="Ingrese la fecha inicio" id="fechaInicio" value="#{proveedoresController.selected.fechaInicio}" title="#{bundle.CreateProveedoresTitle_fechaInicio}" >
+                                        <f:convertDateTime pattern="yyyy-mm-dd"/>
                                     </h:inputText>
                                     <br/>
                                     
