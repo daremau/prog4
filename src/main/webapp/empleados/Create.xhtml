@@ -57,7 +57,7 @@
                                     <h:selectOneMenu styleClass="form-control" id="pais" value="#{empleadosController.selected.pais}" title="#{bundle.CreateEmpleadosTitle_pais}">
                                         <f:selectItems value="#{paisesController.itemsAvailableSelectOne}"/>
                                     </h:selectOneMenu>
-                                    <br/>
+                                    <br/>   
                                 </div>
 
                                 <!-- Columna Derecha -->
@@ -65,7 +65,7 @@
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEmpleadosLabel_email}" for="email">
                                         <ion-icon name="medical" style="font-size: xx-small; color: red"/>
                                     </h:outputLabel>
-                                    <h:inputText styleClass="form-control" id="email" a:placeholder="Ingrese el email" value="#{empleadosController.selected.email}" title="#{bundle.CreateEmpleadosTitle_email}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_email}"/>
+                                    <inputText styleClass="form-control" id="email" a:placeholder="Ingrese el email" value="#{empleadosController.selected.email}" title="#{bundle.CreateEmpleadosTitle_email}" required="true" requiredMessage="#{bundle.CreateEmpleadosRequiredMessage_email}"/>
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEmpleadosLabel_fechaIngreso}" for="fechaIngreso" />
