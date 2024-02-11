@@ -41,7 +41,7 @@
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditAjustesLabel_cantidad}" for="cantidad" />
-                                    <h:inputText styleClass="form-control formato numero" id="cantidad" value="#{ajustesController.selected.cantidad}" title="#{bundle.EditAjustesTitle_cantidad}" />
+                                    <h:inputText styleClass="form-control formato numero" id="cantidad" value="#{ajustesController.selected.cantidad}" title="#{bundle.EditAjustesTitle_cantidad}" a:oninput="SeparadorMiles(this)"/>
                                     <br />
                                 </div>
                                
