@@ -57,7 +57,8 @@
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEntregasLabel_precioCosto}" for="precioCosto" />
-                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el precio costo" id="precioCosto" value="#{entregasController.selected.precioCosto}" title="#{bundle.CreateEntregasTitle_precioCosto}" a:oninput="SeparadorMiles(this)"/>
+                                    <h:inputText styleClass="form-control" a:placeholder="El precio costo se ingresa automaticamente al guardar" id="precioCosto" value="#{entregasController.selected.precioCosto}" title="#{bundle.CreateEntregasTitle_precioCosto}" 
+                                                 disabled="true"/>
                                     <br/>
                                 </div>
                             </div>

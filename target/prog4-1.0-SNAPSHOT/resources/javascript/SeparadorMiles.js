@@ -9,7 +9,6 @@ function SeparadorMiles(input) {
     let integerPart = parts[0];
     let fractionalPart = parts.length > 1 ? '.' + parts[1] : '';
 
-    // Limit fractional part to two decimal points
     if (fractionalPart.length > 2) {
         fractionalPart = fractionalPart.slice(0, 3);
     }
@@ -27,7 +26,6 @@ function SeparadorMiles(input) {
     input.onblur = function() {
         value = value.replace(/,/g, '');
 
-        // Limit fractional part to two decimal points and round it
         if (value.includes('.')) {
             let decimalIndex = value.indexOf('.');
             let decimalPart = value.substring(decimalIndex + 1);

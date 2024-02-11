@@ -58,7 +58,7 @@
                                     <br />
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditEntregasLabel_precioCosto}" for="precioCosto" />
-                                    <h:inputText styleClass="form-control" id="precioCosto" value="#{entregasController.selected.precioCosto}" title="#{bundle.EditEntregasTitle_precioCosto}" a:oninput="SeparadorMiles(this)"/>
+                                    <h:inputText styleClass="form-control" id="precioCosto" value="#{entregasController.selected.precioCostoFormateado}" title="#{bundle.EditEntregasTitle_precioCosto}" disabled="true"/>
                                     <br />
                                 </div>
                             </div>
