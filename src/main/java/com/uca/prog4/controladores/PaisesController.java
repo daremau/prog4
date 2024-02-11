@@ -185,7 +185,7 @@ public class PaisesController implements Serializable {
     }
 
     public SelectItem[] getItemsAvailableSelectOne() {
-        return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
+        return JsfUtil.getSelectItems(ejbFacade.findAllOrderByNombre(), true);
     }
 
     public Paises getPaises(java.lang.Integer id) {

@@ -3,6 +3,7 @@ package com.uca.prog4.entidades;
 import com.uca.prog4.entidades.Ajustes;
 import com.uca.prog4.entidades.Categorias;
 import com.uca.prog4.entidades.Compras;
+import com.uca.prog4.entidades.Entregas;
 import com.uca.prog4.entidades.Marcas;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -11,7 +12,7 @@ import javax.persistence.metamodel.CollectionAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.7.10.v20211216-rNA", date="2024-02-07T11:19:35")
+@Generated(value="EclipseLink-2.7.10.v20211216-rNA", date="2024-02-10T17:32:34")
 @StaticMetamodel(Productos.class)
 public class Productos_ { 
 
@@ -23,6 +24,7 @@ public class Productos_ {
     public static volatile SingularAttribute<Productos, Integer> producto;
     public static volatile SingularAttribute<Productos, BigDecimal> precioVenta;
     public static volatile CollectionAttribute<Productos, Ajustes> ajustesCollection;
+    public static volatile CollectionAttribute<Productos, Entregas> entregasCollection;
     public static volatile SingularAttribute<Productos, String> nombre;
     public static volatile SingularAttribute<Productos, BigDecimal> precioCosto;
     public static volatile SingularAttribute<Productos, Character> garantia;
