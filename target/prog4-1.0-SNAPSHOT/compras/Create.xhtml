@@ -12,7 +12,7 @@
         </ui:define>
        
         <ui:define name="body">
-            <h:form class="col-10">
+            <h:form class="col-10" id="formulario">
                 <div class="card">
                     <div class="card-body">
                        <div class="container col-12">
@@ -38,7 +38,7 @@
                                     <br/>
 
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateComprasLabel_precioCosto}" for="precioCosto" />
-                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el precio costo" id="precioCosto" value="#{comprasController.selected.precioCosto}" title="#{bundle.CreateComprasTitle_precioCosto}" />
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el precio costo" id="precioCosto" value="#{comprasController.selected.precioCosto}" title="#{bundle.CreateComprasTitle_precioCosto}" a:oninput="SeparadorMiles(this)"/>
                                     <br/>
                                 </div>
                                 
@@ -69,7 +69,8 @@
                 <br/>
                 <h:commandLink class="btn btn-primary w-auto align-self-center" action="#{comprasController.prepareList}" value="#{bundle.CreateComprasShowAllLink}" immediate="true"/>
                 <h:commandLink class="btn btn-success w-auto align-self-center ml-1" action="#{comprasController.create}" value="#{bundle.CreateComprasSaveLink}" />
-            </h:form>
+            </h:form> 
+            <script src="../resources/javascript/SeparadorMiles.js"></script>
         </ui:define>
     </ui:composition>
 </html>

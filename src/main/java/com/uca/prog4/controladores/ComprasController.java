@@ -80,7 +80,7 @@ public class ComprasController implements Serializable {
     }
 
     public String create() {
-        try {
+        try { 
             getFacade().create(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("ComprasCreated"));
             return prepareCreate();

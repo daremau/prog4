@@ -69,7 +69,7 @@
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEmpleadosLabel_salario}" for="salario" />
-                                    <h:inputText styleClass="form-control formato-numero" id="salario" a:placeholder="Ingrese el salario" value="#{empleadosController.selected.salario}" title="#{bundle.CreateEmpleadosTitle_salario}" />
+                                    <h:inputText styleClass="form-control formato-numero" id="salario" a:placeholder="Ingrese el salario" value="#{empleadosController.selected.salario}" title="#{bundle.CreateEmpleadosTitle_salario}" a:oninput="SeparadorMiles(this)"/>
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateEmpleadosLabel_area}" for="area" />
@@ -86,6 +86,7 @@
                 <h:commandLink class="btn btn-primary w-auto align-self-center" action="#{empleadosController.prepareList}" value="#{bundle.CreateEmpleadosShowAllLink}" immediate="true"/>
                 <h:commandLink class="btn btn-success w-auto align-self-center ml-1" action="#{empleadosController.create}" value="#{bundle.CreateEmpleadosSaveLink}" />
             </h:form>
+            <script src="../resources/javascript/SeparadorMiles.js"></script>
         </ui:define>
     </ui:composition>
 </html>

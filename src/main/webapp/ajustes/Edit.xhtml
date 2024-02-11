@@ -48,7 +48,7 @@
                                 <!-- Columna Derecha -->
                                 <div class="col-md-6">
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditAjustesLabel_precioCosto}" for="precioCosto" />
-                                    <h:inputText styleClass="form-control formato-numero" id="precioCosto" value="#{ajustesController.selected.precioCosto}" title="#{bundle.EditAjustesTitle_precioCosto}" />
+                                    <h:inputText styleClass="form-control formato-numero" id="precioCosto" value="#{ajustesController.selected.precioCosto}" title="#{bundle.EditAjustesTitle_precioCosto}" a:oninput="SeparadorMiles(this)"/>
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditAjustesLabel_empleado}" for="empleado" />
@@ -72,6 +72,7 @@
                 <h:commandLink styleClass="btn btn-success w-auto ml-1" action="#{ajustesController.update}" value="#{bundle.EditAjustesSaveLink}"/>
                 <h:link styleClass="btn btn-secondary w-auto ml-1" outcome="View" value="#{bundle.EditAjustesViewLink}"/>
             </h:form>
+            <script src="../resources/javascript/SeparadorMiles.js"></script>
         </ui:define>
     </ui:composition>
 </html>
