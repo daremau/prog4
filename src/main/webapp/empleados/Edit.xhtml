@@ -23,19 +23,29 @@
                             <div class="row">
                                 <!-- Columna Izquierda -->
                                 <div class="col-md-6">
-                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditEmpleadosLabel_empleado}" for="empleado" />
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditEmpleadosLabel_empleado}" for="empleado">
+                                        <ion-icon name="medical" style="font-size: xx-small; color: red"/>
+                                    </h:outputLabel>
                                     <h:inputText styleClass="form-control" id="empleado" value="#{empleadosController.selected.empleado}" title="#{bundle.EditEmpleadosTitle_empleado}" required="true" requiredMessage="#{bundle.EditEmpleadosRequiredMessage_empleado}"/>
                                     <br />
-                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditEmpleadosLabel_nombre}" for="nombre" />
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditEmpleadosLabel_nombre}" for="nombre">
+                                        <ion-icon name="medical" style="font-size: xx-small; color: red"/>
+                                    </h:outputLabel>
                                     <h:inputText styleClass="form-control" id="nombre" value="#{empleadosController.selected.nombre}" title="#{bundle.EditEmpleadosTitle_nombre}" required="true" requiredMessage="#{bundle.EditEmpleadosRequiredMessage_nombre}"/>
                                     <br />
-                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditEmpleadosLabel_apellido}" for="apellido" />
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditEmpleadosLabel_apellido}" for="apellido">
+                                        <ion-icon name="medical" style="font-size: xx-small; color: red"/>
+                                    </h:outputLabel>
                                     <h:inputText styleClass="form-control" id="apellido" value="#{empleadosController.selected.apellido}" title="#{bundle.EditEmpleadosTitle_apellido}" required="true" requiredMessage="#{bundle.EditEmpleadosRequiredMessage_apellido}"/>
                                     <br />
-                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditEmpleadosLabel_direccion}" for="direccion" />
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditEmpleadosLabel_direccion}" for="direccion">
+                                        <ion-icon name="medical" style="font-size: xx-small; color: red"/>
+                                    </h:outputLabel>
                                     <h:inputText styleClass="form-control" id="direccion" value="#{empleadosController.selected.direccion}" title="#{bundle.EditEmpleadosTitle_direccion}" required="true" requiredMessage="#{bundle.EditEmpleadosRequiredMessage_direccion}"/>
                                     <br />
-                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditEmpleadosLabel_telefono}" for="telefono" />
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditEmpleadosLabel_telefono}" for="telefono">
+                                        <ion-icon name="medical" style="font-size: xx-small; color: red"/>
+                                    </h:outputLabel>
                                     <h:inputText styleClass="form-control" id="telefono" value="#{empleadosController.selected.telefono}" title="#{bundle.EditEmpleadosTitle_telefono}" required="true" requiredMessage="#{bundle.EditEmpleadosRequiredMessage_telefono}"/>
                                     <br />
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditEmpleadosLabel_pais}" for="pais" />
@@ -46,7 +56,9 @@
                                
                                 <!-- Columna Derecha -->
                                 <div class="col-md-6">
-                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditEmpleadosLabel_email}" for="email" />
+                                    <h:outputLabel styleClass="l-bold" value="#{bundle.EditEmpleadosLabel_email}" for="email">
+                                        <ion-icon name="medical" style="font-size: xx-small; color: red"/>
+                                    </h:outputLabel>
                                     <h:inputText styleClass="form-control" id="email" value="#{empleadosController.selected.email}" title="#{bundle.EditEmpleadosTitle_email}" required="true" requiredMessage="#{bundle.EditEmpleadosRequiredMessage_email}"/>
                                     <br />
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditEmpleadosLabel_fechaIngreso}" for="fechaIngreso" />

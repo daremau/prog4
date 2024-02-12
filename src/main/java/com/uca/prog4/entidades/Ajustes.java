@@ -151,7 +151,7 @@ public class Ajustes implements Serializable {
     }
     
     public String getNombreEmpleado() {
-        return empleado.getNombre() + ", " + empleado.getApellido();
+        return empleado.getNombre() + ", " + empleado.getApellido ();
     }
 
     public void setEmpleado(Empleados empleado) {
