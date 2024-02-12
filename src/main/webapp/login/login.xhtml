@@ -9,17 +9,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>Login</title>
+        <!--<h:outputStylesheet name="css/jsfcrud.css"/>-->
+
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <h:outputStylesheet name="css/jsfcrud.css"/>
+        <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"/>
+        
     </h:head>
     <h:body>
-        <section class="vh-100">
+        <section class="vh-100" style="background: #e5e5e5">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                         <div class="card shadow-5-strong" style="border-radius: 1rem;">
-                            <div class="card-header text-center gradient-custom">
+                            <div class="card-header text-center gradient-custom" style="background: #1b325f; border-top-right-radius: 1rem; border-top-left-radius: 1rem;">
                                 <h2 class="m-2 azul" style="color: white">Inicie Sesión</h2>
                             </div>
                             <div class="card-body p-5">
@@ -27,17 +29,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                                     
                                     <!--usuario-->
                                     <div class="form-outline mb-4">
-                                        <label class="l-bold" style="font-size: larger">Usuario:</label>
+                                        <label class="l-bold" style="font-size: larger; font-weight: bold;">Usuario:</label>
                                         <input type="text" id="usuario" name="usuario" class="form-control form-control-lg" placeholder="Ingrese su usuario" onkeyup="verificarInputs()"/>
                                     </div>
                                     
                                     <!--contrasena-->
                                     <div class="form-outline mb-4">
-                                        <label class="l-bold" style="font-size: larger">Contraseña: </label>
+                                        <label class="l-bold" style="font-size: larger; font-weight: bold;">Contraseña: </label>
                                         <div class="input-group mb-3">
                                             <input type="password" id="contrasena" name="contrasena" class="form-control form-control-lg" placeholder="Ingrese su contraseña" onkeyup="verificarInputs()"/>
                                             <div class="input-group-append">
-                                                <button id="toggleIcon" class="btn btn-primary" onclick="togglePasswordVisibility()" type="button"><ion-icon class="mt-1 ml-1 pl-2" name="eye-off-outline" style="font-size: large"></ion-icon></button>
+                                                <button id="toggleIcon" class="btn btn-primary" style="background-color: #3a89c9;" onclick="togglePasswordVisibility()" type="button"><ion-icon class="mt-1" name="eye-off-outline" style="font-size: x-large"></ion-icon></button>
                                             </div>
                                         </div>
                                     </div>
@@ -46,7 +48,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                                         <div style="color: red" class="mb-1 text-center">#{requestScope.errorMessage}</div>
                                     </h:panelGroup>                                  
 
-                                    <button id="btnIniciarSesion" type="submit" class="validar-btn btn btn-connection btn-block btn-primary btn-lg" disabled="">Iniciar Sesión</button>
+                                    <button id="btnIniciarSesion" type="submit" class="validar-btn btn btn-connection btn-block btn-primary btn-lg" style="background-color: #3a89c9;" disabled="">Iniciar Sesión</button>
 
                                     <br></br><br></br>
                                     
@@ -70,7 +72,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                 var btnLogin = document.getElementById('btnIniciarSesion');
 
                 // Verificar si ambos campos están llenos
-                if (usuario !== '' && contrasena !== '') {
+                if (usuario.length >= 3 && contrasena.length >= 3) {
                     btnLogin.disabled = false; // Habilita el botón
                 } else {
                     btnLogin.disabled = true; // Deshabilita el botón
@@ -82,10 +84,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                 var toggleIcon = document.getElementById('toggleIcon');
                 if (passwordInput.type === "password") {
                     passwordInput.type = "text";
-                    toggleIcon.innerHTML = '<ion-icon class="mt-1 pl-3" name="eye-outline" style="font-size: x-large">'; // Cambia a un ícono que indique "ocultar" (puedes usar un ícono de FontAwesome o similar)
+                    toggleIcon.innerHTML = '<ion-icon class="mt-1" name="eye-outline" style="font-size: x-large">'; // Cambia a un ícono que indique "ocultar" (puedes usar un ícono de FontAwesome o similar)
                 } else {
                     passwordInput.type = "password";
-                    toggleIcon.innerHTML = '<ion-icon class="mt-1 pl-3" name="eye-off-outline" style="font-size: x-large">'; // Cambia de nuevo al ícono de "mostrar"
+                    toggleIcon.innerHTML = '<ion-icon class="mt-1" name="eye-off-outline" style="font-size: x-large">'; // Cambia de nuevo al ícono de "mostrar"
                 }
             }
             //]]>

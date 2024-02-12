@@ -185,7 +185,7 @@ public class ProductosController implements Serializable {
     }
 
     public SelectItem[] getItemsAvailableSelectOne() {
-        return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
+        return JsfUtil.getSelectItems(ejbFacade.findAllOrderByNombre(), true);
     }
 
     public Productos getProductos(java.lang.Integer id) {

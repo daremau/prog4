@@ -185,7 +185,7 @@ public class ProveedoresController implements Serializable {
     }
 
     public SelectItem[] getItemsAvailableSelectOne() {
-        return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
+        return JsfUtil.getSelectItems(ejbFacade.findAllOrderByNombre(), true);
     }
 
     public Proveedores getProveedores(java.lang.Integer id) {

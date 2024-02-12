@@ -1,3 +1,4 @@
+com\uca\prog4\controladores\util\ControlAccesoFilter.class
 com\uca\prog4\controladores\AreasController$1.class
 com\uca\prog4\controladores\PaisesController$PaisesControllerConverter.class
 com\uca\prog4\controladores\ProductosController$ProductosControllerConverter.class
@@ -55,7 +56,6 @@ com\uca\prog4\clases\MarcasFacade.class
 com\uca\prog4\controladores\ProveedoresController.class
 com\uca\prog4\entidades\Areas.class
 com\uca\prog4\entidades\Paises_.class
-FiltroDeAutenticacion.class
 com\uca\prog4\clases\AreasFacade.class
 com\uca\prog4\entidades\Paises.class
 com\uca\prog4\entidades\Entregas.class

@@ -34,7 +34,6 @@ public class Servlet_login extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // Obtención de parámetros del formulario de inicio de sesión
-//        String name = request.getParameter("nombre");
         String user = request.getParameter("usuario");
         String password = request.getParameter("contrasena");
        

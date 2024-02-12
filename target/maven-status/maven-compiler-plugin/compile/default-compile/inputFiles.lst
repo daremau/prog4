@@ -15,6 +15,7 @@ C:\Users\root\Documents\prog4\src\main\java\com\uca\prog4\controladores\Proveedo
 C:\Users\root\Documents\prog4\src\main\java\com\uca\prog4\controladores\util\JsfUtil.java
 C:\Users\root\Documents\prog4\src\main\java\com\uca\prog4\clases\EmpleadosFacade.java
 C:\Users\root\Documents\prog4\src\main\java\com\uca\prog4\controladores\AreasController.java
+C:\Users\root\Documents\prog4\src\main\java\com\uca\prog4\controladores\util\ControlAccesoFilter.java
 C:\Users\root\Documents\prog4\src\main\java\com\uca\prog4\entidades\Categorias.java
 C:\Users\root\Documents\prog4\src\main\java\com\uca\prog4\controladores\MarcasController.java
 C:\Users\root\Documents\prog4\src\main\java\com\uca\prog4\controladores\EntregasController.java
@@ -32,6 +33,5 @@ C:\Users\root\Documents\prog4\src\main\java\com\uca\prog4\entidades\Areas.java
 C:\Users\root\Documents\prog4\src\main\java\com\uca\prog4\clases\ProductosFacade.java
 C:\Users\root\Documents\prog4\src\main\java\com\uca\prog4\clases\EntregasFacade.java
 C:\Users\root\Documents\prog4\src\main\java\com\uca\prog4\entidades\Paises.java
-C:\Users\root\Documents\prog4\src\main\java\FiltroDeAutenticacion.java
 C:\Users\root\Documents\prog4\src\main\java\com\uca\prog4\controladores\AjustesController.java
 C:\Users\root\Documents\prog4\src\main\java\com\uca\prog4\entidades\Entregas.java

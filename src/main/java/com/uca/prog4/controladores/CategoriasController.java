@@ -185,7 +185,7 @@ public class CategoriasController implements Serializable {
     }
 
     public SelectItem[] getItemsAvailableSelectOne() {
-        return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
+        return JsfUtil.getSelectItems(ejbFacade.findAllOrderByNombre(), true);
     }
 
     public Categorias getCategorias(java.lang.Integer id) {
