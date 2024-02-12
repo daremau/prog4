@@ -23,7 +23,7 @@
                     <h:commandLink styleClass="btn btn-primary" action="#{comprasController.previous}" value="#{bundle.Previous}" rendered="#{comprasController.pagination.hasPreviousPage}"/>
                     <h:commandLink styleClass="btn btn-primary" action="#{comprasController.next}" value="#{bundle.Next}" rendered="#{comprasController.pagination.hasNextPage}"/>
                     
-                    <h:dataTable class="table table-sm table-bordered" value="#{comprasController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
+                    <h:dataTable class="table table-sm table-bordered" value="#{comprasController.pagination.createPageDataModel()}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListComprasTitle_compra}"/>

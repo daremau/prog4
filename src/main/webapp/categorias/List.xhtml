@@ -20,10 +20,10 @@
                
                 <h:panelGroup rendered="#{categoriasController.items.rowCount > 0}">
                     <h:outputText styleClass="btn sin-estilo btn-azul" value="#{categoriasController.pagination.pageFirstItem + 1}..#{categoriasController.pagination.pageLastItem + 1}/#{categoriasController.pagination.itemsCount}"/>
-                    <h:commandLink styleClass="btn btn-primary" action="#{categoriasController.previous}" value="#{bundle.Previous} #{categoriasController.pagination.pageSize}" rendered="#{categoriasController.pagination.hasPreviousPage}"/>
-                    <h:commandLink styleClass="btn btn-primary" action="#{categoriasController.next}" value="#{bundle.Next} #{categoriasController.pagination.pageSize}" rendered="#{categoriasController.pagination.hasNextPage}"/>
+                    <h:commandLink styleClass="btn btn-primary" action="#{categoriasController.previous}" value="#{bundle.Previous}" rendered="#{categoriasController.pagination.hasPreviousPage}"/>
+                    <h:commandLink styleClass="btn btn-primary" action="#{categoriasController.next}" value="#{bundle.Next}" rendered="#{categoriasController.pagination.hasNextPage}"/>
                     
-                    <h:dataTable class="table table-sm table-bordered" value="#{categoriasController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
+                    <h:dataTable class="table table-sm table-bordered" value="#{categoriasController.pagination.createPageDataModel()}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListCategoriasTitle_categoria}"/>
