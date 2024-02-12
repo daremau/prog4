@@ -20,10 +20,10 @@
                 
                 <h:panelGroup rendered="#{productosController.items.rowCount > 0}">
                     <h:outputText styleClass="btn sin-estilo btn-azul" value="#{productosController.pagination.pageFirstItem + 1}..#{productosController.pagination.pageLastItem + 1}/#{productosController.pagination.itemsCount}"/>
-                    <h:commandLink styleClass="btn btn-primary" action="#{productosController.previous}" value="#{bundle.Previous} #{productosController.pagination.pageSize}" rendered="#{productosController.pagination.hasPreviousPage}"/>
-                    <h:commandLink styleClass="btn btn-primary" action="#{productosController.next}" value="#{bundle.Next} #{productosController.pagination.pageSize}" rendered="#{productosController.pagination.hasNextPage}"/>
+                    <h:commandLink styleClass="btn btn-primary" action="#{productosController.previous}" value="#{bundle.Previous}" rendered="#{productosController.pagination.hasPreviousPage}"/>
+                    <h:commandLink styleClass="btn btn-primary" action="#{productosController.next}" value="#{bundle.Next}" rendered="#{productosController.pagination.hasNextPage}"/>
                     
-                    <h:dataTable class="table table-sm table-bordered" value="#{productosController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
+                    <h:dataTable class="table table-sm table-bordered" value="#{productosController.pagination.createPageDataModel()}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProductosTitle_producto}"/>

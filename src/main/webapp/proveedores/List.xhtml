@@ -23,7 +23,7 @@
                     <h:commandLink styleClass="btn btn-primary" action="#{proveedoresController.previous}" value="#{bundle.Previous}" rendered="#{proveedoresController.pagination.hasPreviousPage}"/>
                     <h:commandLink styleClass="btn btn-primary" action="#{proveedoresController.next}" value="#{bundle.Next}" rendered="#{proveedoresController.pagination.hasNextPage}"/>
                     
-                    <h:dataTable class="table table-sm table-bordered" value="#{proveedoresController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
+                    <h:dataTable class="table table-sm table-bordered" value="#{proveedoresController.pagination.createPageDataModel()}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProveedoresTitle_proveedor}"/>

@@ -23,7 +23,7 @@
                     <h:commandLink styleClass="btn btn-primary ml-1" action="#{entregasController.previous}" value="#{bundle.Previous}" rendered="#{entregasController.pagination.hasPreviousPage}"/>
                     <h:commandLink styleClass="btn btn-primary ml-1" action="#{entregasController.next}" value="#{bundle.Next}" rendered="#{entregasController.pagination.hasNextPage}"/>
                     
-                    <h:dataTable class="table table-sm table-bordered" value="#{entregasController.items}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
+                    <h:dataTable class="table table-sm table-bordered" value="#{entregasController.pagination.createPageDataModel()}" var="item" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListEntregasTitle_entrega}"/>
