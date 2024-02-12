@@ -55,7 +55,7 @@ public class AreasController implements Serializable {
 
                 @Override
                 public DataModel createPageDataModel() {
-                    return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    return new ListDataModel(getFacade().findRangeByAttribute(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}, "nombre"));
                 }
             };
         }
@@ -149,7 +149,7 @@ public class AreasController implements Serializable {
             }
         }
         if (selectedItemIndex >= 0) {
-            current = getFacade().findRange(new int[]{selectedItemIndex, selectedItemIndex + 1}).get(0);
+            current = getFacade().findRangeByAttribute(new int[]{selectedItemIndex, selectedItemIndex + 1}, "nombre").get(0);
         }
     }
 
