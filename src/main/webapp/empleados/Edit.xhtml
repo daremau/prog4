@@ -72,7 +72,7 @@
                                     </h:inputText>
                                     <br />
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditEmpleadosLabel_salario}" for="salario" />
-                                    <h:inputText styleClass="form-control formato-numero" id="salario" value="#{empleadosController.selected.salario}" title="#{bundle.EditEmpleadosTitle_salario}" a:oninput="SeparadorMiles(this)"/>
+                                    <h:inputText styleClass="form-control formato-numero text-align-right" id="salario" value="#{empleadosController.selected.salario}" title="#{bundle.EditEmpleadosTitle_salario}" a:oninput="SeparadorMiles(this)"/>
                                     <br />
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditEmpleadosLabel_area}" for="area" />
                                     <h:selectOneMenu styleClass="form-control" id="area" value="#{empleadosController.selected.area}" title="#{bundle.EditEmpleadosTitle_area}" >
