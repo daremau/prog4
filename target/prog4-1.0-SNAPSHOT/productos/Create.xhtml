@@ -35,11 +35,11 @@
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProductosLabel_precioCosto}" for="precioCosto" />
-                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el precio costo" id="precioCosto" value="#{productosController.selected.precioCosto}" title="#{bundle.CreateProductosTitle_precioCosto}" />
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el precio costo" id="precioCosto" value="#{productosController.selected.precioCosto}" title="#{bundle.CreateProductosTitle_precioCosto}" a:oninput="SeparadorMiles(this)"/>
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProductosLabel_precioVenta}" for="precioVenta" />
-                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el precio venta" id="precioVenta" value="#{productosController.selected.precioVenta}" title="#{bundle.CreateProductosTitle_precioVenta}" />
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese el precio venta" id="precioVenta" value="#{productosController.selected.precioVenta}" title="#{bundle.CreateProductosTitle_precioVenta}" a:oninput="SeparadorMiles(this)"/>
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProductosLabel_fechaAdquisicion}" for="fechaAdquisicion" />
@@ -59,7 +59,7 @@
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProductosLabel_existencia}" for="existencia" />
-                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese la existencia" id="existencia" value="#{productosController.selected.existencia}" title="#{bundle.CreateProductosTitle_existencia}" />
+                                    <h:inputText styleClass="form-control" a:placeholder="Ingrese la existencia" id="existencia" value="#{productosController.selected.existencia}" title="#{bundle.CreateProductosTitle_existencia}" a:oninput="SeparadorMiles(this)"/>
                                     <br/>
                                     
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.CreateProductosLabel_categoria}" for="categoria" />
@@ -82,6 +82,7 @@
                 <h:commandLink class="btn btn-primary align-self-center" action="#{productosController.prepareList}" value="#{bundle.CreateProductosShowAllLink}" immediate="true"/>
                 <h:commandLink class="btn btn-success align-self-center ml-1" action="#{productosController.create}" value="#{bundle.CreateProductosSaveLink}" />
             </h:form>
+            <script src="../resources/javascript/SeparadorMiles.js"></script>
         </ui:define>
     </ui:composition>
 </html>

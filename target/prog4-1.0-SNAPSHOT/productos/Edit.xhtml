@@ -36,11 +36,11 @@
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_precioCosto}" for="precioCosto" />
-                                    <h:inputText styleClass="form-control" id="precioCosto" value="#{productosController.selected.precioCosto}" title="#{bundle.EditProductosTitle_precioCosto}" disabled="true"/>
+                                    <h:inputText styleClass="form-control" id="precioCosto" value="#{productosController.selected.precioCostoFormateado}" title="#{bundle.EditProductosTitle_precioCosto}" disabled="true"/>
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_precioVenta}" for="precioVenta" />
-                                    <h:inputText styleClass="form-control" id="precioVenta" value="#{productosController.selected.precioVenta}" title="#{bundle.EditProductosTitle_precioVenta}" disabled="true"/>
+                                    <h:inputText styleClass="form-control" id="precioVenta" value="#{productosController.selected.precioVentaFormateado}" title="#{bundle.EditProductosTitle_precioVenta}" disabled="true"/>
                                    
                                     <br />
                            
@@ -61,7 +61,7 @@
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_existencia}" for="existencia" />
-                                    <h:inputText styleClass="form-control formato-numero" id="existencia" value="#{productosController.selected.existencia}" title="#{bundle.EditProductosTitle_existencia}" disabled="true"/>
+                                    <h:inputText styleClass="form-control formato-numero" id="existencia" value="#{productosController.selected.existenciaFormateado}" title="#{bundle.EditProductosTitle_existencia}" disabled="true"/>
                                     <br />
                            
                                     <h:outputLabel styleClass="l-bold" value="#{bundle.EditProductosLabel_categoria}" for="categoria" />

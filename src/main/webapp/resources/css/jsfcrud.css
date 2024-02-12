@@ -137,3 +137,7 @@ ion-icon {
     border-color: #1b325f;
     color: white;
 }
+
+.text-align-right {
+    text-align: right;
+}
